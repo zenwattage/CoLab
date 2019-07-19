@@ -13,7 +13,7 @@ const cookieSession = require('cookie-session');
 
 const app = express();
 //database connection
-mongoose.connect('mongodb://localhost/CoLab_DB', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/newColabDB', {useNewUrlParser: true});
 
 app.use(logger('dev'));
 app.use(express.json());
