@@ -68,7 +68,7 @@ export default class Signup extends Component {
             <input type="submit" value="Submit"></input>
           </form>
 
-          {/* {console.log(this.state.errorMessage)} */}
+          {console.log(this.state.errorMessage)}
 
           {/* <form onSubmit={this.handleSubmit}>
             <input type="text" name="firstname" onChange={this.handleChange} />
@@ -79,7 +79,7 @@ export default class Signup extends Component {
 
             <button>Signup</button>
           </form> */}
-          <p>{this.state.errorMessage}</p>
+          {/* <p>{this.state.errorMessage}</p> */}
         </div>
       </Fragment>
     );
