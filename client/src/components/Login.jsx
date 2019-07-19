@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+import Footer from "./Footer/index";
 // import Wrapper from "./Wrapper";
 
 export default class Login extends Component {
@@ -58,6 +59,8 @@ export default class Login extends Component {
           <button>Login</button>
         </form>
         <p>{this.state.errorMessage}</p>
+
+        <Footer />
       </div>
     );
   }

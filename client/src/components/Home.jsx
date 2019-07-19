@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./Home.css";
+import Footer from "./Footer/index"
 
 export default class Home extends Component {
 
@@ -18,6 +19,9 @@ export default class Home extends Component {
           <a type="button" className="login" href = "/login">Log In</a>
           <a type="button" className="login" href = "/signup">Sign Up</a>
         </div>
+      
+
+      <Footer />
       </div>
     );
   }

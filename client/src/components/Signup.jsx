@@ -1,7 +1,8 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
 import Wrapper from "./Wrapper";
-import Filter from "./Filter/Filter"
+import Filter from "./Filter/Filter";
+import Footer from "./Footer/index";
 
 export default class Signup extends Component {
 
@@ -9,7 +10,7 @@ export default class Signup extends Component {
     email: "",
     password: "",
     errorMessage: "",
-    results: ["filter1", "filter2"]
+    results: []
   }
 
   handleSubmit = event => {
@@ -37,40 +38,50 @@ export default class Signup extends Component {
     const { name, value } = event.target;
     this.setState({
       [name]: value
-    })
-  };
-  render() {
-    // JSX
-    return (
-      <Fragment>
-        <Wrapper />
-        <div className="loginpage main">
-          <h1>Welcome to CoLab!</h1>
-          <p>Please fill out the registration form to sign-up.</p>
-          <p>You will complete your profile on the next page.</p>
+    })};
+ 
+    renderFilter(option) {
+      if (option === "dancer"){
+        this.setState({results :["Hip-hop", "Ballet", "Contemporary", "Latin"]})
+      }
+      else if (option === "photographer"){
+        this.setState({results : ["Landscape","Portrait", "Street", "Motion"]})
+      }
+    };
 
-          <form onSubmit={this.handleSubmit}>
-            <p className="IMA">I am a:</p>
-            <select name="professions" id="talent">
-              <option value="dancer">Dancer</option>
-              <option value="photographer">Photographer</option>
-            </select>
-            <Filter results={this.state.results} />
-            <hr />
-            <div>First name: <input type="text" name="firstName" onChange={this.handleChange}></input></div>
-            <div>Last name: <input type="text" name="lastName" onChange={this.handleChange}></input></div>
-            <div>Email: <input type="text" name="email" onChange={this.handleChange}></input></div>
-            <div>Password: <input type="password" name="password" onChange={this.handleChange}></input></div>
-            <hr />
+    render() {
+      // JSX
+      return (
+        <Fragment>
+          <Wrapper />
+          <div className="loginpage main">
+            <h1>Welcome to CoLab!</h1>
+            <p>Please fill out the registration form to sign-up.</p>
+            <p>You will complete your profile on the next page.</p>
 
-            <button className="login">Sign Up</button>
+            <form onSubmit={this.handleSubmit}>
+              <p className="IMA">I am a:</p>
+              <button className="login" id="dancer" onClick={() => this.renderFilter("dancer")}>Dancer</button>
+              <button className="login" id="photographer" onClick={() => this.renderFilter("photographer")}>Photographer</button>
+              <Filter results={this.state.results}/>
+              
 
-            <input type="submit" value="Submit"></input>
-          </form>
+              <hr />
 
-          {console.log(this.state.errorMessage)}
+              <div>First name: <input type="text" name="firstName" onChange={this.handleChange}></input></div>
+              <div>Last name: <input type="text" name="lastName" onChange={this.handleChange}></input></div>
+              <div>Email: <input type="text" name="email" onChange={this.handleChange}></input></div>
+              <div>Password: <input type="password" name="password" onChange={this.handleChange}></input></div>
+              <hr />
 
-          {/* <form onSubmit={this.handleSubmit}>
+              <button className="login">Sign Up</button>
+
+              <input type="submit" value="Submit"></input>
+            </form>
+
+            {console.log(this.state.errorMessage)}
+
+            {/* <form onSubmit={this.handleSubmit}>
             <input type="text" name="firstname" onChange={this.handleChange} />
             <input type="text" name="lastname" onChange={this.handleChange} />
             <input type="text" name="email" onChange={this.handleChange} />
@@ -79,10 +90,11 @@ export default class Signup extends Component {
 
             <button>Signup</button>
           </form> */}
-          {/* <p>{this.state.errorMessage}</p> */}
-        </div>
-      </Fragment>
-    );
+            {/* <p>{this.state.errorMessage}</p> */}
+          </div>
+          <Footer />
+        </Fragment>
+      );
+    }
   }
-}
 
