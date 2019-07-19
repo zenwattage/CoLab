@@ -18,5 +18,17 @@
     "morgan": "~1.9.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
-  }
+  },
+  "description": "## Installation open a seperate windows command prompt and type: ```mongod```",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenwattage/CoLab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zenwattage/CoLab/issues"
+  },
+  "homepage": "https://github.com/zenwattage/CoLab#readme"
 }

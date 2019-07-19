@@ -1,0 +1,10 @@
+/* Login/Register page /////////////////////////////////////////////////////////////// */ 
+.loginpage {
+  text-align: center;
+}
+.logintitle {
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 20px;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
