@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import "./Login.css";
+// import Wrapper from "./Wrapper";
 
 export default class Login extends Component {
   state = {
@@ -47,11 +49,12 @@ export default class Login extends Component {
     }
     // JSX
     return (
+      // <Wrapper />
       <div>
-        <h1> Login Component </h1>
+        <h1>Log in to CoLab</h1>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="email" onChange={this.handleChange} />
-          <input type="password" name="password" onChange={this.handleChange} />
+          <div>Email: <input type="text" name="email" onChange={this.handleChange} /></div>
+          <div>Password: <input type="password" name="password" onChange={this.handleChange} /></div>
           <button>Login</button>
         </form>
         <p>{this.state.errorMessage}</p>
