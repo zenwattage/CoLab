@@ -65,7 +65,7 @@ export default class Signup extends Component {
 
           <input type="submit" value="Submit"></input>
         </form>
-        <p>{this.state.errorMessage}</p>
+        {/* <p>{this.state.errorMessage}</p> */}
 
         {/* <form onSubmit={this.handleSubmit}>
           <p>First name:</p>
