@@ -5,11 +5,10 @@ export default class Filter extends Component {
      // JSX
      return (
          <div>
-           <h3>Style</h3>
+          <h1>{this.props.statement}</h1>
            {this.props.results.map(result => (
-             <p><input type="checkbox" name = "filter" value={result}/>{result}</p>
+             <button className="login" id="dancer">{result}</button>
            ))}
          </div>
      );
-   }
-}
+}}

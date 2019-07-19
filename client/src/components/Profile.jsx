@@ -5,6 +5,7 @@ import Row from "../components/Row";
 import Col from "../components/Col";
 import axios from "axios";
 import Wrapper from "./Wrapper";
+import Footer from "./Footer/index";
 
 class Profile extends Component {
   // State to store images of work
@@ -108,6 +109,7 @@ class Profile extends Component {
 
 
           </Container>
+          <Footer />
         </div>
       </Fragment>
     );

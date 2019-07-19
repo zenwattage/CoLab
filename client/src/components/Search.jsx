@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
+import Footer from "./Footer/index";
 
 function SearchArtist() {
   return (
@@ -44,6 +45,7 @@ function SearchArtist() {
 
 
         </Container>
+        <Footer />
       </div>
     </Fragment>
   );
