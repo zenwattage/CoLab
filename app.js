@@ -12,14 +12,14 @@ const log = console.log;
 const cookieSession = require('cookie-session');
 
 const app = express();
-
-mongoose.connect('mongodb://localhost/authentication-example', {useNewUrlParser: true});
+//database connection
+mongoose.connect('mongodb://localhost/CoLab_DB', {useNewUrlParser: true});
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-
+//cookie session
 app.use(cookieSession({
   name: 'session',
   keys: ['key1', 'key2']
