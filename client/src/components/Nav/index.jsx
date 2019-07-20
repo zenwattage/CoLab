@@ -1,14 +1,36 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar">
+      <a className="navbar-brand-name" href="/">
+        CoLab
+      </a>
+      <a className="navbar-brand" href="/login">
+        Log In
+      </a>
+      <a className="navbar-brand" href="/signup">
+        Sign Up
+      </a>
+      <a className="navbar-brand" href="/profile">
+        Profile
+      </a>
+      <a className="navbar-brand" href="/search">
+        Search
+      </a>
+      <a className="navbar-brand" href="/searchresults">
+        Results
+      </a>
+
+
+{/* 
+
       <Link className="navbar-brand" to="/">
         CoLab
-      </Link>
+</Link>
       <div>
         <ul className="navbar-nav">
           <li className="nav-item">
@@ -17,7 +39,7 @@ function Nav() {
               className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
             >
               Log In
-            </Link>
+      </Link>
           </li>
           <li className="nav-item">
             <Link
@@ -25,7 +47,7 @@ function Nav() {
               className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}
             >
               Sign Up
-            </Link>
+      </Link>
           </li>
           <li className="nav-item">
             <Link
@@ -33,7 +55,7 @@ function Nav() {
               className={window.location.pathname === "/Profile" ? "nav-link active" : "nav-link"}
             >
               Profile Page
-            </Link>
+      </Link>
           </li>
           <li className="nav-item">
             <Link
@@ -41,7 +63,7 @@ function Nav() {
               className={window.location.pathname === "/SearchArtist" ? "nav-link active" : "nav-link"}
             >
               Search
-            </Link>
+      </Link>
           </li>
           <li className="nav-item">
             <Link
@@ -49,12 +71,16 @@ function Nav() {
               className={window.location.pathname === "/SearchResults" ? "nav-link active" : "nav-link"}
             >
               Results
-            </Link>
+      </Link>
           </li>
         </ul>
       </div>
-    </nav>
+    </nav> */}
+
+
+  </nav>
   );
 }
+
 
 export default Nav;

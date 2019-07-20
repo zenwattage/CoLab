@@ -1,3 +1,21 @@
 nav.navbar.navbar-default {
   margin-bottom: 0;
 }
+
+.navbar {
+  background-color: white;
+  height: 50px;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  float: right;
+  color: black;
+  margin-right: 10px;
+}
+
+.navbar-brand-name {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}

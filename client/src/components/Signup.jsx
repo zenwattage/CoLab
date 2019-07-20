@@ -4,6 +4,7 @@ import Wrapper from "./Wrapper";
 import Filter from "./Filter/Filter";
 import Footer from "./Footer/index";
 import Button from "./Button/Button.jsx";
+import Nav from "./Nav/index";
 
 
 export default class Signup extends Component {
@@ -44,21 +45,24 @@ export default class Signup extends Component {
     })
   };
 
+
   renderFilter = (option) => {
     if (option === "dancer") {
       this.setState({ results: ["Hip-hop", "Ballet", "Contemporary", "Latin"] });
-      this.setState({statement:"Here's the dance I'm good at:"})
+      this.setState({statement:"Here's the dance I'm good at:"});
     }
     else if (option === "photographer") {
       this.setState({ results: ["Landscape", "Portrait", "Street", "Motion"] });
       this.setState({statement:"Here's the photography I'm good at:"})
     }
+
   };
 
   render() {
     // JSX
     return (
       <Fragment>
+        <Nav />
         <Wrapper />
         <div className="loginpage main">
           <h1>Welcome to CoLab!</h1>
@@ -78,8 +82,11 @@ export default class Signup extends Component {
             <div>Password: <input type="password" name="password" onChange={this.handleChange}></input></div>
             <hr />
 
+          <div className="signupbutton">
             <Button value="signup">Sign up</Button>
-            <Button value="submit">Submit</Button>
+            <Button value="submit" >Submit</Button>
+          </div>
+          
           </form>
 
           {console.log(this.state.errorMessage)}

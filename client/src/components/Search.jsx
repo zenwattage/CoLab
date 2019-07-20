@@ -4,6 +4,7 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import Footer from "./Footer/index";
+import Button from "./Button/Button";
 
 function SearchArtist() {
   return (
@@ -27,19 +28,7 @@ function SearchArtist() {
 
           <Row>
             <Col size="md-12">
-              
-            </Col>
-          </Row>
-
-          <Row>
-            <Col size="md-12">
-              
-            </Col>
-          </Row>
-
-          <Row>
-            <Col size="md-12">
-              <button>Search Creatives</button>
+              <Button className="button" value="search">Search Creatives</Button>
             </Col>
           </Row>
 
