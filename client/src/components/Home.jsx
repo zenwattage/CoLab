@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import "./Home.css";
-import Footer from "./Footer/index"
+import Footer from "./Footer/index";
+import Button from "./Button/Button.jsx";
 
 export default class Home extends Component {
-
   render() {
     // JSX
     return (
@@ -16,12 +16,11 @@ export default class Home extends Component {
         </article>
 
         <div className="buttons">
-          <a type="button" className="login" href = "/login">Log In</a>
-          <a type="button" className="login" href = "/signup">Sign Up</a>
+          <Button link = "/login" value = "login">Log In</Button>
+          <Button link = "/signup" value = "signup">Sign Up</Button>
         </div>
-      
 
-      <Footer />
+        <Footer />
       </div>
     );
   }
