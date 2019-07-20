@@ -3,6 +3,8 @@ import { Redirect } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 import Footer from "./Footer/index";
+import Button from "./Button/Button.jsx";
+
 // import Wrapper from "./Wrapper";
 
 export default class Login extends Component {
@@ -28,6 +30,8 @@ export default class Login extends Component {
       const isAuthenticated = response.data.isAuthenticated;
       window.localStorage.setItem('isAuthenticated', isAuthenticated);
       this.props.history.push("/profile");
+      console.log(response);
+      
     })
     .catch(error => {
       this.setState({
@@ -53,11 +57,11 @@ export default class Login extends Component {
       // <Wrapper />
       <div>
         <h1>Log in to CoLab</h1>
-        <form onSubmit={this.handleSubmit}>
+        {/* <form onSubmit={this.handleSubmit}> */}
           <div>Email: <input type="text" name="email" onChange={this.handleChange} /></div>
           <div>Password: <input type="password" name="password" onChange={this.handleChange} /></div>
-          <button>Login</button>
-        </form>
+          <Button value = "login" handleOnClick = {this.handleSubmit}>Log In</Button>
+        {/* </form> */}
         <p>{this.state.errorMessage}</p>
 
         <Footer />
