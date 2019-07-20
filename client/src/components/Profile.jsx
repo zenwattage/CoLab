@@ -6,52 +6,72 @@ import Col from "../components/Col";
 import axios from "axios";
 import Wrapper from "./Wrapper";
 import Footer from "./Footer/index";
+import Button from "./Button/Button"
 
 class Profile extends Component {
   // State to store images of work
   state = {
-    selectedFile: null
+    // selectedFile: null,
+    bio: "",
+    instagram: "",
+    twitter: "",
+    other: "",
   }
 
   // ALL IMAGE UPLOAD HANDLERS /////////////////////////////////////////////////////////////////////
   // Set state to the file uploaded
-  fileSelectedHandler = event => {
-    this.setState({
-      selectedFile: event.target.files[0]
-    })
-  };
+  // fileSelectedHandler = event => {
+  //   this.setState({
+  //     selectedFile: event.target.files[0]
+  //   })
+  // };
 
-  // Upload image to our own database/api
-  fileUploadHandler = () => {
-    const fd = new FormData();
-    fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
-    axios.post('', fd, {
-      onUploadProgress: progressEvent => {
-        console.log("Upload progress " + Math.round((progressEvent.loaded / progressEvent.total) * 100) + "%");
-      }
-    })
-      .then(res => {
-        console.log(res);
-      })
-  }
+  // // Upload image to our own database/api
+  // fileUploadHandler = () => {
+  //   const fd = new FormData();
+  //   fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
+  //   axios.post('', fd, {
+  //     onUploadProgress: progressEvent => {
+  //       console.log("Upload progress " + Math.round((progressEvent.loaded / progressEvent.total) * 100) + "%");
+  //     }
+  //   })
+  //     .then(res => {
+  //       console.log(res);
+  //     })
+  // }
 
   // ALL BIO HANDLERS ////////////////////////////////////////////////////////////////////
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {value: ''};
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  //   this.handleChange = this.handleChange.bind(this);
+  //   this.handleSubmit = this.handleSubmit.bind(this);
+  // }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = event.target;
 
-  handleSubmit(event) {
-    // alert('A name was submitted: ' + this.state.value);
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  };
+
+  // THIS HAPPENS AFTER FORM IS SUBMITTED
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-  }
+
+    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+    this.setState({
+      bio: "",
+      instagram: "",
+      twitter: "",
+      other: "",
+    });
+  };
 
   render() {
     return (
@@ -68,45 +88,52 @@ class Profile extends Component {
 
             <Row>
               <Col size="md-12">
-              </Col>
-            </Row>
-
-            <Row>
-              <Col size="md-12">
                 <p>Upload images of your work</p>
-                <div className="picupload">
+                {/* <div className="picupload">
                   <input type="file" onChange={this.fileSelectedHandler} />
-                  <button onClick={this.fileUploadHandler}>Upload</button>
-                </div>
+                  <Button className="button" onClick={this.fileUploadHandler}>Upload</Button>
+                </div> */}
               </Col>
             </Row>
 
             <Row>
               <Col size="md-12">
-                <form onSubmit={this.handleSubmit}>
-                  <label>
-                    Tell us about yourself:
-                    <br></br>
-                  <input type="text" value={this.state.value} onChange={this.handleChange} className="bio"/>
-                  </label>
+                <form className="form">
+                  <p>Tell us about your self.</p>
+                  <input
+                    value={this.state.bio}
+                    name="bio"
+                    onChange={this.handleInputChange}
+                    type="text"
+                    placeholder="Insert bio here"
+                  />
+                   <p>Add social media links.</p>
+                  <input
+                    value={this.state.instagram}
+                    name="instagram"
+                    onChange={this.handleInputChange}
+                    type="text"
+                    placeholder="IG handle"
+                  />
+                  <input
+                    value={this.state.twitter}
+                    name="twitter"
+                    onChange={this.handleInputChange}
+                    type="text"
+                    placeholder="Twitter handle"
+                  />
+                  <input
+                    value={this.state.other}
+                    name="other"
+                    onChange={this.handleInputChange}
+                    type="text"
+                    placeholder="Other site"
+                  />
                   <br></br>
-                  <input type="submit" value="Submit" />
+                  <Button onClick={this.handleFormSubmit}>Submit</Button>
                 </form>
               </Col>
             </Row>
-
-            <Row>
-              <Col size="md-12">
-                <p>Add social media links.</p>
-              </Col>
-            </Row>
-
-            <Row>
-              <Col size="md-12">
-                <button>Find your creatives</button>
-              </Col>
-            </Row>
-
 
           </Container>
           <Footer />
