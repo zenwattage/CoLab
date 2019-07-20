@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import Button from "../Button/Button"; 
 
 export default class Filter extends Component {
    render() {
      // JSX
      return (
          <div>
-          <h1>{this.props.statement}</h1>
+          <h4>{this.props.statement}</h4>
            {this.props.results.map(result => (
-             <button className="login" id="dancer">{result}</button>
-           ))}
+          <Button value = {this.props.value}>{result}</Button>
+          ))}
          </div>
      );
 }}
