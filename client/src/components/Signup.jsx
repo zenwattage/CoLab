@@ -3,6 +3,7 @@ import axios from 'axios';
 import Wrapper from "./Wrapper";
 import Filter from "./Filter/Filter";
 import Footer from "./Footer/index";
+import Buttons from "./Buttons"
 
 export default class Signup extends Component {
 
@@ -60,12 +61,8 @@ export default class Signup extends Component {
             <p>You will complete your profile on the next page.</p>
 
             <form onSubmit={this.handleSubmit}>
-              <p className="IMA">I am a:</p>
-              <button className="login" id="dancer" onClick={() => this.renderFilter("dancer")}>Dancer</button>
-              <button className="login" id="photographer" onClick={() => this.renderFilter("photographer")}>Photographer</button>
-              <Filter results={this.state.results}/>
-              
-
+   
+            <Buttons />
               <hr />
 
               <div>First name: <input type="text" name="firstName" onChange={this.handleChange}></input></div>
