@@ -12,7 +12,8 @@ export default class Signup extends Component {
     email: "",
     password: "",
     errorMessage: "",
-    results: []
+    results: [],
+    statement:""
   }
 
   handleSubmit = event => {
@@ -45,10 +46,12 @@ export default class Signup extends Component {
 
   renderFilter = (option) => {
     if (option === "dancer") {
-      this.setState({ results: ["Hip-hop", "Ballet", "Contemporary", "Latin"] })
+      this.setState({ results: ["Hip-hop", "Ballet", "Contemporary", "Latin"] });
+      this.setState({statement:"Here's the dance I'm good at:"})
     }
     else if (option === "photographer") {
-      this.setState({ results: ["Landscape", "Portrait", "Street", "Motion"] })
+      this.setState({ results: ["Landscape", "Portrait", "Street", "Motion"] });
+      this.setState({statement:"Here's the photography I'm good at:"})
     }
   };
 
@@ -66,7 +69,7 @@ export default class Signup extends Component {
             <p className="IMA">I am a:</p>
             <Button value="dancer" handleOnClick={this.renderFilter}>Dancer</Button>
             <Button value="photographer" handleOnClick={this.renderFilter}>Photographer</Button>
-            <Filter results={this.state.results} />
+            <Filter results={this.state.results}  statement = {this.state.statement}/>
             <hr />
 
             <div>First name: <input type="text" name="firstName" onChange={this.handleChange}></input></div>

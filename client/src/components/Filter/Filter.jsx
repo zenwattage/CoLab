@@ -6,7 +6,7 @@ export default class Filter extends Component {
      // JSX
      return (
          <div>
-          <h1>{this.props.statement}</h1>
+          <h4>{this.props.statement}</h4>
            {this.props.results.map(result => (
           <Button value = {this.props.value}>{result}</Button>
           ))}
