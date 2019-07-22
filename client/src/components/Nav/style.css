@@ -12,10 +12,12 @@ nav.navbar.navbar-default {
   float: right;
   color: black;
   margin-right: 10px;
+  font-family: 'Lato', sans-serif;
 }
 
 .navbar-brand-name {
   text-decoration: none;
   color: black;
   font-size: 25px;
+  font-family: 'Lato', sans-serif;
 }

@@ -5,6 +5,7 @@ import Filter from "./Filter/Filter";
 import Footer from "./Footer/index";
 import Button from "./Button/Button.jsx";
 import Nav from "./Nav/index";
+import "./Signup.css"
 
 
 export default class Signup extends Component {
@@ -14,7 +15,7 @@ export default class Signup extends Component {
     password: "",
     errorMessage: "",
     results: [],
-    statement:""
+    statement: ""
   }
 
   handleSubmit = event => {
@@ -45,7 +46,6 @@ export default class Signup extends Component {
     })
   };
 
-
   renderFilter = (option) => {
     if (option === "dancer") {
       this.setState({ results: ["Hip-hop", "Ballet", "Contemporary", "Latin"] });
@@ -64,8 +64,8 @@ export default class Signup extends Component {
       <Fragment>
         <Nav />
         <Wrapper />
-        <div className="loginpage main">
-          <h1>Welcome to CoLab!</h1>
+        <div className="signuppage">
+          <h1 className="title">Welcome to CoLab!</h1>
           <p>Please fill out the registration form to sign-up.</p>
           <p>You will complete your profile on the next page.</p>
 

@@ -3,10 +3,11 @@ import Nav from "../components/Nav";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
-import axios from "axios";
+// import axios from "axios";
 import Wrapper from "./Wrapper";
 import Footer from "./Footer/index";
-import Button from "./Button/Button"
+import Button from "./Button/Button";
+import Portfolio from "../portfolio.jpeg";
 
 class Profile extends Component {
   // State to store images of work
@@ -82,13 +83,22 @@ class Profile extends Component {
           <Container style={{ marginTop: 30 }}>
             <Row>
               <Col size="md-12">
-                <h1>Build your Creative Portfolio</h1>
+                <h1 className="title">Build your Creative Portfolio</h1>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col size="md-4">
+                <img src={Portfolio} className="portfolioimg" alt="portfolio" />
+              </Col>
+              <Col size="md-8">
+                <p>Here you can add to your portfolio to showcase your best work, projects, and social media accounts.</p>
               </Col>
             </Row>
 
             <Row>
               <Col size="md-12">
-                <p>Upload images of your work</p>
+                <p className="subtitle">Upload images of your work</p>
                 {/* <div className="picupload">
                   <input type="file" onChange={this.fileSelectedHandler} />
                   <Button className="button" onClick={this.fileUploadHandler}>Upload</Button>
@@ -99,22 +109,29 @@ class Profile extends Component {
             <Row>
               <Col size="md-12">
                 <form className="form">
-                  <p>Tell us about your self.</p>
-                  <input
+                  <p className="subtitle">Tell us about your self.</p>
+                  <div className="bioform"> Bio: 
+                    <input
                     value={this.state.bio}
                     name="bio"
                     onChange={this.handleInputChange}
                     type="text"
                     placeholder="Insert bio here"
                   />
-                   <p>Add social media links.</p>
-                  <input
+                  </div>
+                 
+                   <p className="subtitle"> Add social media links.</p>
+                   <div className="bioform">Instagram:
+                   <input
                     value={this.state.instagram}
                     name="instagram"
                     onChange={this.handleInputChange}
                     type="text"
                     placeholder="IG handle"
                   />
+                   </div>
+                  
+                  <div className="bioform">Twitter: 
                   <input
                     value={this.state.twitter}
                     name="twitter"
@@ -122,6 +139,9 @@ class Profile extends Component {
                     type="text"
                     placeholder="Twitter handle"
                   />
+                  </div>
+
+                  <div className="bioform">Other: 
                   <input
                     value={this.state.other}
                     name="other"
@@ -129,6 +149,8 @@ class Profile extends Component {
                     type="text"
                     placeholder="Other site"
                   />
+                  </div>
+
                   <br></br>
                   <Button onClick={this.handleFormSubmit}>Submit</Button>
                 </form>

@@ -14,14 +14,14 @@ function SearchArtist() {
         <Container style={{ marginTop: 30 }}>
           <Row>
             <Col size="md-12">
-              <h1>Search for an artist</h1>
+              <h1 className="title">Search for an Artist</h1>
             </Col>
           </Row>
 
           <Row>
             <Col size="md-12">
               <div>
-                <p>Select admirable traits</p>
+                <p className="subtitle">Select admirable traits</p>
               </div>
             </Col>
           </Row>
