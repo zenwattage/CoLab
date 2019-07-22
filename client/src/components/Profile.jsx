@@ -72,6 +72,7 @@ class Profile extends Component {
       twitter: "",
       other: "",
     });
+    this.props.history.push('/search');
   };
 
   render() {
@@ -108,7 +109,7 @@ class Profile extends Component {
 
             <Row>
               <Col size="md-12">
-                <form className="form">
+              <form onSubmit={this.handleSubmit}>
                   <p className="subtitle">Tell us about your self.</p>
                   <div className="bioform"> Bio: 
                     <input
@@ -152,7 +153,7 @@ class Profile extends Component {
                   </div>
 
                   <br></br>
-                  <Button onClick={this.handleFormSubmit}>Submit</Button>
+                  <button onClick={this.handleFormSubmit}>Submit</button>
                 </form>
               </Col>
             </Row>
