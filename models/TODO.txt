@@ -1,0 +1,2 @@
+Create code that writes values to each talents collection
+create logic using db.aggregate to load responses to queries
