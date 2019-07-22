@@ -4,8 +4,6 @@ import Wrapper from "./Wrapper";
 import Filter from "./Filter/Filter";
 import Footer from "./Footer/index";
 import Button from "./Button/Button.jsx";
-
-
 export default class Signup extends Component {
 
   state = {
@@ -13,7 +11,9 @@ export default class Signup extends Component {
     password: "",
     errorMessage: "",
     results: [],
-    statement:""
+    statement:"",
+    className:"still",
+    profession:""
   }
 
   handleSubmit = event => {
@@ -46,14 +46,25 @@ export default class Signup extends Component {
 
   renderFilter = (option) => {
     if (option === "dancer") {
-      this.setState({ results: ["Hip-hop", "Ballet", "Contemporary", "Latin"] });
+      this.setState({ results: ["Hip-hop", "Ballet", "Contemporary", "Latin"] ,
+    profession: option});
       this.setState({statement:"Here's the dance I'm good at:"})
     }
     else if (option === "photographer") {
       this.setState({ results: ["Landscape", "Portrait", "Street", "Motion"] });
       this.setState({statement:"Here's the photography I'm good at:"})
     }
+    // this.handleFilter(); 
   };
+
+  handleFilter=()=>{
+    if (this.state.className === "still"){
+      this.setState({className:"active"})
+    }
+    else{
+      this.setState({className:"still"})
+    }
+  }; 
 
   render() {
     // JSX
@@ -65,11 +76,11 @@ export default class Signup extends Component {
           <p>Please fill out the registration form to sign-up.</p>
           <p>You will complete your profile on the next page.</p>
 
-          <form onSubmit={this.handleSubmit}>
+          {/* <form onSubmit={this.handleSubmit}> */}
             <p className="IMA">I am a:</p>
             <Button value="dancer" handleOnClick={this.renderFilter}>Dancer</Button>
             <Button value="photographer" handleOnClick={this.renderFilter}>Photographer</Button>
-            <Filter results={this.state.results}  statement = {this.state.statement}/>
+            <Filter results={this.state.results}  statement = {this.state.statement} handleFilter={this.handleFilter} className= {this.state.className}/>
             <hr />
 
             <div>First name: <input type="text" name="firstName" onChange={this.handleChange}></input></div>
@@ -77,10 +88,10 @@ export default class Signup extends Component {
             <div>Email: <input type="text" name="email" onChange={this.handleChange}></input></div>
             <div>Password: <input type="password" name="password" onChange={this.handleChange}></input></div>
             <hr />
-
+            <button onClick={this.handleFilter}>Switch Classname</button>
             <Button value="signup">Sign up</Button>
             <Button value="submit">Submit</Button>
-          </form>
+          {/* </form> */}
 
           {console.log(this.state.errorMessage)}
 

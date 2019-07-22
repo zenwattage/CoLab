@@ -1,19 +1,42 @@
-import React from "react";
+import React, { Component } from 'react';
 import "./style.css";
 
-function Button(props) {
-  return (
-    <a href={props.link}>
-      <button
-        type="button"
-        value={props.value}
-        onClick={() => props.handleOnClick(props.value)}>{props.children}</button>
-    </a>);
-};
+export default class Button extends Component {
+  handleFilter=()=>{
+    if (this.state.className === "still"){
+      this.setState({className:"active"})
+    }
+    else{
+      this.setState({className:"still"})
+    }
+  }; 
+
+  handleOnClick=()=>{
+    this.props.handleOnClick(this.props.value);
+    if (this.props.enableChangeState){
+      this.handleFilter();
+    }
+  };
+
+  state ={
+    className:"still"
+  };
+
+  render() {
+    return (
+      <a href={this.props.link}>
+        <button
+          type="button"
+          value={this.props.value}
+          className={this.state.className}
+          onClick={this.handleOnClick}>{this.props.children}</button>
+      </a>);
+  };
+}
 
 Button.defaultProps = {
+  enableChangeState: false,
   value: "",
-  handleOnClick: function(){return;}
+  className: "",
+  handleOnClick: function () { return; }
 };
-
-export default Button;
