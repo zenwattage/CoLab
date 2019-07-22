@@ -13,9 +13,9 @@ export default class Signup extends Component {
     password: "",
     errorMessage: "",
     results: [],
-    statement:"",
-    className:"still",
-    profession:""
+    statement: "",
+    className: "still",
+    profession: ""
   }
 
   handleSubmit = event => {
@@ -49,70 +49,65 @@ export default class Signup extends Component {
   renderFilter = (option) => {
     if (option === "dancer") {
       this.setState({ results: ["Hip-hop", "Ballet", "Contemporary", "Latin"] });
-      this.setState({statement:"Here's the dance I'm good at:"});
+      this.setState({ statement: "Here's the dance I'm good at:" });
     }
     else if (option === "photographer") {
       this.setState({ results: ["Landscape", "Portrait", "Street", "Motion"] });
-      this.setState({statement:"Here's the photography I'm good at:"})
+      this.setState({ statement: "Here's the photography I'm good at:" })
     }
   };
 
-  handleFilter=()=>{
-    if (this.state.className === "still"){
-      this.setState({className:"active"})
+  handleFilter = () => {
+    if (this.state.className === "still") {
+      this.setState({ className: "active" })
     }
-    else{
-      this.setState({className:"still"})
+    else {
+      this.setState({ className: "still" })
     }
-  }; 
+  };
 
   render() {
     // JSX
     return (
       <Fragment>
-        <Nav/>
+        <Nav />
         <Wrapper />
         <div className="signuppage">
           <h1 className="title">Welcome to CoLab!</h1>
           <p>Please fill out the registration form to sign-up.</p>
           <p>You will complete your profile on the next page.</p>
 
-          {/* <form onSubmit={this.handleSubmit}> */}
+          <form onSubmit={this.handleSubmit}>
+
             <p className="IMA">I am a:</p>
             <Button value="dancer" handleOnClick={this.renderFilter}>Dancer</Button>
             <Button value="photographer" handleOnClick={this.renderFilter}>Photographer</Button>
-            <Filter results={this.state.results}  statement = {this.state.statement} handleFilter={this.handleFilter} className= {this.state.className}/>
+            <Filter results={this.state.results} statement={this.state.statement} handleFilter={this.handleFilter} className={this.state.className} />
+
             <hr />
 
-            <div>First name: <input type="text" name="firstName" onChange={this.handleChange}></input></div>
-            <div>Last name: <input type="text" name="lastName" onChange={this.handleChange}></input></div>
-            <div>Email: <input type="text" name="email" onChange={this.handleChange}></input></div>
-            <div>Password: <input type="password" name="password" onChange={this.handleChange}></input></div>
-            <hr />
+            <div>First name:
+              <input type="text" name="firstName" onChange={this.handleChange} />
+            </div>
+            <div>Last name:
+              <input type="text" name="lastName" onChange={this.handleChange} />
+            </div>
+            <div>Email:
+              <input type="text" name="email" onChange={this.handleChange} />
+            </div>
+            <div>Password:
+              <input type="password" name="password" onChange={this.handleChange} />
+            </div>
 
-          <div className="signupbutton">
-            <Button value="signup">Sign up</Button>
-            <Button value="submit" >Submit</Button>
-          </div>
-          
-  
-
+            <button>Submit</button>
+          </form>
+          <p>{this.state.errorMessage}</p>
           {console.log(this.state.errorMessage)}
-
-          {/* <form onSubmit={this.handleSubmit}>
-            <input type="text" name="firstname" onChange={this.handleChange} />
-            <input type="text" name="lastname" onChange={this.handleChange} />
-            <input type="text" name="email" onChange={this.handleChange} />
-            <input type="password" name="password" onChange={this.handleChange} />
-            <input type="text" name="talent" onChange={this.handleChange} />
-
-            <button>Signup</button>
-          </form> */}
-          {/* <p>{this.state.errorMessage}</p> */}
         </div>
+
         <Footer />
       </Fragment>
-    );
+    )
   }
 }
 
