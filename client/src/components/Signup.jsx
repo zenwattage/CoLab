@@ -70,7 +70,7 @@ export default class Signup extends Component {
     // JSX
     return (
       <Fragment>
-        <Nav />
+        <Nav/>
         <Wrapper />
         <div className="signuppage">
           <h1 className="title">Welcome to CoLab!</h1>
@@ -95,7 +95,7 @@ export default class Signup extends Component {
             <Button value="submit" >Submit</Button>
           </div>
           
-          {/* </form> */}
+  
 
           {console.log(this.state.errorMessage)}
 
