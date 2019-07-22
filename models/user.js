@@ -10,22 +10,7 @@ const UserSchema = new Schema({
   bio: String,
   instagram: String,
   linkedin: String,
-  talents: {
-    dancer: {
-      properties: {
-        style: String,
-      },
-      images: Array,
-      videos: Array,
-    },
-    photographer: {
-      properties: {
-        style: String,
-      },
-      images: Array,
-      videos: Array,
-    }
-  }
+  talents: Array,
 });
 
 
