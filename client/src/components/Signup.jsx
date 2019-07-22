@@ -4,6 +4,7 @@ import Wrapper from "./Wrapper";
 import Filter from "./Filter/Filter";
 import Footer from "./Footer/index";
 import Button from "./Button/Button.jsx";
+import Nav from "../components/Nav/index"; 
 
 export default class Signup extends Component {
 
@@ -70,7 +71,7 @@ export default class Signup extends Component {
     // JSX
     return (
       <Fragment>
-        <Nav />
+        <Nav/>
         <Wrapper />
         <div className="loginpage main">
           <h1>Welcome to CoLab!</h1>
@@ -95,7 +96,7 @@ export default class Signup extends Component {
             <Button value="submit" >Submit</Button>
           </div>
           
-          </form>
+  
 
           {console.log(this.state.errorMessage)}
 
