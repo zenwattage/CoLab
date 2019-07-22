@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Login.css";
 import Footer from "./Footer/index";
 import Button from "./Button/Button.jsx";
-import Nav from "../components/Nav/index"; 
+// import Nav from "../components/Nav/index"; 
 
 // import Wrapper from "./Wrapper";
 
@@ -57,13 +57,12 @@ export default class Login extends Component {
     return (
       // <Wrapper />
       <div>
-        <Nav/>
-        <h1>Log in to CoLab</h1>
-        {/* <form onSubmit={this.handleSubmit}> */}
+        <h1 className="title">Log in to CoLab</h1>
+        <form onSubmit={this.handleSubmit}>
           <div>Email: <input type="text" name="email" onChange={this.handleChange} /></div>
           <div>Password: <input type="password" name="password" onChange={this.handleChange} /></div>
           <Button value = "login" handleOnClick = {this.handleSubmit}>Log In</Button>
-        {/* </form> */}
+        </form>
         <p>{this.state.errorMessage}</p>
 
         <Footer />
