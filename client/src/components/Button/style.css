@@ -1,3 +1,9 @@
+
+.active{
+  background:yellow; 
+  border-radius: 3px; 
+}
+
 .button {
   font-size: 20px;
   border-radius: 2px;
@@ -5,3 +11,4 @@
   padding: 10px;
   width: 160px;
 }
+
