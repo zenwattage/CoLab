@@ -1,27 +1,39 @@
 import React, { Component } from 'react';
 import "./style.css";
 
+
 export default class Button extends Component {
+
   handleFilter=()=>{
     if (this.state.className === "still"){
-      this.setState({className:"active"})
+      this.setState({className:"active"});
     }
     else{
       this.setState({className:"still"})
-    }
+      // this.state.talentArray.filter(this.props.value);
+    }; 
   }; 
 
   handleOnClick=()=>{
-    this.props.handleOnClick(this.props.value);
     if (this.props.enableChangeState){
       this.handleFilter();
     }
+    this.props.handleOnClick(this.props.value, (this.state.className === "still"));
   };
 
+  // pushArr = ()=>{
+  //   if (this.state.className ==="active"){
+  //     this.state.talentArray.push(this.props.value);
+  //     console.log(this.state.talentArray);
+  //   }
+  //   // else{
+  //   //   this.state.talentArray.filter(this.props.value);
+  //   // }
+  // }
   
 
   state ={
-    className:"still"
+    className:"still",
   };
 
   render() {

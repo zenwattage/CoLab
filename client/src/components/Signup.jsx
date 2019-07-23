@@ -18,11 +18,11 @@ export default class Signup extends Component {
     statement: "",
     className: "still",
     profession: "",
+    talentArray:[]
     bio: "",
     instagram: "",
     linkedin: "",
     other: ""
-
   }
 
   handleSubmit = event => {
@@ -58,8 +58,8 @@ export default class Signup extends Component {
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
-      [name]: value,
-    })
+      [name]: value
+    });
   };
 
   renderFilter = (option) => {
@@ -86,14 +86,18 @@ export default class Signup extends Component {
     }
   };
 
-  handleFilter = () => {
-    if (this.state.className === "still") {
-      this.setState({ className: "active" })
+  // this is a function that adds all the buttons' value to the talentArray
+  handleOnClick = (value,addOrRemove)=>{
+    if (addOrRemove){
+      this.state.talentArray.push(value); 
+      console.log(this.state.talentArray);  
+  }
+    else{
+      const index = this.state.talentArray.indexOf(value); 
+      this.state.talentArray.splice(index,1); 
+      console.log(this.state.talentArray);  
     }
-    else {
-      this.setState({ className: "still" })
-    }
-  };
+  }
 
   render() {
     // JSX
@@ -111,7 +115,7 @@ export default class Signup extends Component {
             <p className="IMA">I am a:</p>
             <Button value="dancer" handleOnClick={this.renderFilter}>Dancer</Button>
             <Button value="photographer" handleOnClick={this.renderFilter}>Photographer</Button>
-            <Filter results={this.state.results} statement={this.state.statement} handleFilter={this.handleFilter} className={this.state.className} />
+            <Filter results={this.state.results} statement={this.state.statement} handleOnClick={this.handleOnClick} className={this.state.className} />
 
             <hr />
 

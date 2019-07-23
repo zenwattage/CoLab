@@ -21,6 +21,7 @@ function Nav() {
       <a className="navbar-brand" href="/search">
         Search
       </a>
+      
       {/* <a className="navbar-brand" href="/results">
         Results
       </a> */}
