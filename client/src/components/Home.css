@@ -133,3 +133,8 @@ blockquote {
  border-radius: 3px;
  text-decoration: none; 
 }
+
+.portfolioimg {
+    width: 200px;
+    height: auto;
+}
