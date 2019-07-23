@@ -57,6 +57,19 @@ export default class Signup extends Component {
     if (option === "dancer") {
       this.setState({ results: ["Hip-hop", "Ballet", "Contemporary", "Latin"] });
       this.setState({ statement: "Here's the dance I'm good at:" });
+      // if (option === "ballet") {
+      //   this.setState({ results: ["Yes", "No"] });
+      //  this.setState({ statement: "Can you dance en pointe?" });
+      // } else if (option === "hip-hop") {
+      //   this.setState({ results: ["Yes", "No"] });
+      //   this.setState({ statement: "Can you freestyle?" });
+      // } else if (option === "latin") {
+      //   this.setState({ results: ["Yes", "No"] });
+      //   this.setState({ statement: "Can you freestyle?" });
+      // } else if (option === "contemporary") {
+      //   this.setState({ results: ["Yes", "No"] });
+      //   this.setState({ statement: "Can you freestyle?" });
+      // }
     }
     else if (option === "photographer") {
       this.setState({ results: ["Landscape", "Portrait", "Street", "Motion"] });

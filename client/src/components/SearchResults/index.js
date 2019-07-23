@@ -19,15 +19,6 @@ function SearchResults(props) {
           <li key={result} className="list-group-item">
             <img alt="Dog" src={result} className="img-fluid" />
           </li>
-          // <li>
-          //   <strong>Name:</strong> {props.firstname}
-          // </li>
-          // <li>
-          //   <strong>Bio:</strong> {props.bio}
-          // </li>
-          // <li>
-          //   <strong>Instagram:</strong> {props.instagram}
-          // </li>
       )
       )}
       </ul>
