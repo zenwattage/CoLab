@@ -17,7 +17,9 @@ export default class Signup extends Component {
     results: [],
     statement: "",
     className: "still",
-    profession: ""
+    profession: "",
+    
+
   }
 
   handleSubmit = event => {
@@ -49,7 +51,7 @@ export default class Signup extends Component {
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
     })
   };
 
