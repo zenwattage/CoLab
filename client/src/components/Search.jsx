@@ -6,6 +6,7 @@ import Col from "../components/Col";
 import Footer from "./Footer/index";
 // import Button from "./Button/Button";
 import SearchForm from "./SearchForm/index";
+import SearchResults from "./SearchResults/index";
 
 class SearchArtist extends Component {
     state = {
@@ -14,7 +15,6 @@ class SearchArtist extends Component {
       results: [],
       error: ""
     }
-
 
 // taking in value of what user is searching
 handleInputChange = event => {
@@ -50,23 +50,8 @@ render () {
             handleInputChange={this.handleInputChange}
             // breeds={this.state.breeds}
           />
-
-  
-
-{/* 
-          <Row>
-            <Col size="md-12">
-              <div>
-                <p className="subtitle">Select admirable traits</p>
-              </div>
-            </Col>
-          </Row> */}
-{/* 
-          <Row>
-            <Col size="md-12">
-              <Button className="button" value="search">Search Creatives</Button>
-            </Col>
-          </Row> */}
+          
+          <SearchResults results={this.state.results} />
 
 
         </Container>

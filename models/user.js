@@ -3,11 +3,10 @@ const Schema = mongoose.Schema;
 
 
 const UserSchema = new Schema({
-  firstName: String,
-  lastName: String,
-  password: String,
-  email: String,
-  // gender captured during talent survey
+  firstName: {type: String, default: ''},
+  lastName: {type: String, default: ''},
+  password: {type: String, default: ''},
+  email: {type: String, default: ''},
   gender: {type: String, default: ''},
   bio: {type: String, default: ''},
   instagram: {type: String, default: ''},

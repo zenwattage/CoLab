@@ -11,19 +11,27 @@ import Button from "./Button/Button.jsx";
 export default class Login extends Component {
   state = {
     email: "",
+    firstName: "",
+    lastName: "",
     password: "",
-    errorMessage: ""
+    errorMessage: "",
+    results: [],
+    statement: "",
+    className: "still",
+    profession: ""
   };
 
   handleSubmit = event => {
-    event.preventDefault();
-    const { email, password } = this.state;
+    // event.preventDefault();
+    const { email, password, firstName, lastName } = this.state;
     axios({
       url: "/authentication/signin",
       method: "POST",
       data: {
         email,
-        password
+        password,
+        firstName,
+        lastName
       }
     })
     .then(response => {
