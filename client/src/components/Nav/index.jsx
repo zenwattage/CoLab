@@ -15,9 +15,9 @@ function Nav() {
       <a className="navbar-brand" href="/signup">
         Sign Up
       </a>
-      <a className="navbar-brand" href="/profile">
+      {/* <a className="navbar-brand" href="/profile">
         Profile
-      </a>
+      </a> */}
       <a className="navbar-brand" href="/search">
         Search
       </a>

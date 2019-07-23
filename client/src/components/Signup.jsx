@@ -19,13 +19,17 @@ export default class Signup extends Component {
     className: "still",
     profession: "",
     talentArray:[]
+    bio: "",
+    instagram: "",
+    linkedin: "",
+    other: ""
   }
 
   handleSubmit = event => {
     event.preventDefault();
     
-    const { email, password, firstName, lastName } = this.state;
-    console.log({email, password, firstName, lastName});
+    const { email, password, firstName, lastName, bio, instagram, linkedin, other } = this.state;
+    console.log({email, password, firstName, lastName, bio, instagram, linkedin, other});
     
     axios({
       url: "/authentication/signup",
@@ -34,11 +38,15 @@ export default class Signup extends Component {
         email,
         password,
         firstName,
-        lastName
+        lastName,
+        bio,
+        instagram,
+        linkedin,
+        other
       }
     })
       .then((response) => {
-        this.props.history.push('/profile');
+        this.props.history.push('/search');
       })
       .catch((error) => {
         this.setState({
@@ -123,6 +131,49 @@ export default class Signup extends Component {
             <div>Password:
               <input type="password" name="password" onChange={this.handleChange} />
             </div>
+
+            <p className="subtitle">Tell us about your self.</p>
+                  <div className="bioform"> Bio: 
+                    <input
+                    value={this.state.bio}
+                    name="bio"
+                    onChange={this.handleChange}
+                    type="text"
+                    placeholder="Insert bio here"
+                  />
+                  </div>
+                 
+                   <p className="subtitle"> Add social media links.</p>
+                   <div className="bioform">Instagram:
+                   <input
+                    value={this.state.instagram}
+                    name="instagram"
+                    onChange={this.handleChange}
+                    type="text"
+                    placeholder="IG handle"
+                  />
+                   </div>
+                  
+                  <div className="bioform">LinkedIn: 
+                  <input
+                    value={this.state.twitter}
+                    name="linkedin"
+                    onChange={this.handleChange}
+                    type="text"
+                    placeholder="Linkedin profile"
+                  />
+                  </div>
+
+                  <div className="bioform">Other: 
+                  <input
+                    value={this.state.other}
+                    name="other"
+                    onChange={this.handleChange}
+                    type="text"
+                    placeholder="Other site"
+                  />
+                  </div>
+
 
             <button>Submit</button>
           </form>
