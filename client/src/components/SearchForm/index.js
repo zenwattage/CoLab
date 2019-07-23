@@ -58,7 +58,7 @@ export default class SearchForm extends Component {
     }
     else if (option === "photographer") {
       this.setState({ results: ["Landscape", "Portrait", "Street", "Motion"] });
-      this.setState({ statement: "The photographer I am looking for is:" })
+      this.setState({ statement: "The type of photographer I want is:" })
     }
   };
 
@@ -78,33 +78,13 @@ export default class SearchForm extends Component {
         {/* <Nav /> */}
         {/* <Wrapper /> */}
         <div className="signuppage">
-          {/* <h1 className="title">Welcome to CoLab!</h1>
-          <p>Please fill out the registration form to sign-up.</p>
-          <p>You will complete your profile on the next page.</p> */}
-
           <form onSubmit={this.handleSubmit}>
-
-            <p className="IMA">I am looking for a:</p>
+            <h4 className="IMA">I am looking for a:</h4>
             <Button value="dancer" handleOnClick={this.renderFilter}>Dancer</Button>
             <Button value="photographer" handleOnClick={this.renderFilter}>Photographer</Button>
             <Filter results={this.state.results} statement={this.state.statement} handleFilter={this.handleFilter} className={this.state.className} />
 
-            <hr />
-
-            {/* <div>First name:
-              <input type="text" name="firstName" onChange={this.handleChange} />
-            </div>
-            <div>Last name:
-              <input type="text" name="lastName" onChange={this.handleChange} />
-            </div>
-            <div>Email:
-              <input type="text" name="email" onChange={this.handleChange} />
-            </div>
-            <div>Password:
-              <input type="password" name="password" onChange={this.handleChange} />
-            </div> */}
-
-            <button>Submit</button>
+            <button className="submitbutton">Submit</button>
           </form>
           <p>{this.state.errorMessage}</p>
           {console.log(this.state.errorMessage)}
