@@ -10,30 +10,35 @@ export default class Signup extends Component {
 
   state = {
     email: "",
+    firstName: "",
+    lastName: "",
     password: "",
     errorMessage: "",
     results: [],
     statement: "",
     className: "still",
     profession: "",
-    submitArr:[]
+    talentArray:[]
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    const { email, password } = this.state;
+    
+    const { email, password, firstName, lastName } = this.state;
+    console.log({email, password, firstName, lastName});
+    
     axios({
       url: "/authentication/signup",
       method: "POST",
       data: {
         email,
-        password
+        password,
+        firstName,
+        lastName
       }
     })
       .then((response) => {
         this.props.history.push('/profile');
-        // this.state.submitArr.push(this.state.[name]); 
-        // console.log(this.state.submitArr); 
       })
       .catch((error) => {
         this.setState({
@@ -53,6 +58,19 @@ export default class Signup extends Component {
     if (option === "dancer") {
       this.setState({ results: ["Hip-hop", "Ballet", "Contemporary", "Latin"] });
       this.setState({ statement: "Here's the dance I'm good at:" });
+      // if (option === "ballet") {
+      //   this.setState({ results: ["Yes", "No"] });
+      //  this.setState({ statement: "Can you dance en pointe?" });
+      // } else if (option === "hip-hop") {
+      //   this.setState({ results: ["Yes", "No"] });
+      //   this.setState({ statement: "Can you freestyle?" });
+      // } else if (option === "latin") {
+      //   this.setState({ results: ["Yes", "No"] });
+      //   this.setState({ statement: "Can you freestyle?" });
+      // } else if (option === "contemporary") {
+      //   this.setState({ results: ["Yes", "No"] });
+      //   this.setState({ statement: "Can you freestyle?" });
+      // }
     }
     else if (option === "photographer") {
       this.setState({ results: ["Landscape", "Portrait", "Street", "Motion"] });
@@ -60,14 +78,18 @@ export default class Signup extends Component {
     }
   };
 
-  handleFilter = () => {
-    if (this.state.className === "still") {
-      this.setState({ className: "active" })
+  // this is a function that adds all the buttons' value to the talentArray
+  handleOnClick = (value,addOrRemove)=>{
+    if (addOrRemove){
+      this.state.talentArray.push(value); 
+      console.log(this.state.talentArray);  
+  }
+    else{
+      const index = this.state.talentArray.indexOf(value); 
+      this.state.talentArray.splice(index,1); 
+      console.log(this.state.talentArray);  
     }
-    else {
-      this.setState({ className: "still" })
-    }
-  };
+  }
 
   render() {
     // JSX
@@ -85,7 +107,7 @@ export default class Signup extends Component {
             <p className="IMA">I am a:</p>
             <Button value="dancer" handleOnClick={this.renderFilter}>Dancer</Button>
             <Button value="photographer" handleOnClick={this.renderFilter}>Photographer</Button>
-            <Filter results={this.state.results} statement={this.state.statement} handleFilter={this.handleFilter} className={this.state.className} />
+            <Filter results={this.state.results} statement={this.state.statement} handleOnClick={this.handleOnClick} className={this.state.className} />
 
             <hr />
 

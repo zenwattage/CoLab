@@ -3,29 +3,15 @@ const Schema = mongoose.Schema;
 
 
 const UserSchema = new Schema({
-  username: String,
-  password: String,
-  email: String,
-  gender: String,
-  bio: String,
-  instagram: String,
-  linkedin: String,
-  talents: {
-    dancer: {
-      properties: {
-        style: String,
-      },
-      images: Array,
-      videos: Array,
-    },
-    photographer: {
-      properties: {
-        style: String,
-      },
-      images: Array,
-      videos: Array,
-    }
-  }
+  firstName: {type: String, default: ''},
+  lastName: {type: String, default: ''},
+  password: {type: String, default: ''},
+  email: {type: String, default: ''},
+  gender: {type: String, default: ''},
+  bio: {type: String, default: ''},
+  instagram: {type: String, default: ''},
+  linkedin: {type: String, default: ''},
+  talents: Array,
 });
 
 

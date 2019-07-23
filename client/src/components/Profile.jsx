@@ -15,7 +15,7 @@ class Profile extends Component {
     // selectedFile: null,
     bio: "",
     instagram: "",
-    twitter: "",
+    linkedin: "",
     other: "",
   }
 
@@ -69,7 +69,7 @@ class Profile extends Component {
     this.setState({
       bio: "",
       instagram: "",
-      twitter: "",
+      linkedin: "",
       other: "",
     });
     this.props.history.push('/search');
@@ -89,10 +89,10 @@ class Profile extends Component {
             </Row>
 
             <Row>
-              <Col size="md-4">
+              <Col size="md-8">
                 <img src={Portfolio} className="portfolioimg" alt="portfolio" />
               </Col>
-              <Col size="md-8">
+              <Col size="md-4">
                 <p>Here you can add to your portfolio to showcase your best work, projects, and social media accounts.</p>
               </Col>
             </Row>
@@ -132,13 +132,13 @@ class Profile extends Component {
                   />
                    </div>
                   
-                  <div className="bioform">Twitter: 
+                  <div className="bioform">LinkedIn: 
                   <input
                     value={this.state.twitter}
-                    name="twitter"
+                    name="linkedin"
                     onChange={this.handleInputChange}
                     type="text"
-                    placeholder="Twitter handle"
+                    placeholder="Linkedin profile"
                   />
                   </div>
 
