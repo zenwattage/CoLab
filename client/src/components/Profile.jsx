@@ -89,10 +89,10 @@ class Profile extends Component {
             </Row>
 
             <Row>
-              <Col size="md-4">
+              <Col size="md-8">
                 <img src={Portfolio} className="portfolioimg" alt="portfolio" />
               </Col>
-              <Col size="md-8">
+              <Col size="md-4">
                 <p>Here you can add to your portfolio to showcase your best work, projects, and social media accounts.</p>
               </Col>
             </Row>

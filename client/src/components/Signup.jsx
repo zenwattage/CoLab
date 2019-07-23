@@ -10,6 +10,8 @@ export default class Signup extends Component {
 
   state = {
     email: "",
+    firstName: "",
+    lastName: "",
     password: "",
     errorMessage: "",
     results: [],
@@ -20,13 +22,18 @@ export default class Signup extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const { email, password } = this.state;
+    
+    const { email, password, firstName, lastName } = this.state;
+    console.log({email, password, firstName, lastName});
+    
     axios({
       url: "/authentication/signup",
       method: "POST",
       data: {
         email,
-        password
+        password,
+        firstName,
+        lastName
       }
     })
       .then((response) => {
