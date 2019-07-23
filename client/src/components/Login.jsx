@@ -16,7 +16,7 @@ export default class Login extends Component {
   };
 
   handleSubmit = event => {
-    event.preventDefault();
+    // event.preventDefault();
     const { email, password } = this.state;
     axios({
       url: "/authentication/signin",

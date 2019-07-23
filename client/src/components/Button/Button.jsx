@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import "./style.css";
 
+
 export default class Button extends Component {
+
   handleFilter=()=>{
     if (this.state.className === "still"){
-      this.setState({className:"active"})
+      this.setState({className:"active"});
+      this.state.talentArray.push("what"); 
+      console.log(this.state.talentArray);
     }
     else{
       this.setState({className:"still"})
-    }
+    }; 
   }; 
 
   handleOnClick=()=>{
@@ -19,7 +23,8 @@ export default class Button extends Component {
   };
 
   state ={
-    className:"still"
+    className:"still",
+    talentArray:[]
   };
 
   render() {

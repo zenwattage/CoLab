@@ -15,7 +15,8 @@ export default class Signup extends Component {
     results: [],
     statement: "",
     className: "still",
-    profession: ""
+    profession: "",
+    submitArr:[]
   }
 
   handleSubmit = event => {
@@ -31,6 +32,8 @@ export default class Signup extends Component {
     })
       .then((response) => {
         this.props.history.push('/profile');
+        // this.state.submitArr.push(this.state.[name]); 
+        // console.log(this.state.submitArr); 
       })
       .catch((error) => {
         this.setState({
@@ -43,7 +46,7 @@ export default class Signup extends Component {
     const { name, value } = event.target;
     this.setState({
       [name]: value
-    })
+    });
   };
 
   renderFilter = (option) => {
