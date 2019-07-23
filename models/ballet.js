@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const BalletSchema = new Schema ({
     userId: String,
     properties: {
-        tutu: Boolean
+        // Can you dance en pointe?
+        pointe: Boolean
     },
     images: Array,
     videos: Array,
