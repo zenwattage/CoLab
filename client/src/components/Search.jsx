@@ -50,6 +50,7 @@ render () {
             handleInputChange={this.handleInputChange}
             // breeds={this.state.breeds}
           />
+          
           <SearchResults results={this.state.results} />
 
 
