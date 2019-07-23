@@ -18,7 +18,7 @@ export default class Signup extends Component {
     statement: "",
     className: "still",
     profession: "",
-    talentArray:[]
+    talentArray:[],
     bio: "",
     instagram: "",
     linkedin: "",
