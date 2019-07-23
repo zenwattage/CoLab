@@ -25,6 +25,7 @@ const SignupStrategy = new Strategy({ passReqToCallback: true, usernameField: 'e
       lastName,
       gender,
       instagram,
+      linkedin,
       bio
     });
 
