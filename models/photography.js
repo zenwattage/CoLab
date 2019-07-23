@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const PhotographySchema = new Schema ({
+const PortraitSchema = new Schema ({
     userId: String,
     properties: {
         camera: Boolean
@@ -10,6 +10,6 @@ const PhotographySchema = new Schema ({
     videos: Array,
 })
 
-const Photography = mongoose.model('Photography', PhotographySchema);
+const Portrait = mongoose.model('Portrait', PortraitSchema);
 
-module.exports = Photography;
+module.exports = Portrait;

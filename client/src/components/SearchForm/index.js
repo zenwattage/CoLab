@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button/Button"
 import "./style.css";
 
-// Using the datalist element we can create autofill suggestions based on the props.breeds array
+// Using the datalist element we can  autofill suggestions based on the props.breeds array
 function SearchForm(props) {
   return (
     <form className="search">
