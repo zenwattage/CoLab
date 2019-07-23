@@ -6,7 +6,7 @@ import Col from "../components/Col";
 // import axios from "axios";
 import Wrapper from "./Wrapper";
 import Footer from "./Footer/index";
-import Button from "./Button/Button";
+// import Button from "./Button/Button";
 import Portfolio from "../portfolio.jpeg";
 
 class Profile extends Component {

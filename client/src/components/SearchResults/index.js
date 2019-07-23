@@ -4,6 +4,7 @@ import Row from "../Row/index";
 import Col from "../Col/index";
 import Container from "../Container/index"
 
+
 function SearchResults(props) {
   return (
     <Container style={{ marginTop: 30 }}>
