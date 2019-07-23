@@ -3,7 +3,7 @@ import Nav from "../components/Nav";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
-// import axios from "axios";
+import axios from "axios";
 import Wrapper from "./Wrapper";
 import Footer from "./Footer/index";
 // import Button from "./Button/Button";
@@ -16,7 +16,7 @@ class Profile extends Component {
     bio: "",
     instagram: "",
     linkedin: "",
-    other: "",
+    other: ""
   }
 
   // ALL IMAGE UPLOAD HANDLERS /////////////////////////////////////////////////////////////////////
@@ -50,30 +50,57 @@ class Profile extends Component {
   //   this.handleSubmit = this.handleSubmit.bind(this);
   // }
 
-  handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    const { name, value } = event.target;
-
-    // Updating the input's state
-    this.setState({
-      [name]: value
-    });
-  };
-
   // THIS HAPPENS AFTER FORM IS SUBMITTED
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
 
-    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    this.setState({
-      bio: "",
-      instagram: "",
-      linkedin: "",
-      other: "",
-    });
-    this.props.history.push('/search');
+    const { bio, instagram, linkedin, other } = this.state;
+    console.log({bio, instagram, linkedin, other});
+    
+    axios({
+      url: "/authentication/signup",
+      method: "POST",
+      data: {
+        bio,
+        instagram,
+        linkedin,
+        other
+      }
+    })
+      .then((response) => {
+        this.setState({
+          bio: "",
+          instagram: "",
+          linkedin: "",
+          other: "",
+        })
+        this.props.history.push('/search');
+      })
+      .catch((error) => {
+        this.setState({
+          errorMessage: error.response.data.message
+        });
+      });
   };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    })
+  };
+
+
+  // setting state of what user inputted 
+  //   this.setState({
+  //     bio: "",
+  //     instagram: "",
+  //     linkedin: "",
+  //     other: "",
+  //   });
+  //   this.props.history.push('/search');
+  // };
 
   render() {
     return (
