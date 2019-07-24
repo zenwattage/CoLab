@@ -55,6 +55,10 @@ router.post('/signin', function (req, res, next) {
   })(req, res, next);
 });
 
+
+
+
+
 router.get('/api', (req, res) => {
   const email = req.users; //req.session.passport.session
   res.json({
