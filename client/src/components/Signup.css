@@ -1,8 +1,17 @@
-.signupbutton {
+/* .signupbutton {
   margin-right: 10px;
 }
 
 .signuppage {
   font-family: 'Lato', sans-serif;
   text-align: center;
+} */
+
+#profession button{
+  display: inline; 
 }
+
+#talent button{
+  display: block;
+}
+

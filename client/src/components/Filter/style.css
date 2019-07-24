@@ -1,0 +1,15 @@
+.still{
+  display:block;
+};
+
+.active{
+  display: block; 
+}
+
+.hide{
+  display:none;
+}
+
+.show{
+  display: inline;
+}

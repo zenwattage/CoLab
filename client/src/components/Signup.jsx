@@ -5,32 +5,37 @@ import Filter from "./Filter/Filter";
 import Footer from "./Footer/index";
 import Button from "./Button/Button.jsx";
 import Nav from "./Nav/index";
+import "./Signup.css";
+import professions from "./profession.json";
 
 export default class Signup extends Component {
 
   state = {
+    professions,
     email: "",
     firstName: "",
     lastName: "",
     password: "",
     errorMessage: "",
-    results: [],
+    talents: [],
     statement: "",
     className: "still",
     profession: "",
-    talentArray:[]
+    talentArray: [],
     bio: "",
     instagram: "",
     linkedin: "",
-    other: ""
+    other: "",
+    subQuestions:[],
+    subTalents:"hide"
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    
+
     const { email, password, firstName, lastName, bio, instagram, linkedin, other } = this.state;
-    console.log({email, password, firstName, lastName, bio, instagram, linkedin, other});
-    
+    console.log({ email, password, firstName, lastName, bio, instagram, linkedin, other });
+
     axios({
       url: "/authentication/signup",
       method: "POST",
@@ -62,10 +67,17 @@ export default class Signup extends Component {
     });
   };
 
-  renderFilter = (option) => {
-    if (option === "dancer") {
-      this.setState({ results: ["Hip-hop", "Ballet", "Contemporary", "Latin"] });
-      this.setState({ statement: "Here's the dance I'm good at:" });
+  setTalents = (option) => {
+    for (var i = 0; i < this.state.professions.length; i++) {
+      if (option === this.state.professions[i].profession) {
+          this.setState({talents:this.state.professions[i].talents});
+          // this.state.subQuestions.push(this.state.professions[i].talents[j].question);
+          console.log(this.state.talents)
+        }
+
+        // this.setState({ subFilter: this.state.professions[i].subQuestions });
+        this.setState({ statement: "Here's the dance I'm good at:" });
+      }
       // if (option === "ballet") {
       //   this.setState({ results: ["Yes", "No"] });
       //  this.setState({ statement: "Can you dance en pointe?" });
@@ -79,24 +91,25 @@ export default class Signup extends Component {
       //   this.setState({ results: ["Yes", "No"] });
       //   this.setState({ statement: "Can you freestyle?" });
       // }
+      // }
     }
-    else if (option === "photographer") {
-      this.setState({ results: ["Landscape", "Portrait", "Street", "Motion"] });
-      this.setState({ statement: "Here's the photography I'm good at:" })
-    }
-  };
 
   // this is a function that adds all the buttons' value to the talentArray
-  handleOnClick = (value,addOrRemove)=>{
-    if (addOrRemove){
-      this.state.talentArray.push(value); 
-      console.log(this.state.talentArray);  
-  }
-    else{
-      const index = this.state.talentArray.indexOf(value); 
-      this.state.talentArray.splice(index,1); 
-      console.log(this.state.talentArray);  
+  handleOnClick = (value, addOrRemove) => {
+    if (addOrRemove) {
+      this.state.talentArray.push(value);
+      console.log(this.state.talentArray);
+     
     }
+    else {
+      const index = this.state.talentArray.indexOf(value);
+      this.state.talentArray.splice(index, 1);
+      console.log(this.state.talentArray);
+    }
+  }
+
+  handleSubQuestion = () => {
+    this.setState()
   }
 
   render() {
@@ -113,10 +126,18 @@ export default class Signup extends Component {
           <form onSubmit={this.handleSubmit}>
 
             <p className="IMA">I am a:</p>
-            <Button value="dancer" handleOnClick={this.renderFilter}>Dancer</Button>
-            <Button value="photographer" handleOnClick={this.renderFilter}>Photographer</Button>
-            <Filter results={this.state.results} statement={this.state.statement} handleOnClick={this.handleOnClick} className={this.state.className} />
-
+            <div id="profession">
+              {this.state.professions.map(x=> (
+                <Button value={x.profession} handleOnClick={this.setTalents}>{x.profession}</Button>
+              ))}
+            </div>
+            <div id="talent">
+              <Filter results={this.state.talents} 
+              statement={this.state.statement} 
+              handleOnClick={this.handleOnClick} 
+              className={this.state.className}
+              subQuestions={this.state.subQuestions}/>
+            </div>
             <hr />
 
             <div>First name:
@@ -133,46 +154,46 @@ export default class Signup extends Component {
             </div>
 
             <p className="subtitle">Tell us about your self.</p>
-                  <div className="bioform"> Bio: 
+            <div className="bioform"> Bio:
                     <input
-                    value={this.state.bio}
-                    name="bio"
-                    onChange={this.handleChange}
-                    type="text"
-                    placeholder="Insert bio here"
-                  />
-                  </div>
-                 
-                   <p className="subtitle"> Add social media links.</p>
-                   <div className="bioform">Instagram:
-                   <input
-                    value={this.state.instagram}
-                    name="instagram"
-                    onChange={this.handleChange}
-                    type="text"
-                    placeholder="IG handle"
-                  />
-                   </div>
-                  
-                  <div className="bioform">LinkedIn: 
-                  <input
-                    value={this.state.twitter}
-                    name="linkedin"
-                    onChange={this.handleChange}
-                    type="text"
-                    placeholder="Linkedin profile"
-                  />
-                  </div>
+                value={this.state.bio}
+                name="bio"
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Insert bio here"
+              />
+            </div>
 
-                  <div className="bioform">Other: 
+            <p className="subtitle"> Add social media links.</p>
+            <div className="bioform">Instagram:
+                   <input
+                value={this.state.instagram}
+                name="instagram"
+                onChange={this.handleChange}
+                type="text"
+                placeholder="IG handle"
+              />
+            </div>
+
+            <div className="bioform">LinkedIn:
                   <input
-                    value={this.state.other}
-                    name="other"
-                    onChange={this.handleChange}
-                    type="text"
-                    placeholder="Other site"
-                  />
-                  </div>
+                value={this.state.twitter}
+                name="linkedin"
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Linkedin profile"
+              />
+            </div>
+
+            <div className="bioform">Other:
+                  <input
+                value={this.state.other}
+                name="other"
+                onChange={this.handleChange}
+                type="text"
+                placeholder="Other site"
+              />
+            </div>
 
 
             <button>Submit</button>
