@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from "../Button/Button";
 import "./style.css";
 import ButtonHolder from "../ButtonHolder/index";
 
