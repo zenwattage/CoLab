@@ -78,20 +78,6 @@ export default class Signup extends Component {
         // this.setState({ subFilter: this.state.professions[i].subQuestions });
         this.setState({ statement: "Here's the dance I'm good at:" });
       }
-      // if (option === "ballet") {
-      //   this.setState({ results: ["Yes", "No"] });
-      //  this.setState({ statement: "Can you dance en pointe?" });
-      // } else if (option === "hip-hop") {
-      //   this.setState({ results: ["Yes", "No"] });
-      //   this.setState({ statement: "Can you freestyle?" });
-      // } else if (option === "latin") {
-      //   this.setState({ results: ["Yes", "No"] });
-      //   this.setState({ statement: "Can you freestyle?" });
-      // } else if (option === "contemporary") {
-      //   this.setState({ results: ["Yes", "No"] });
-      //   this.setState({ statement: "Can you freestyle?" });
-      // }
-      // }
     }
 
   // this is a function that adds all the buttons' value to the talentArray
@@ -108,9 +94,9 @@ export default class Signup extends Component {
     }
   }
 
-  handleSubQuestion = () => {
-    this.setState()
-  }
+  // handleSubQuestion = () => {
+  //   this.setState()
+  // }
 
   render() {
     // JSX
@@ -118,10 +104,14 @@ export default class Signup extends Component {
       <Fragment>
         <Nav />
         <Wrapper />
+        <article className="container">
+           <blockquote>
+             <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
+           </blockquote>
+         </article>
+
         <div className="signuppage">
-          <h1 className="title">Welcome to CoLab!</h1>
           <p>Please fill out the registration form to sign-up.</p>
-          <p>You will complete your profile on the next page.</p>
 
           <form onSubmit={this.handleSubmit}>
 
@@ -136,7 +126,7 @@ export default class Signup extends Component {
               statement={this.state.statement} 
               handleOnClick={this.handleOnClick} 
               className={this.state.className}
-              subQuestions={this.state.subQuestions}/>
+              />
             </div>
             <hr />
 
