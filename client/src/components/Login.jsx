@@ -38,7 +38,7 @@ export default class Login extends Component {
       //set user 
       const isAuthenticated = response.data.isAuthenticated;
       window.localStorage.setItem('isAuthenticated', isAuthenticated);
-      this.props.history.push("/profile");
+      this.props.history.push("/search");
       console.log(response);
       
     })
@@ -59,7 +59,7 @@ export default class Login extends Component {
     const isAuthenticated = window.localStorage.getItem("isAuthenticated");
 
     if (isAuthenticated) {
-      return <Redirect to="/profile" />;
+      return <Redirect to="/search" />;
     }
     // JSX
     return (
