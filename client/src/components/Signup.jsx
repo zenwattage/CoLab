@@ -25,19 +25,25 @@ export default class Signup extends Component {
     bio: "",
     instagram: "",
     linkedin: "",
-    other: ""
+    other: "",
+    talentChoice: "",
+    subTalent: "",
   }
 
   handleSubmit = event => {
     event.preventDefault();
 
-    const { email, password, firstName, lastName, bio, instagram, linkedin, other } = this.state;
-    console.log({ email, password, firstName, lastName, bio, instagram, linkedin, other });
+    // MONGODB:We need to add the sub-talent fields in this const object. how will it be captured?
+    // talent will be read in order to know what database to post to
+    // subTalents will be read to populate the talent collection  
+    const { email, password, firstName, lastName, bio, instagram, linkedin, other, talentChoice, subTalent } = this.state;
+    console.log({ email, password, firstName, lastName, bio, instagram, linkedin, other, talentChoice, subTalent });
 
     axios({
       url: "/authentication/signup",
       method: "POST",
       data: {
+        // MONGODB:talent data here
         email,
         password,
         firstName,
@@ -56,7 +62,105 @@ export default class Signup extends Component {
           errorMessage: error.response.data.message
         });
       });
+
+      // MONGODB:This is where we need to insert the axios call to the talents collection
+      // switch case could be added
+    switch(talentChoice) {
+      case 'ballet':
+          axios({
+            url: "/authentication/ballet",
+            method: "POST",
+            data: {
+              // MONGODB:talent data here
+              subTalent
+            }
+          })
+        break;
+        case 'latin':
+            axios({
+              url: "/authentication/latin",
+              method: "POST",
+              data: {
+                // MONGODB:talent data here
+                subTalent
+              }
+            })
+          break;
+          case 'hipHop':
+              axios({
+                url: "/authentication/hipHop",
+                method: "POST",
+                data: {
+                  // MONGODB:talent data here
+                  subTalent
+                }
+              })
+            break;
+            case 'contemporary':
+                axios({
+                  url: "/authentication/contemporary",
+                  method: "POST",
+                  data: {
+                    // MONGODB:talent data here
+                    subTalent
+                  }
+                })
+              break;
+              case 'portrait':
+                  axios({
+                    url: "/authentication/portrait",
+                    method: "POST",
+                    data: {
+                      // MONGODB:talent data here
+                      subTalent
+                    }
+                  })
+                break;
+                case 'landscape':
+                    axios({
+                      url: "/authentication/landscape",
+                      method: "POST",
+                      data: {
+                        // MONGODB:talent data here
+                        subTalent
+                      }
+                    })
+                  break;
+                  case 'motion':
+                      axios({
+                        url: "/authentication/motion",
+                        method: "POST",
+                        data: {
+                          // MONGODB:talent data here
+                          subTalent
+                        }
+                      })
+                    break;
+                    case 'street':
+                        axios({
+                          url: "/authentication/street",
+                          method: "POST",
+                          data: {
+                            // MONGODB:talent data here
+                            subTalent
+                          }
+                        })
+                      break;
+      default:
+        break;
+      }
+  
   };
+  
+
+handleTalent = (talent, subTalent) =>  axios({
+  url: "/authentication/" + talent,
+  method: "POST",
+  data: {
+    // MONGODB:talent data here
+    subTalent
+  }
+})
 
   handleChange = (event) => {
     const { name, value } = event.target;
