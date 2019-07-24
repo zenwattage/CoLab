@@ -7,7 +7,7 @@ const StreetSchema = new Schema ({
         camera: Boolean
     },
     images: Array,
-    videos: Arrayt,
+    videos: Array,
 })
 
 const Street = mongoose.model('Street', StreetSchema);

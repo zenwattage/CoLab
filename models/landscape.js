@@ -7,7 +7,7 @@ const LandscapeSchema = new Schema ({
         camera: Boolean
     },
     images: Array,
-    videos: Arrayt,
+    videos: Array,
 })
 
 const Landscape = mongoose.model('Landscape', LandscapeSchema);
