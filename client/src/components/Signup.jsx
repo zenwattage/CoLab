@@ -108,8 +108,15 @@ export default class Signup extends Component {
       <Fragment>
         <Nav />
         <Wrapper />
+
+        <article className="container">
+            <blockquote>
+              <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
+            </blockquote>
+          </article>
+
         <div className="signuppage">
-          <h1 className="title">Welcome to CoLab!</h1>
+          {/* <h1 className="title">Welcome to CoLab!</h1> */}
           <p>Please fill out the registration form to sign-up.</p>
           {/* FORM SUBMIT LOGIC */}
           <form onSubmit={this.handleSubmit}>

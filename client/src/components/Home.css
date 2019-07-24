@@ -1,7 +1,11 @@
-
-/* CoLab logo font ///////////////////////////////////////////////////////////////////////////// */
-.logo {
-  color: white;
+/* CoLab logo ///////////////////////////////////////////////////////////////////////////// */
+.logoimg {
+  width: 350px;
+  height: auto;
+  /* -ms-transform: rotate(350deg); 
+  -webkit-transform: rotate(350deg); 
+  transform: rotate(350deg); */
+  margin-left: 400px;
 }
 
 /* Welcome statement ////////////////////////////////////////////////////////////////////////// */
@@ -48,7 +52,7 @@ blockquote {
     /* float: left; */
     padding: 45px 0px 30px 25px;
     margin: 0;
-    margin-top: 100px;
+    margin-top: 10px;
     border-top: 2px dotted black;
     border-bottom: 2px dotted black;
     -webkit-transform: rotate(-3deg);
