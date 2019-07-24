@@ -6,8 +6,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-p {
+p, h4 {
   font-family: 'lato', sans-serif;
+  color:white;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

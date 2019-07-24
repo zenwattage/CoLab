@@ -108,7 +108,7 @@ export default class SearchForm extends Component {
             </div>
             <div id="talent">
               <Filter results={this.state.talents} 
-              statement={this.state.statement} 
+              // statement={this.state.statement} 
               handleOnClick={this.handleOnClick} 
               className={this.state.className}
               />
