@@ -2,20 +2,29 @@ import React, { Fragment, Component } from 'react';
 import Button from "../Button/Button";
 import axios from 'axios';
 import Filter from "../Filter/Filter";
+import professions from "../profession.json";
 import "./style.css";
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 export default class SearchForm extends Component {
   state = {
+    professions,
     email: "",
     firstName: "",
     lastName: "",
     password: "",
     errorMessage: "",
-    results: [],
+    talents: [],
     statement: "",
     className: "still",
-    profession: ""
+    profession: "",
+    talentArray: [],
+    bio: "",
+    instagram: "",
+    linkedin: "",
+    other: "",
+    subQuestions:[],
+    subTalents:"hide"
   }
 
   handleSubmit = event => {
@@ -51,25 +60,32 @@ export default class SearchForm extends Component {
     })
   };
 
-  renderFilter = (option) => {
-    if (option === "dancer") {
-      this.setState({ results: ["Hip-hop", "Ballet", "Contemporary", "Latin"] });
-      this.setState({ statement: "The type of dancer I want is:" });
-    }
-    else if (option === "photographer") {
-      this.setState({ results: ["Landscape", "Portrait", "Street", "Motion"] });
-      this.setState({ statement: "The type of photographer I want is:" })
-    }
-  };
+  setTalents = (option) => {
+    for (var i = 0; i < this.state.professions.length; i++) {
+      if (option === this.state.professions[i].profession) {
+          this.setState({talents:this.state.professions[i].talents});
+          // this.state.subQuestions.push(this.state.professions[i].talents[j].question);
+          console.log(this.state.talents)
+        }
 
-  handleFilter = () => {
-    if (this.state.className === "still") {
-      this.setState({ className: "active" })
+        // this.setState({ subFilter: this.state.professions[i].subQuestions });
+        this.setState({ statement: "The type of dancer I want is:" });
+      }
     }
-    else {
-      this.setState({ className: "still" })
+
+
+    handleOnClick = (value, addOrRemove) => {
+      if (addOrRemove) {
+        this.state.talentArray.push(value);
+        console.log(this.state.talentArray);
+       
+      }
+      else {
+        const index = this.state.talentArray.indexOf(value);
+        this.state.talentArray.splice(index, 1);
+        console.log(this.state.talentArray);
+      }
     }
-  };
 
   render() {
     // JSX
@@ -78,13 +94,41 @@ export default class SearchForm extends Component {
         {/* <Nav /> */}
         {/* <Wrapper /> */}
         <div className="signuppage">
-          <form onSubmit={this.handleSubmit}>
-            <h4 className="IMA">I am looking for a:</h4>
-            <Button value="dancer" handleOnClick={this.renderFilter}>Dancer</Button>
-            <Button value="photographer" handleOnClick={this.renderFilter}>Photographer</Button>
-            <Filter results={this.state.results} statement={this.state.statement} handleFilter={this.handleFilter} className={this.state.className} />
+          {/* <h1 className="title">Welcome to CoLab!</h1>
+          <p>Please fill out the registration form to sign-up.</p>
+          <p>You will complete your profile on the next page.</p> */}
 
-            <button className="submitbutton">Submit</button>
+          <form onSubmit={this.handleSubmit}>
+
+            <p className="IMA">I am looking for a:</p>
+            <div id="profession">
+              {this.state.professions.map(x=> (
+                <Button value={x.profession} handleOnClick={this.setTalents}>{x.profession}</Button>
+              ))}
+            </div>
+            <div id="talent">
+              <Filter results={this.state.talents} 
+              // statement={this.state.statement} 
+              handleOnClick={this.handleOnClick} 
+              className={this.state.className}
+              />
+            </div>
+            <hr />
+
+            {/* <div>First name:
+              <input type="text" name="firstName" onChange={this.handleChange} />
+            </div>
+            <div>Last name:
+              <input type="text" name="lastName" onChange={this.handleChange} />
+            </div>
+            <div>Email:
+              <input type="text" name="email" onChange={this.handleChange} />
+            </div>
+            <div>Password:
+              <input type="password" name="password" onChange={this.handleChange} />
+            </div> */}
+
+            <button>Submit</button>
           </form>
           <p>{this.state.errorMessage}</p>
           {console.log(this.state.errorMessage)}
