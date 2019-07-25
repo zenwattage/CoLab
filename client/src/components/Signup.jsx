@@ -9,6 +9,7 @@ import "./Signup.css";
 import professions from "./profession.json";
 import Col from "./Col/index";
 import Row from "./Row/index";
+// import Container from "./Container/index";
 
 export default class Signup extends Component {
 
@@ -72,14 +73,15 @@ export default class Signup extends Component {
   setTalents = (option) => {
     for (var i = 0; i < this.state.professions.length; i++) {
       if (option === this.state.professions[i].profession) {
-          this.setState({talents:this.state.professions[i].talents});
-          // this.state.subQuestions.push(this.state.professions[i].talents[j].question);
-          console.log(this.state.talents)
-        }
-
-        // this.setState({ subFilter: this.state.professions[i].subQuestions });
-        this.setState({ statement: "Here's the dance I'm good at:" });
+        this.setState({ talents: this.state.professions[i].talents });
+        // this.state.subQuestions.push(this.state.professions[i].talents[j].question);
+        console.log(this.state.talents)
       }
+
+      // this.setState({ subFilter: this.state.professions[i].subQuestions });
+      this.setState({ statement: "Here's the dance I'm good at:" });
+    }
+  };
     
 
   // this is a function that adds all the buttons' value to the talentArray
@@ -95,11 +97,14 @@ export default class Signup extends Component {
     }
   }
 
+
   render() {
     // JSX
     return (
+      // <Container>
       <Fragment>
         <Nav />
+        
         <Wrapper />
 
         <article className="container">
@@ -125,7 +130,7 @@ export default class Signup extends Component {
               statement={this.state.statement} 
               handleOnClick={this.handleOnClick} 
               className={this.state.className}
-              subQuestions={this.state.subQuestions}/>
+              />
             </div>
 
             {/* Profession info */}
@@ -235,10 +240,9 @@ export default class Signup extends Component {
           <p>{this.state.errorMessage}</p>
           {console.log(this.state.errorMessage)}
         </div>
-
+        {/* </Container> */}
         <Footer />
       </Fragment>
     )
   }
-}
-
+  }
