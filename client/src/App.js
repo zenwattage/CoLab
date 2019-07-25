@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-// import Profile from './components/Profile';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Home from './components/Home';
@@ -19,7 +18,6 @@ export default class App extends Component {
         <Router>
           <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route path="/profile" component={Profile} /> */}
           <Route path="/search" component={SearchArtist} />
           {/* <Route path="/results" component={SearchResults} /> */}
           <Route path="/signup" component={Signup} />

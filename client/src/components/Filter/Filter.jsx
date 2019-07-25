@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Button from "../Button/Button";
 import "./style.css";
 import ButtonHolder from "../ButtonHolder/index";
 
@@ -10,8 +9,6 @@ export default class Filter extends Component {
 
   handleOnClick = () => {
     this.props.handleOnClick();
-    if (!this.state.subHide) {
-    }
   };
 
   render() {
