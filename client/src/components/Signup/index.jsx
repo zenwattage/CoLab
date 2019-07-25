@@ -1,14 +1,14 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
-import Wrapper from "./Wrapper";
-import Filter from "./Filter/Filter";
-import Footer from "./Footer/index";
-import Button from "./Button/Button.jsx";
-import Nav from "./Nav/index";
-import "./Signup.css";
-import professions from "./profession.json";
-import Col from "./Col/index";
-import Row from "./Row/index";
+import Wrapper from "../Wrapper";
+import Filter from "../Filter/Filter";
+import Footer from "../Footer/index";
+import Button from "../Button/Button";
+import Nav from "../Nav/index";
+import "./style.css";
+import professions from "../profession.json";
+import Col from "../Col/index";
+import Row from "../Row/index";
 
 export default class Signup extends Component {
 
@@ -80,7 +80,7 @@ export default class Signup extends Component {
         // this.setState({ subFilter: this.state.professions[i].subQuestions });
         this.setState({ statement: "Here's the dance I'm good at:" });
       }
-    
+    }
 
   // this is a function that adds all the buttons' value to the talentArray
   handleOnClick = (value, addOrRemove) => {
@@ -101,17 +101,15 @@ export default class Signup extends Component {
       <Fragment>
         <Nav />
         <Wrapper />
-
         <article className="container">
-            <blockquote>
-              <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
-            </blockquote>
-          </article>
+           <blockquote>
+             <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
+           </blockquote>
+         </article>
 
         <div className="signuppage">
-          {/* <h1 className="title">Welcome to CoLab!</h1> */}
           <p>Please fill out the registration form to sign-up.</p>
-          {/* FORM SUBMIT LOGIC */}
+
           <form onSubmit={this.handleSubmit}>
 
             <p className="IMA">I am a:</p>
@@ -125,15 +123,8 @@ export default class Signup extends Component {
               statement={this.state.statement} 
               handleOnClick={this.handleOnClick} 
               className={this.state.className}
-              subQuestions={this.state.subQuestions}/>
+              />
             </div>
-
-            {/* Profession info */}
-            <h2 className="IMA">My profession is:</h2>
-            <Button value="dancer" handleOnClick={this.renderFilter}>Dancer</Button>
-            <Button value="photographer" handleOnClick={this.renderFilter}>Photographer</Button>
-            <Filter results={this.state.results} statement={this.state.statement} handleOnClick={this.handleOnClick} className={this.state.className} />
-
 
             <hr />
 
@@ -153,51 +144,6 @@ export default class Signup extends Component {
                 <input className="personalinput" type="password" name="password" onChange={this.handleChange} />
               </div>
             </div>
-
-            <p className="subtitle">Tell us about your self.</p>
-            <div className="bioform"> Bio:
-                    <input
-                value={this.state.bio}
-                name="bio"
-                onChange={this.handleChange}
-                type="text"
-                placeholder="Insert bio here"
-              />
-            </div>
-
-            <p className="subtitle"> Add social media links.</p>
-            <div className="bioform">Instagram:
-                   <input
-                value={this.state.instagram}
-                name="instagram"
-                onChange={this.handleChange}
-                type="text"
-                placeholder="IG handle"
-              />
-            </div>
-
-            <div className="bioform">LinkedIn:
-                  <input
-                value={this.state.twitter}
-                name="linkedin"
-                onChange={this.handleChange}
-                type="text"
-                placeholder="Linkedin profile"
-              />
-            </div>
-
-            <div className="bioform">Other:
-                  <input
-                value={this.state.other}
-                name="other"
-                onChange={this.handleChange}
-                type="text"
-                placeholder="Other site"
-              />
-            </div>
-
-
-            <button>Submit</button>
 
             <hr />
 
@@ -241,4 +187,3 @@ export default class Signup extends Component {
     )
   }
 }
-
