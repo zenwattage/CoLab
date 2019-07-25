@@ -145,51 +145,6 @@ export default class Signup extends Component {
               </div>
             </div>
 
-            <p className="subtitle">Tell us about your self.</p>
-            <div className="bioform"> Bio:
-                    <input
-                value={this.state.bio}
-                name="bio"
-                onChange={this.handleChange}
-                type="text"
-                placeholder="Insert bio here"
-              />
-            </div>
-
-            <p className="subtitle"> Add social media links.</p>
-            <div className="bioform">Instagram:
-                   <input
-                value={this.state.instagram}
-                name="instagram"
-                onChange={this.handleChange}
-                type="text"
-                placeholder="IG handle"
-              />
-            </div>
-
-            <div className="bioform">LinkedIn:
-                  <input
-                value={this.state.twitter}
-                name="linkedin"
-                onChange={this.handleChange}
-                type="text"
-                placeholder="Linkedin profile"
-              />
-            </div>
-
-            <div className="bioform">Other:
-                  <input
-                value={this.state.other}
-                name="other"
-                onChange={this.handleChange}
-                type="text"
-                placeholder="Other site"
-              />
-            </div>
-
-
-            <button>Submit</button>
-
             <hr />
 
             {/* Portfolio info */}
@@ -232,4 +187,3 @@ export default class Signup extends Component {
     )
   }
 }
-
