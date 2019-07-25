@@ -27,7 +27,7 @@ export default class Button extends Component {
   render() {
     
     return (!this.props.isHide) &&(
-      <div>
+      <div className = "Buttons">
         <a href={this.props.link}>
           <button
             type="button"
