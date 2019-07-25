@@ -40,7 +40,7 @@ render () {
         <Wrapper />
           <Row>
             <Col size="md-12">
-              <h1 className="title">Search for an Artist.</h1>
+              <h1 className="title">Search for an artist.</h1>
               <p className="subTitle"> Any artists matching your criteria will appear after the search is complete.</p>
             </Col>
           </Row>
