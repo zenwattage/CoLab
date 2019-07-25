@@ -1,14 +1,14 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
-import Wrapper from "./Wrapper";
-import Filter from "./Filter/Filter";
-import Footer from "./Footer/index";
-import Button from "./Button/Button.jsx";
-import Nav from "./Nav/index";
-import "./Signup.css";
-import professions from "./profession.json";
-import Col from "./Col/index";
-import Row from "./Row/index";
+import Wrapper from "../Wrapper";
+import Filter from "../Filter/Filter";
+import Footer from "../Footer/index";
+import Button from "../Button/Button";
+import Nav from "../Nav/index";
+import "./style.css";
+import professions from "../profession.json";
+import Col from "../Col/index";
+import Row from "../Row/index";
 
 export default class Signup extends Component {
 
