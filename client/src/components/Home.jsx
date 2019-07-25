@@ -12,12 +12,6 @@ export default class Home extends Component {
       <div>        
           <img src={logo} className="logoimg" alt="logo" />
 
-          {/* <article className="container">
-            <blockquote>
-              <strong>Welcome</strong> to <em>our creative</em>  <strong className="community">community</strong>
-            </blockquote>
-          </article> */}
-
           <div className="buttons">
             <Button link = "/login" value = "login">Log In</Button>
             <Button link = "/signup" value = "signup">Sign Up</Button>
