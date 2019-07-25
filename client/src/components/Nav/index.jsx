@@ -9,9 +9,9 @@ function Nav() {
       <a className="navbar-brand-name" href="/">
         CoLab
       </a>
-      <a className="navbar-brand" href="/login">
+      {/* <a className="navbar-brand" href="/login">
         Log In
-      </a>
+      </a> */}
       <a className="navbar-brand" href="/signup">
         Sign Up
       </a>
