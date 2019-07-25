@@ -23,13 +23,10 @@ export default class Filter extends Component {
         <h4>{this.props.statement}</h4>
         {this.props.results.map(result => (
           <div>
-            {/* <Button value={result.name} enableChangeState handleOnClick={this.handleOnClick} >{result.name}</Button>
-            <Button value={result.question} enableChangeState>{result.question}</Button> */}
             <ButtonHolder name = {result.name} question = {result.question}/>
           </div>
         ))}
-        {/* {this.props.subQuestions.map(subQuestion => (<Button value={subQuestion} enableChangeState>{subQuestion}</Button>
-        ))} */}
+  
       </div>
     );
   }

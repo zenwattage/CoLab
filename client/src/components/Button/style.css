@@ -7,7 +7,7 @@
   padding: 10px;
   width: 160px;
   font-family: 'Lato', sans-serif;
-  
+  text-align:center; 
 }
 
 .still {
@@ -19,6 +19,7 @@
   font-family: 'Lato', sans-serif;
   margin-bottom: 20px;
   align-content: center;
+  text-align:center; 
 }
 
 /* .button {
@@ -34,3 +35,6 @@
   cursor: pointer;
 }
 
+.Buttons{
+  text-align: center; 
+}
