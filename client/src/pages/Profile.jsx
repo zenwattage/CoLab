@@ -5,6 +5,7 @@ import Col from "../components/Col";
 import axios from "axios";
 import Wrapper from "../components/Wrapper/index";
 import Footer from "../components/Footer/index";
+import logo from "../logo5.png";
 
 class Profile extends Component {
   // State to store images of work
@@ -94,10 +95,9 @@ class Profile extends Component {
         <Nav />
         <Wrapper />
         <div>
-            <Row>
-              <Col size="md-12">
+            <Row>      
+                <img src={logo} className="logo" alt="logo" width="200px"/>  
                 <h1 className="title">Your Creative Portfolio</h1>
-              </Col>
             </Row>
 
             {/* <Row>
@@ -124,44 +124,44 @@ class Profile extends Component {
               <form onSubmit={this.handleSubmit}>
                   <p className="subtitle">Tell us about your self.</p>
                   <div className="bioform"> Bio: 
-                    <input
+                    {/* <input
                     value={this.state.bio}
                     name="bio"
                     onChange={this.handleInputChange}
                     type="text"
                     placeholder="Insert bio here"
-                  />
+                  /> */}
                   </div>
                  
                    <p className="subtitle"> Add social media links.</p>
                    <div className="bioform">Instagram:
-                   <input
+                   {/* <input
                     value={this.state.instagram}
                     name="instagram"
                     onChange={this.handleInputChange}
                     type="text"
                     placeholder="IG handle"
-                  />
+                  /> */}
                    </div>
                   
                   <div className="bioform">LinkedIn: 
-                  <input
+                  {/* <input
                     value={this.state.twitter}
                     name="linkedin"
                     onChange={this.handleInputChange}
                     type="text"
                     placeholder="Linkedin profile"
-                  />
+                  /> */}
                   </div>
 
                   <div className="bioform">Other: 
-                  <input
+                  {/* <input
                     value={this.state.other}
                     name="other"
                     onChange={this.handleInputChange}
                     type="text"
                     placeholder="Other site"
-                  />
+                  /> */}
                   </div>
 
                   <br></br>
