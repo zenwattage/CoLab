@@ -80,7 +80,7 @@ export default class Signup extends Component {
         // this.setState({ subFilter: this.state.professions[i].subQuestions });
         this.setState({ statement: "Here's the dance I'm good at:" });
       }
-    
+    }
 
   // this is a function that adds all the buttons' value to the talentArray
   handleOnClick = (value, addOrRemove) => {
@@ -101,17 +101,15 @@ export default class Signup extends Component {
       <Fragment>
         <Nav />
         <Wrapper />
-
         <article className="container">
-            <blockquote>
-              <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
-            </blockquote>
-          </article>
+           <blockquote>
+             <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
+           </blockquote>
+         </article>
 
         <div className="signuppage">
-          {/* <h1 className="title">Welcome to CoLab!</h1> */}
           <p>Please fill out the registration form to sign-up.</p>
-          {/* FORM SUBMIT LOGIC */}
+
           <form onSubmit={this.handleSubmit}>
 
             <p className="IMA">I am a:</p>
@@ -125,15 +123,8 @@ export default class Signup extends Component {
               statement={this.state.statement} 
               handleOnClick={this.handleOnClick} 
               className={this.state.className}
-              subQuestions={this.state.subQuestions}/>
+              />
             </div>
-
-            {/* Profession info */}
-            <h2 className="IMA">My profession is:</h2>
-            <Button value="dancer" handleOnClick={this.renderFilter}>Dancer</Button>
-            <Button value="photographer" handleOnClick={this.renderFilter}>Photographer</Button>
-            <Filter results={this.state.results} statement={this.state.statement} handleOnClick={this.handleOnClick} className={this.state.className} />
-
 
             <hr />
 
