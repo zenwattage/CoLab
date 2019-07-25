@@ -28,13 +28,11 @@ export default class Signup extends Component {
     instagram: "",
     linkedin: "",
     other: "",
-<<<<<<< HEAD
+    // MERGE CONFLICT CAUSE
     talentChoice: "",
     subTalent: "",
-=======
     subQuestions:[],
     subTalents:"hide"
->>>>>>> master
   }
 
   handleSubmit = event => {
