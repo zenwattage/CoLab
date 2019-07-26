@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from 'react';
+import { Redirect } from "react-router-dom";
 import axios from 'axios';
 import Wrapper from "../Wrapper";
 import Filter from "../Filter/Filter";
@@ -53,6 +54,10 @@ export default class Signup extends Component {
       }
     })
       .then((response) => {
+        const isAuthenticated = response.data.isAuthenticated;
+      window.localStorage.setItem('isAuthenticated', isAuthenticated);
+      this.props.history.push("/search");
+
         this.props.history.push('/search');
       })
       .catch((error) => {
@@ -96,7 +101,12 @@ export default class Signup extends Component {
   }
 
   render() {
-    // JSX
+    //REDIRECT IF AUTHENTICATED
+    const isAuthenticated = window.localStorage.getItem("isAuthenticated");
+
+    if (isAuthenticated) {
+      return <Redirect to="/search" />;
+    }
     return (
       <Fragment>
         <Nav />
