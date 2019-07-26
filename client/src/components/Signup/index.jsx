@@ -9,6 +9,7 @@ import "./style.css";
 import professions from "../profession.json";
 import Col from "../Col/index";
 import Row from "../Row/index";
+import Talent from '../Talent';
 
 export default class Signup extends Component {
 
@@ -19,17 +20,10 @@ export default class Signup extends Component {
     lastName: "",
     password: "",
     errorMessage: "",
-    talents: [],
-    statement: "",
-    className: "still",
-    profession: "",
-    talentArray: [],
     bio: "",
     instagram: "",
     linkedin: "",
     other: "",
-    subQuestions:[],
-    subTalents:"hide"
   }
 
   handleSubmit = event => {
@@ -69,31 +63,6 @@ export default class Signup extends Component {
     });
   };
 
-  setTalents = (option) => {
-    for (var i = 0; i < this.state.professions.length; i++) {
-      if (option === this.state.professions[i].profession) {
-          this.setState({talents:this.state.professions[i].talents});
-          // this.state.subQuestions.push(this.state.professions[i].talents[j].question);
-          console.log(this.state.talents)
-        }
-
-        // this.setState({ subFilter: this.state.professions[i].subQuestions });
-        this.setState({ statement: "Here's the dance I'm good at:" });
-      }
-    }
-
-  // this is a function that adds all the buttons' value to the talentArray
-  handleOnClick = (value, addOrRemove) => {
-    if (addOrRemove) {
-      this.state.talentArray.push(value);
-      console.log(this.state.talentArray);
-    }
-    else {
-      const index = this.state.talentArray.indexOf(value);
-      this.state.talentArray.splice(index, 1);
-      console.log(this.state.talentArray);
-    }
-  }
 
   render() {
     // JSX
@@ -102,30 +71,23 @@ export default class Signup extends Component {
         <Nav />
         <Wrapper />
         <article className="container">
-           <blockquote>
-             <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
-           </blockquote>
-         </article>
+          <blockquote>
+            <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
+          </blockquote>
+        </article>
 
         <div className="signuppage">
           <p>Please fill out the registration form to sign-up.</p>
 
           <form onSubmit={this.handleSubmit}>
 
-            <p className="IMA">I am a:</p>
-            <div id="profession">
-              {this.state.professions.map(x=> (
-                <Button value={x.profession} handleOnClick={this.setTalents}>{x.profession}</Button>
+            <h2 className="IMA">I am a:</h2>
+            <div>
+              {this.state.professions.map(x => (
+                <Talent profession={x.profession} talents={x.talents}
+                statement = {x.statement} className={this.state.className}/>
               ))}
             </div>
-            <div id="talent">
-              <Filter results={this.state.talents} 
-              statement={this.state.statement} 
-              handleOnClick={this.handleOnClick} 
-              className={this.state.className}
-              />
-            </div>
-
             <hr />
 
             {/* Personal info */}
@@ -148,7 +110,7 @@ export default class Signup extends Component {
             <hr />
 
             {/* Portfolio info */}
-            <div className ="portfolioinfo">
+            <div className="portfolioinfo">
               <h4 className="subtitle">Now, tell us about your self.
               </h4>
               <Row>
@@ -173,7 +135,7 @@ export default class Signup extends Component {
                   <input className="personalinput" value={this.state.other} name="other" onChange={this.handleChange} type="text" placeholder="Any other info you'd like to share?"
                     />
                   </div>
-               </Col>
+                </Col>
               </Row>
             </div>
             <button className="submitbutton">Submit</button>

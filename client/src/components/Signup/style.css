@@ -161,3 +161,8 @@
 #profession button{
   text-align:center; 
 }
+
+.profession{
+  display: inline-grid;
+  margin-right:50px; 
+}
