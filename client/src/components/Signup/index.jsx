@@ -1,19 +1,16 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment, Component } from "react";
 import { Redirect } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import Wrapper from "../Wrapper";
-import Filter from "../Filter/Filter";
 import Footer from "../Footer/index";
-import Button from "../Button/Button";
 import Nav from "../Nav/index";
 import "./style.css";
 import professions from "../profession.json";
 import Col from "../Col/index";
 import Row from "../Row/index";
-import Talent from '../Talent';
+import Talent from "../Talent";
 
 export default class Signup extends Component {
-
   state = {
     professions,
     email: "",
@@ -24,14 +21,32 @@ export default class Signup extends Component {
     bio: "",
     instagram: "",
     linkedin: "",
-    other: "",
-  }
+    other: ""
+  };
 
   handleSubmit = event => {
     event.preventDefault();
 
-    const { email, password, firstName, lastName, bio, instagram, linkedin, other } = this.state;
-    console.log({ email, password, firstName, lastName, bio, instagram, linkedin, other });
+    const {
+      email,
+      password,
+      firstName,
+      lastName,
+      bio,
+      instagram,
+      linkedin,
+      other
+    } = this.state;
+    console.log({
+      email,
+      password,
+      firstName,
+      lastName,
+      bio,
+      instagram,
+      linkedin,
+      other
+    });
 
     axios({
       url: "/authentication/signup",
@@ -47,27 +62,24 @@ export default class Signup extends Component {
         other
       }
     })
-      .then((response) => {
+      .then(response => {
         const isAuthenticated = response.data.isAuthenticated;
-      window.localStorage.setItem('isAuthenticated', isAuthenticated);
-      this.props.history.push("/search");
-
-        this.props.history.push('/search');
+        window.localStorage.setItem("isAuthenticated", isAuthenticated);
+        this.props.history.push("/search");
       })
-      .catch((error) => {
+      .catch(error => {
         this.setState({
           errorMessage: error.response.data.message
         });
       });
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
   };
-
 
   render() {
     //REDIRECT IF AUTHENTICATED
@@ -82,7 +94,9 @@ export default class Signup extends Component {
         <Wrapper />
         <article className="container">
           <blockquote>
-            <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
+            <strong>Welcome</strong> to{" "}
+            <em className="creative">our creative</em>{" "}
+            <strong className="community">community</strong>
           </blockquote>
         </article>
 
@@ -90,12 +104,15 @@ export default class Signup extends Component {
           <p>Please fill out the registration form to sign-up.</p>
 
           <form onSubmit={this.handleSubmit}>
-
             <h2 className="IMA">I am a:</h2>
             <div>
               {this.state.professions.map(x => (
-                <Talent profession={x.profession} talents={x.talents}
-                statement = {x.statement} className={this.state.className}/>
+                <Talent
+                  profession={x.profession}
+                  talents={x.talents}
+                  statement={x.statement}
+                  className={this.state.className}
+                />
               ))}
             </div>
             <hr />
@@ -103,17 +120,42 @@ export default class Signup extends Component {
             {/* Personal info */}
             <div className="personalinfo">
               <h4>Create your account here.</h4>
-              <div className="inputtitle"> First name:
-                <input className="personalinput" type="text" name="firstName" onChange={this.handleChange} />
+              <div className="inputtitle">
+                {" "}
+                First name:
+                <input
+                  className="personalinput"
+                  type="text"
+                  name="firstName"
+                  onChange={this.handleChange}
+                />
               </div>
-              <div className="inputtitle">Last name:
-                <input className="personalinput" type="text" name="lastName" onChange={this.handleChange} />
+              <div className="inputtitle">
+                Last name:
+                <input
+                  className="personalinput"
+                  type="text"
+                  name="lastName"
+                  onChange={this.handleChange}
+                />
               </div>
-              <div className="inputtitle">Email:
-                <input className="personalinput" type="text" name="email" onChange={this.handleChange} />
+              <div className="inputtitle">
+                Email:
+                <input
+                  className="personalinput"
+                  type="text"
+                  name="email"
+                  onChange={this.handleChange}
+                />
               </div>
-              <div className="inputtitle">Password:
-                <input className="personalinput" type="password" name="password" onChange={this.handleChange} />
+              <div className="inputtitle">
+                Password:
+                <input
+                  className="personalinput"
+                  type="password"
+                  name="password"
+                  onChange={this.handleChange}
+                />
               </div>
             </div>
 
@@ -121,28 +163,52 @@ export default class Signup extends Component {
 
             {/* Portfolio info */}
             <div className="portfolioinfo">
-              <h4 className="subtitle">Now, tell us about your self.
-              </h4>
+              <h4 className="subtitle">Now, tell us about your self.</h4>
               <Row>
                 <Col size="md-7">
-                  <div className="bioform"> Bio:
-                    <input className="bioinput" value={this.state.bio} name="bio" onChange={this.handleChange} type="text" placeholder="What makes you unique?"
+                  <div className="bioform">
+                    {" "}
+                    Bio:
+                    <input
+                      className="bioinput"
+                      value={this.state.bio}
+                      name="bio"
+                      onChange={this.handleChange}
+                      type="text"
+                      placeholder="What makes you unique?"
                     />
                   </div>
                 </Col>
                 <Col size="md-5">
-                  <div className="bioform">Instagram @:
-                  <input className="personalinput" value={this.state.instagram} name="instagram" onChange={this.handleChange} type="text"
-                    // placeholder="IG handle"
+                  <div className="bioform">
+                    Instagram @:
+                    <input
+                      className="personalinput"
+                      value={this.state.instagram}
+                      name="instagram"
+                      onChange={this.handleChange}
+                      type="text"
+                      // placeholder="IG handle"
                     />
                   </div>
-                  <div className="bioform">LinkedIn:
-                  <input className="personalinput" value={this.state.twitter} type="text"
-                    // placeholder="Linkedin profile"
+                  <div className="bioform">
+                    LinkedIn:
+                    <input
+                      className="personalinput"
+                      value={this.state.twitter}
+                      type="text"
+                      // placeholder="Linkedin profile"
                     />
                   </div>
-                  <div className="bioform">Other:
-                  <input className="personalinput" value={this.state.other} name="other" onChange={this.handleChange} type="text" placeholder="Any other info you'd like to share?"
+                  <div className="bioform">
+                    Other:
+                    <input
+                      className="personalinput"
+                      value={this.state.other}
+                      name="other"
+                      onChange={this.handleChange}
+                      type="text"
+                      placeholder="Any other info you'd like to share?"
                     />
                   </div>
                 </Col>
@@ -156,6 +222,6 @@ export default class Signup extends Component {
 
         <Footer />
       </Fragment>
-    )
+    );
   }
 }
