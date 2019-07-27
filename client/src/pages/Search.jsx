@@ -4,7 +4,6 @@ import Wrapper from "../components/Wrapper/index";
 import Row from "../components/Row/index";
 import Col from "../components/Col/index";
 import Footer from "../components/Footer/index";
-// import Button from "./Button/Button";
 import SearchForm from "../components/SearchForm/index";
 import SearchResults from "../components/SearchResults/index";
 
@@ -30,7 +29,7 @@ render () {
   return (
     <Fragment>
       <Nav />
-        <Wrapper />
+        <Wrapper>
           <Row>
             <Col size="md-12">
               <h1 className="title">Search for an artist.</h1>
@@ -44,7 +43,7 @@ render () {
           />
           
           <SearchResults results={this.state.results} />
-
+          </Wrapper>
         <Footer />
     </Fragment>
   );
