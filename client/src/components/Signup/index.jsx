@@ -83,7 +83,7 @@ export default class Signup extends Component {
     return (
       <Fragment>
         <Nav />
-        <Wrapper />
+        <Wrapper>
         <article className="container">
           <blockquote>
             <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
@@ -101,7 +101,6 @@ export default class Signup extends Component {
                statement = {x.statement} className={this.state.className}/>
              ))}
             </div>
-            <hr />
           </form>
 
           <hr />
@@ -165,6 +164,7 @@ export default class Signup extends Component {
           <p>{this.state.errorMessage}</p>
           {console.log(this.state.errorMessage)}
         </div>
+        </Wrapper>
         <Footer />
       </Fragment>
     )
