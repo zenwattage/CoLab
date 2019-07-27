@@ -2,8 +2,8 @@
   {
     "profession":"dancer",
     "talents":[
-      {"name":"Hip-hop","question":"Can you dance en pointe?"}, 
-      {"name":"Ballet","question":"Can you freestyle?"}, 
+      {"name":"Hip-hop","question":"Can you freestyle?"}, 
+      {"name":"Ballet","question":"Can you dance en pointe?"}, 
       {"name":"Contemporary","question":"Can you freestyle?"}, 
       {"name":"Latin","question":"Can you freestyle?"}],
       "statement": "Here's the dance I'm good at:" 
