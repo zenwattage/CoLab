@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from 'react';
+import { Redirect } from "react-router-dom";
 import axios from 'axios';
 import Wrapper from "../Wrapper";
 import Filter from "../Filter/Filter";
@@ -7,9 +8,15 @@ import Button from "../Button/Button";
 import Nav from "../Nav/index";
 import "./style.css";
 import professions from "../profession.json";
+<<<<<<< HEAD
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from "react-bootstrap/Form";
+=======
+import Col from "../Col/index";
+import Row from "../Row/index";
+import Talent from '../Talent';
+>>>>>>> a4d6ed770f9abeb7b5e9a9ce4d26a585441fd0ea
 
 export default class Signup extends Component {
 
@@ -20,17 +27,15 @@ export default class Signup extends Component {
     lastName: "",
     password: "",
     errorMessage: "",
-    talents: [],
-    statement: "",
-    className: "still",
-    profession: "",
-    talentArray: [],
     bio: "",
     instagram: "",
     linkedin: "",
     other: "",
+<<<<<<< HEAD
     subQuestions: [],
     subTalents: "hide"
+=======
+>>>>>>> a4d6ed770f9abeb7b5e9a9ce4d26a585441fd0ea
   }
 
   handleSubmit = event => {
@@ -54,6 +59,10 @@ export default class Signup extends Component {
       }
     })
       .then((response) => {
+        const isAuthenticated = response.data.isAuthenticated;
+      window.localStorage.setItem('isAuthenticated', isAuthenticated);
+      this.props.history.push("/search");
+
         this.props.history.push('/search');
       })
       .catch((error) => {
@@ -70,6 +79,7 @@ export default class Signup extends Component {
     });
   };
 
+<<<<<<< HEAD
   setTalents = (option) => {
     for (var i = 0; i < this.state.professions.length; i++) {
       if (option === this.state.professions[i].profession) {
@@ -82,22 +92,16 @@ export default class Signup extends Component {
       this.setState({ statement: "Here's the dance I'm good at:" });
     }
   }
-
-  // this is a function that adds all the buttons' value to the talentArray
-  handleOnClick = (value, addOrRemove) => {
-    if (addOrRemove) {
-      this.state.talentArray.push(value);
-      console.log(this.state.talentArray);
-    }
-    else {
-      const index = this.state.talentArray.indexOf(value);
-      this.state.talentArray.splice(index, 1);
-      console.log(this.state.talentArray);
-    }
-  }
+=======
 
   render() {
-    // JSX
+    //REDIRECT IF AUTHENTICATED
+    const isAuthenticated = window.localStorage.getItem("isAuthenticated");
+>>>>>>> a4d6ed770f9abeb7b5e9a9ce4d26a585441fd0ea
+
+    if (isAuthenticated) {
+      return <Redirect to="/search" />;
+    }
     return (
       <Fragment>
         <Nav />
@@ -113,6 +117,7 @@ export default class Signup extends Component {
 
           <form onSubmit={this.handleSubmit}>
 
+<<<<<<< HEAD
             <p className="IMA">I am a:</p>
             <div id="profession">
               {this.state.professions.map(x => (
@@ -127,6 +132,15 @@ export default class Signup extends Component {
               />
             </div>
 
+=======
+            <h2 className="IMA">I am a:</h2>
+            <div>
+              {this.state.professions.map(x => (
+                <Talent profession={x.profession} talents={x.talents}
+                statement = {x.statement} className={this.state.className}/>
+              ))}
+            </div>
+>>>>>>> a4d6ed770f9abeb7b5e9a9ce4d26a585441fd0ea
             <hr />
 
             {/* Personal info */}
@@ -159,6 +173,7 @@ export default class Signup extends Component {
                     <div className="bioform">Instagram @: <input className="personalinput" value={this.state.instagram} name="instagram" onChange={this.handleChange} type="text" />
                     </div>
 
+<<<<<<< HEAD
                     <div className="bioform">LinkedIn: <input className="personalinput" value={this.state.twitter} type="text" />
                     </div>
 
@@ -220,6 +235,36 @@ export default class Signup extends Component {
               //   </Button>
 
 //              </Form>
+=======
+            {/* Portfolio info */}
+            <div className="portfolioinfo">
+              <h4 className="subtitle">Now, tell us about your self.
+              </h4>
+              <Row>
+                <Col size="md-7">
+                  <div className="bioform"> Bio:
+                    <input className="bioinput" value={this.state.bio} name="bio" onChange={this.handleChange} type="text" placeholder="What makes you unique?"
+                    />
+                  </div>
+                </Col>
+                <Col size="md-5">
+                  <div className="bioform">Instagram @:
+                  <input className="personalinput" value={this.state.instagram} name="instagram" onChange={this.handleChange} type="text"
+                    // placeholder="IG handle"
+                    />
+                  </div>
+                  <div className="bioform">LinkedIn:
+                  <input className="personalinput" value={this.state.twitter} type="text"
+                    // placeholder="Linkedin profile"
+                    />
+                  </div>
+                  <div className="bioform">Other:
+                  <input className="personalinput" value={this.state.other} name="other" onChange={this.handleChange} type="text" placeholder="Any other info you'd like to share?"
+                    />
+                  </div>
+                </Col>
+              </Row>
+>>>>>>> a4d6ed770f9abeb7b5e9a9ce4d26a585441fd0ea
             </div>
 
             {/* <button className="submitbutton">Submit</button> */}

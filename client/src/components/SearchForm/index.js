@@ -44,6 +44,7 @@ export default class SearchForm extends Component {
       }
     })
       .then((response) => {
+        
         this.props.history.push('/profile');
       })
       .catch((error) => {
