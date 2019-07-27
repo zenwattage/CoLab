@@ -1,12 +1,12 @@
 import React, { Fragment, Component } from "react";
-import Nav from "../components/Nav";
-import Wrapper from "./Wrapper";import Row from "../components/Row";
-import Col from "../components/Col";
-import Footer from "./Footer/index";
+import Nav from "../components/Nav/index";
+import Wrapper from "../components/Wrapper/index";
+import Row from "../components/Row/index";
+import Col from "../components/Col/index";
+import Footer from "../components/Footer/index";
 // import Button from "./Button/Button";
-import SearchForm from "./SearchForm/index";
-import SearchResults from "./SearchResults/index";
-import "./Search.css";
+import SearchForm from "../components/SearchForm/index";
+import SearchResults from "../components/SearchResults/index";
 
 class SearchArtist extends Component {
     state = {
@@ -24,14 +24,7 @@ handleInputChange = event => {
 // when search button is pressed this happens
 handleFormSubmit = event => {
   event.preventDefault();
-  // API.getDogsOfBreed(this.state.search)
-  //   .then(res => {
-  //     if (res.data.status === "error") {
-  //       throw new Error(res.data.message);
-  //     }
-  //     this.setState({ results: res.data.message, error: "" });
-  //   })
-  //   .catch(err => this.setState({ error: err.message }));
+// SEARCH FUNCTION GOES HERE
 };
 render () {
   return (
@@ -48,7 +41,6 @@ render () {
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
-            // breeds={this.state.breeds}
           />
           
           <SearchResults results={this.state.results} />

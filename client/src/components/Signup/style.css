@@ -157,3 +157,12 @@
   font-family: 'Lato', sans-serif;
   text-align: center;
 } 
+
+#profession button{
+  text-align:center; 
+}
+
+.profession{
+  display: inline-grid;
+  margin-right:50px; 
+}
