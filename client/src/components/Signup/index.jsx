@@ -112,7 +112,6 @@ export default class Signup extends Component {
           <p>Please fill out the registration form to sign-up.</p>
 
           <form onSubmit={this.handleSubmit}>
-
             <p className="IMA">I am a:</p>
             <div id="profession">
               {this.state.professions.map(x => (
@@ -126,6 +125,7 @@ export default class Signup extends Component {
                 className={this.state.className}
               />
             </div>
+          </form>
 
             <hr />
 
@@ -169,61 +169,56 @@ export default class Signup extends Component {
               // eslint-disable-next-line react/jsx-no-comment-textnodes
               </Row> */}
 
-<Form>
- <Form.Row>
- <Form.Group as={Col} controlId="formGridEmail">
-<Form.Label>First name</Form.Label>
- <Form.Control name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" />
-</Form.Group>
+              <Form onSubmit={this.handleSubmit}>
+                <Form.Row>
+                  <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Label>First name</Form.Label>
+                    <Form.Control value={this.state.firstName} name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" />
+                  </Form.Group>
 
-<Form.Group as={Col} controlId="formGridPassword">
-<Form.Label>Last name</Form.Label>
-<Form.Control name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" />
-</Form.Group>
-</Form.Row>
+                  <Form.Group as={Col} controlId="formGridPassword">
+                    <Form.Label>Last name</Form.Label>
+                    <Form.Control value={this.state.lastName} name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" />
+                  </Form.Group>
+                </Form.Row>
 
-<Form.Row>
-<Form.Group as={Col} controlId="formGridEmail">
-<Form.Label>Email</Form.Label>
-<Form.Control name="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
-</Form.Group>
+                <Form.Row>
+                  <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control value={this.state.email} name="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
+                  </Form.Group>
 
-<Form.Group as={Col} controlId="formGridPassword">
-<Form.Label>Password</Form.Label>
-<Form.Control name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
-</Form.Group>
-</Form.Row>
+                  <Form.Group as={Col} controlId="formGridPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control value={this.state.password} name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
+                  </Form.Group>
+                </Form.Row>
 
-<Form.Group controlId="exampleForm.ControlTextarea1">
-                  //     <Form.Label>Bio</Form.Label>
-                  //     <Form.Control value={this.state.bio} name="bio" onChange={this.handleChange} as="textarea" rows="6" placeholder="Tell us something interesting..." />
-                  //   </Form.Group>
+                <Form.Group controlId="exampleForm.ControlTextarea1">
+                  <Form.Label>Bio</Form.Label>
+                  <Form.Control value={this.state.bio} name="bio" onChange={this.handleChange} type="text" as="textarea" rows="6" placeholder="Tell us something interesting..." />
+                </Form.Group>
 
-              //   <Form.Row>
-              //     <Form.Group as={Col} controlId="formGridAddress2">
-              //       <Form.Label>Instagram</Form.Label>
-              //       <Form.Control value={this.state.instagram} name="instagram" onChange={this.handleChange}/>
-              //     </Form.Group>
-              //     <Form.Group as={Col} controlId="formGridAddress2">
-              //       <Form.Label>LinkedIn</Form.Label>
-              //       <Form.Control value={this.state.linkedin} name="linkedin" onChange={this.handleChange}/>
-              //     </Form.Group>
-              //     <Form.Group as={Col} controlId="formGridAddress2">
-              //       <Form.Label>Other</Form.Label>
-              //       <Form.Control value={this.state.other} name="other" onChange={this.handleChange} placeholder="Anything else?"/>
-              //     </Form.Group>
-              //   </Form.Row>
+                <Form.Row>
+                  <Form.Group as={Col} controlId="formGridAddress2">
+                    <Form.Label>Instagram</Form.Label>
+                    <Form.Control value={this.state.instagram} name="instagram" onChange={this.handleChange} />
+                  </Form.Group>
+                  <Form.Group as={Col} controlId="formGridAddress2">
+                    <Form.Label>LinkedIn</Form.Label>
+                    <Form.Control value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
+                  </Form.Group>
+                  <Form.Group as={Col} controlId="formGridAddress2">
+                    <Form.Label>Other</Form.Label>
+                    <Form.Control value={this.state.other} name="other" onChange={this.handleChange} placeholder="Anything else?" />
+                  </Form.Group>
+                </Form.Row>
 
+                <button className="submitbutton">Submit</button>
 
-              //   <Button variant="primary" type="submit">
-              //     Submit
-              //   </Button>
-
-//              </Form>
+              </Form>
             </div>
 
-            {/* <button className="submitbutton">Submit</button> */}
-          </form>
           <p>{this.state.errorMessage}</p>
           {console.log(this.state.errorMessage)}
         </div>
@@ -232,56 +227,3 @@ export default class Signup extends Component {
     )
   }
 }
-
-
-// <Form>
-//   <Form.Row>
-//     <Form.Group as={Col} controlId="formGridEmail">
-//       <Form.Label>First name</Form.Label>
-//       <Form.Control name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" />
-//     </Form.Group>
-
-//     <Form.Group as={Col} controlId="formGridPassword">
-//       <Form.Label>Last name</Form.Label>
-//       <Form.Control name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" />
-//     </Form.Group>
-//    </Form.Row>
-
-//   <Form.Row>
-//     <Form.Group as={Col} controlId="formGridEmail">
-//       <Form.Label>Email</Form.Label>
-//       <Form.Control name="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
-//     </Form.Group>
-
-//     <Form.Group as={Col} controlId="formGridPassword">
-//       <Form.Label>Password</Form.Label>
-//       <Form.Control name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
-//     </Form.Group>
-//   </Form.Row>
-
-//   <Form.Group controlId="exampleForm.ControlTextarea1">
-//     <Form.Label>Bio</Form.Label>
-//     <Form.Control value={this.state.bio} name="bio" onChange={this.handleChange} as="textarea" rows="6" placeholder="Tell us something interesting..." />
-//   </Form.Group>
-
-//   <Form.Row>
-//     <Form.Group as={Col} controlId="formGridAddress2">
-//       <Form.Label>Instagram</Form.Label>
-//       <Form.Control value={this.state.instagram} name="instagram" onChange={this.handleChange}/>
-//     </Form.Group>
-//     <Form.Group as={Col} controlId="formGridAddress2">
-//       <Form.Label>LinkedIn</Form.Label>
-//       <Form.Control value={this.state.linkedin} name="linkedin" onChange={this.handleChange}/>
-//     </Form.Group>
-//     <Form.Group as={Col} controlId="formGridAddress2">
-//       <Form.Label>Other</Form.Label>
-//       <Form.Control value={this.state.other} name="other" onChange={this.handleChange} placeholder="Anything else?"/>
-//     </Form.Group>
-//   </Form.Row>
-
-
-//   <Button variant="primary" type="submit">
-//     Submit
-//   </Button>
-
-// </Form>
