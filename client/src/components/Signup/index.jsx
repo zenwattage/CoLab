@@ -101,7 +101,6 @@ export default class Signup extends Component {
                statement = {x.statement} className={this.state.className}/>
              ))}
             </div>
-            <hr />
           </form>
 
           <hr />

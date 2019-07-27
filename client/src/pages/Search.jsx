@@ -4,50 +4,58 @@ import Wrapper from "../components/Wrapper/index";
 import Row from "../components/Row/index";
 import Col from "../components/Col/index";
 import Footer from "../components/Footer/index";
-import SearchForm from "../components/SearchForm/index";
 import SearchResults from "../components/SearchResults/index";
+import professions from "../components/profession.json";
+import TalentSearch from '../components/Talent/TalentSearch';
+import "./style.css"; 
+
+
 
 class SearchArtist extends Component {
-    state = {
-      search: "",
-      profession: "",
-      results: [],
-      error: ""
-    }
+  state = {
+    search: "",
+    professions,
+    results: [],
+    error: ""
+  }
 
-// taking in value of what user is searching
-handleInputChange = event => {
-  this.setState({ search: event.target.value });
-};
+  // taking in value of what user is searching
+  handleInputChange = event => {
+    this.setState({ search: event.target.value });
+  };
 
-// when search button is pressed this happens
-handleFormSubmit = event => {
-  event.preventDefault();
-// SEARCH FUNCTION GOES HERE
-};
-render () {
-  return (
-    <Fragment>
-      <Nav />
-        <Wrapper>
-          <Row>
-            <Col size="md-12">
-              <h1 className="title">Search for an artist.</h1>
-              <p className="subTitle"> Any artists matching your criteria will appear after the search is complete.</p>
-            </Col>
-          </Row>
+  // when search button is pressed this happens
+  handleFormSubmit = event => {
+    event.preventDefault();
+    // SEARCH FUNCTION GOES HERE
+  };
+  render() {
+    return (
+      <Fragment>
+        <Nav />
+        <Wrapper />
+        <Row className = "search"> 
+          <Col size="md-12">
+            <h1 className="title">Search for an artist.</h1>
+            <p className="subTitle"> Any artists matching your criteria will appear after the search is complete.</p>
+            <p className = "subLine">I'm looking for a:</p>
+          </Col>
+        </Row>
 
-          <SearchForm
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-          />
-          
-          <SearchResults results={this.state.results} />
-          </Wrapper>
+        <div className = "searchButtons">
+          {this.state.professions.map(x => (
+              <TalentSearch profession={x.profession} talents={x.talents}
+                statement={x.searchStatement} className={this.state.className} />
+          ))}
+        </div>
+        <div className = "center">
+        <button className="submitbutton">Submit</button>
+        </div>
+        <SearchResults results={this.state.results} />
         <Footer />
-    </Fragment>
-  );
-}
+      </Fragment>
+    );
+  }
 }
 
 

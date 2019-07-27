@@ -6,7 +6,7 @@ export default class Question extends Component {
   render() {
     return (
       (!this.props.isHide) && <div className="Question" isHide={this.props.isHide} enableChangeState>
-        <p>{this.props.question}</p>
+        <p className = "statement question">{this.props.question}</p>
         <form>
           <div className="form-check">
             <label>
@@ -37,4 +37,3 @@ export default class Question extends Component {
     )
   }
 }
-
