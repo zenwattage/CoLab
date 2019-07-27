@@ -38,4 +38,7 @@ export default class Question extends Component {
   }
 }
 
+<<<<<<< HEAD
 // {/* <Button isHide = {this.state.HideSub} value={this.props.question} enableChangeState>{this.props.question}</Button> */ }
+=======
+>>>>>>> e036fd6393197449c18c221365fb08a4f1199e38

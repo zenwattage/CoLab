@@ -9,6 +9,10 @@ import professions from "../profession.json";
 import Col from "../Col/index";
 import Row from "../Row/index";
 import Talent from "../Talent";
+<<<<<<< HEAD
+=======
+
+>>>>>>> e036fd6393197449c18c221365fb08a4f1199e38
 
 export default class Signup extends Component {
   state = {
@@ -69,7 +73,12 @@ export default class Signup extends Component {
     })
       .then(response => {
         const isAuthenticated = response.data.isAuthenticated;
+<<<<<<< HEAD
         window.localStorage.setItem("isAuthenticated", isAuthenticated);
+=======
+
+        window.localStorage.setItem('isAuthenticated', isAuthenticated);
+>>>>>>> e036fd6393197449c18c221365fb08a4f1199e38
         this.props.history.push("/search");
       })
       .catch(error => {
@@ -123,6 +132,7 @@ export default class Signup extends Component {
             <hr />
           </form>
 
+<<<<<<< HEAD
             {/* Personal info */}
             <div className="personalinfo">
               <h4>Create your account here.</h4>
@@ -165,6 +175,8 @@ export default class Signup extends Component {
               </div>
             </div>
 
+=======
+>>>>>>> e036fd6393197449c18c221365fb08a4f1199e38
           {/* Personal info */}
           <div className="signupinfo">
             <Row className="justify-content-md-center">
@@ -221,6 +233,7 @@ export default class Signup extends Component {
             </Form>
           </div>
 
+<<<<<<< HEAD
             {/* Portfolio info */}
             <div className="portfolioinfo">
               <h4 className="subtitle">Now, tell us about your self.</h4>
@@ -276,6 +289,9 @@ export default class Signup extends Component {
             </div>
             <button className="submitbutton">Submit</button>
           </form>
+=======
+
+>>>>>>> e036fd6393197449c18c221365fb08a4f1199e38
           <p>{this.state.errorMessage}</p>
           {console.log(this.state.errorMessage)}
         </div>
