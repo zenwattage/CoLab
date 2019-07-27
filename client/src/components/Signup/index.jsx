@@ -105,7 +105,7 @@ export default class Signup extends Component {
     return (
       <Fragment>
         <Nav />
-        <Wrapper />
+        <Wrapper>
         <article className="container">
           <blockquote>
             <strong>Welcome</strong> to{" "}
@@ -295,6 +295,7 @@ export default class Signup extends Component {
           <p>{this.state.errorMessage}</p>
           {console.log(this.state.errorMessage)}
         </div>
+        </Wrapper>
         <Footer />
       </Fragment>
     );
