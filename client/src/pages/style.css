@@ -1,0 +1,19 @@
+.search{
+  text-align: center;
+}
+
+.searchButtons{
+  text-align: center;
+}
+
+.subLine{
+  color:rgb(5, 133, 22);
+}
+
+.center{
+  text-align:center; 
+}
+
+.center .submitbutton{
+  margin-top:50px; 
+}

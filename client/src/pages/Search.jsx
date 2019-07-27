@@ -4,10 +4,10 @@ import Wrapper from "../components/Wrapper/index";
 import Row from "../components/Row/index";
 import Col from "../components/Col/index";
 import Footer from "../components/Footer/index";
-// import SearchForm from "../components/SearchForm/index";
 import SearchResults from "../components/SearchResults/index";
 import professions from "../components/profession.json";
-import Talent from '../components/Talent/index';
+import TalentSearch from '../components/Talent/TalentSearch';
+import "./style.css"; 
 
 
 
@@ -34,26 +34,24 @@ class SearchArtist extends Component {
       <Fragment>
         <Nav />
         <Wrapper />
-        <Row>
+        <Row className = "search"> 
           <Col size="md-12">
             <h1 className="title">Search for an artist.</h1>
             <p className="subTitle"> Any artists matching your criteria will appear after the search is complete.</p>
+            <p className = "subLine">I'm looking for a:</p>
           </Col>
         </Row>
 
-        {/* <SearchForm
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-          /> */}
-        <div>
+        <div className = "searchButtons">
           {this.state.professions.map(x => (
-            <Talent profession={x.profession} talents={x.talents}
-              statement={x.statement} className={this.state.className} />
+              <TalentSearch profession={x.profession} talents={x.talents}
+                statement={x.searchStatement} className={this.state.className} />
           ))}
         </div>
-        <hr />
+        <div className = "center">
+        <button className="submitbutton">Submit</button>
+        </div>
         <SearchResults results={this.state.results} />
-
         <Footer />
       </Fragment>
     );
