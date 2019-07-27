@@ -2,10 +2,11 @@
   {
     "profession":"dancer",
     "talents":[
-      {"name":"Hip-hop","question":"I can dance en pointe"}, 
-      {"name":"Ballet","question":"I can freestyle"}, 
-      {"name":"Contemporary","question":"I can freestyle"}, 
-      {"name":"Latin","question":"I can freestyle"}]
+      {"name":"Hip-hop","question":"Can you dance en pointe?"}, 
+      {"name":"Ballet","question":"Can you freestyle?"}, 
+      {"name":"Contemporary","question":"Can you freestyle?"}, 
+      {"name":"Latin","question":"Can you freestyle?"}],
+      "statement": "Here's the dance I'm good at:" 
   },
   {
     "profession":"photographer",
@@ -13,6 +14,7 @@
       {"name":"Landscape","question":"I can freestyle"}, 
       {"name":"Portrait","question":"I can freestyle"}, 
       {"name":"Street","question":"I can freestyle"}, 
-      {"name":"Motion","question":"I can freestyle"}]
+      {"name":"Motion","question":"I can freestyle"}],
+      "statement": "Here's the photography I'm good at:" 
   }
 ]
