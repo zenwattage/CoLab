@@ -7,7 +7,7 @@ const UserSchema = new Schema({
   lastName: {type: String, default: ''},
   password: {type: String, default: ''},
   email: {type: String, default: ''},
-  // gender: {type: String, default: ''},
+  imageUrl: {type: String, default: ''},
   bio: {type: String, default: ''},
   instagram: {type: String, default: ''},
   linkedin: {type: String, default: ''},
