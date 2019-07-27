@@ -2,6 +2,7 @@ import React, { Fragment, Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 import Wrapper from "../Wrapper";
+<<<<<<< HEAD
 import Footer from "../Footer/index";
 import Nav from "../Nav/index";
 import "./style.css";
@@ -9,6 +10,19 @@ import professions from "../profession.json";
 import Col from "../Col/index";
 import Row from "../Row/index";
 import Talent from "../Talent";
+=======
+
+import Footer from "../Footer/index";
+
+import Nav from "../Nav/index";
+import "./style.css";
+import professions from "../profession.json";
+import Talent from "../Talent"
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Form from "react-bootstrap/Form";
+
+>>>>>>> 02fa318437d8e9d41f68c5111ade5f5a5e104341
 
 export default class Signup extends Component {
   state = {
@@ -18,11 +32,23 @@ export default class Signup extends Component {
     lastName: "",
     password: "",
     errorMessage: "",
+    // talents: [],
+    // statement: "",
+    // className: "still",
+    // profession: "",
+    // talentArray: [],
     bio: "",
     instagram: "",
     linkedin: "",
+<<<<<<< HEAD
     other: ""
   };
+=======
+    other: "",
+    // subQuestions: [],
+    // subTalents: "hide"
+  }
+>>>>>>> 02fa318437d8e9d41f68c5111ade5f5a5e104341
 
   handleSubmit = event => {
     event.preventDefault();
@@ -64,7 +90,11 @@ export default class Signup extends Component {
     })
       .then(response => {
         const isAuthenticated = response.data.isAuthenticated;
+<<<<<<< HEAD
         window.localStorage.setItem("isAuthenticated", isAuthenticated);
+=======
+        window.localStorage.setItem('isAuthenticated', isAuthenticated);
+>>>>>>> 02fa318437d8e9d41f68c5111ade5f5a5e104341
         this.props.history.push("/search");
       })
       .catch(error => {
@@ -82,12 +112,12 @@ export default class Signup extends Component {
   };
 
   render() {
-    //REDIRECT IF AUTHENTICATED
-    const isAuthenticated = window.localStorage.getItem("isAuthenticated");
-
-    if (isAuthenticated) {
-      return <Redirect to="/search" />;
-    }
+  //REDIRECT IF AUTHENTICATED
+  const isAuthenticated = window.localStorage.getItem("isAuthenticated");
+  if (isAuthenticated) {
+    return <Redirect to="/search" />;
+  }
+    // JSX
     return (
       <Fragment>
         <Nav />
@@ -104,6 +134,7 @@ export default class Signup extends Component {
           <p>Please fill out the registration form to sign-up.</p>
 
           <form onSubmit={this.handleSubmit}>
+<<<<<<< HEAD
             <h2 className="IMA">I am a:</h2>
             <div>
               {this.state.professions.map(x => (
@@ -114,9 +145,19 @@ export default class Signup extends Component {
                   className={this.state.className}
                 />
               ))}
+=======
+            <p className="IMA">I am a:</p>
+            <div>
+             {this.state.professions.map(x => (
+               <Talent profession={x.profession} talents={x.talents}
+               statement = {x.statement} className={this.state.className}/>
+             ))}
+>>>>>>> 02fa318437d8e9d41f68c5111ade5f5a5e104341
             </div>
             <hr />
+          </form>
 
+<<<<<<< HEAD
             {/* Personal info */}
             <div className="personalinfo">
               <h4>Create your account here.</h4>
@@ -158,9 +199,67 @@ export default class Signup extends Component {
                 />
               </div>
             </div>
+=======
+          <hr />
+>>>>>>> 02fa318437d8e9d41f68c5111ade5f5a5e104341
 
-            <hr />
+          {/* Personal info */}
+          <div className="signupinfo">
+            <Row className="justify-content-md-center">
+              <h4>Create your account here.</h4>
+            </Row>
 
+            <Form onSubmit={this.handleSubmit}>
+              <Form.Row>
+                <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label>First name</Form.Label>
+                  <Form.Control value={this.state.firstName} name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" />
+                </Form.Group>
+
+                <Form.Group as={Col} controlId="formGridPassword">
+                  <Form.Label>Last name</Form.Label>
+                  <Form.Control value={this.state.lastName} name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" />
+                </Form.Group>
+              </Form.Row>
+
+              <Form.Row>
+                <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control value={this.state.email} name="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
+                </Form.Group>
+
+                <Form.Group as={Col} controlId="formGridPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control value={this.state.password} name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
+                </Form.Group>
+              </Form.Row>
+
+              <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Bio</Form.Label>
+                <Form.Control value={this.state.bio} name="bio" onChange={this.handleChange} type="text" as="textarea" rows="6" placeholder="Tell us something interesting..." />
+              </Form.Group>
+
+              <Form.Row>
+                <Form.Group as={Col} controlId="formGridAddress2">
+                  <Form.Label>Instagram</Form.Label>
+                  <Form.Control value={this.state.instagram} name="instagram" onChange={this.handleChange} />
+                </Form.Group>
+                <Form.Group as={Col} controlId="formGridAddress2">
+                  <Form.Label>LinkedIn</Form.Label>
+                  <Form.Control value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
+                </Form.Group>
+                <Form.Group as={Col} controlId="formGridAddress2">
+                  <Form.Label>Other</Form.Label>
+                  <Form.Control value={this.state.other} name="other" onChange={this.handleChange} placeholder="Anything else?" />
+                </Form.Group>
+              </Form.Row>
+
+              <button className="submitbutton">Submit</button>
+
+            </Form>
+          </div>
+
+<<<<<<< HEAD
             {/* Portfolio info */}
             <div className="portfolioinfo">
               <h4 className="subtitle">Now, tell us about your self.</h4>
@@ -216,10 +315,11 @@ export default class Signup extends Component {
             </div>
             <button className="submitbutton">Submit</button>
           </form>
+=======
+>>>>>>> 02fa318437d8e9d41f68c5111ade5f5a5e104341
           <p>{this.state.errorMessage}</p>
           {console.log(this.state.errorMessage)}
         </div>
-
         <Footer />
       </Fragment>
     );
