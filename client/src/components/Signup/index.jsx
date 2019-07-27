@@ -129,7 +129,6 @@ export default class Signup extends Component {
                 />
               ))}
             </div>
-            <hr />
           </form>
 
 <<<<<<< HEAD
