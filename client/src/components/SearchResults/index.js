@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import "./style.css";
-import Row from "../Row/index";
-import Col from "../Col/index";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 function SearchResults(props) {
   return (
@@ -12,7 +12,7 @@ function SearchResults(props) {
           <h1 className="title">Here are your creative matches.</h1>
         </Col>
       </Row>
-
+{/* 
       <ul className="list-group search-results">
         {props.results.map(result => (
           <li key={result} className="list-group-item">
@@ -20,7 +20,8 @@ function SearchResults(props) {
           </li>
       )
       )}
-      </ul>
+      </ul> */}
+
     </Fragment>
   );
 }

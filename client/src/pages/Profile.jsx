@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from "react";
 import Nav from "../components/Nav";
-import Row from "../components/Row";
-import Col from "../components/Col";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import axios from "axios";
 import Wrapper from "../components/Wrapper/index";
 import Footer from "../components/Footer/index";
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from "react-bootstrap/Container";
 import logo from "../logo5.png";
 
 class Profile extends Component {
@@ -93,24 +95,31 @@ class Profile extends Component {
     return (
       <Fragment>
         <Nav />
-        <Wrapper>
-          {/* <div> */}
-          <Row>
-            <img src={logo} className="logo" alt="logo" width="200px" />
-            <h1 className="title">Your Creative Portfolio</h1>
+        <Jumbotron fluid>
+          <Row className="justify-content-md-center">
+            <Col>
+              <h1>
+                Profile
+              </h1>
+            </Col>
           </Row>
+        </Jumbotron>
 
-          {/* <Row>
-              <Col size="md-8">
-                <img src={Portfolio} className="portfolioimg" alt="portfolio" />
-              </Col>
-              <Col size="md-4">
-                <p>Here you can add to your portfolio to showcase your best work, projects, and social media accounts.</p>
-              </Col>
-            </Row> */}
+
+        <Wrapper>
+
+{/* 
+          <Row>
+            <Col>
+              <img src={logo} className="logo" alt="logo" width="200px" />
+            </Col>
+            <Col>
+              <h1 className="title">Your Profile</h1>
+            </Col>
+          </Row> */}
 
           <Row>
-            <Col size="md-12">
+            <Col>
               <p className="subtitle">Upload images of your work.</p>
               {/* <div className="picupload">
                   <input type="file" onChange={this.fileSelectedHandler} />
