@@ -1,0 +1,11 @@
+.login {
+  align-content: center;
+  text-align: center;
+}
+.loginform {
+  margin-bottom: 10px;
+}
+.loginsubmit {
+  width: 90px;
+  margin-bottom: 10px;
+}
