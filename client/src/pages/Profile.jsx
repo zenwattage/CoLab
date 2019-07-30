@@ -6,8 +6,7 @@ import axios from "axios";
 import Wrapper from "../components/Wrapper/index";
 import Footer from "../components/Footer/index";
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from "react-bootstrap/Container";
-import logo from "../logo5.png";
+// import logo from "../logo5.png";
 
 class Profile extends Component {
   // State to store images of work
