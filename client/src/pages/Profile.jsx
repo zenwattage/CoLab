@@ -94,17 +94,6 @@ class Profile extends Component {
     return (
       <Fragment>
         <Nav />
-        <Jumbotron fluid>
-          <Row className="justify-content-md-center">
-            <Col>
-              <h1>
-                Profile
-              </h1>
-            </Col>
-          </Row>
-        </Jumbotron>
-
-
         <Wrapper>
 
 {/* 

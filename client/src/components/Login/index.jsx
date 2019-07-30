@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Red/irect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 import Button from "../Button/Button";
@@ -21,6 +21,8 @@ export default class Login extends Component {
   };
 
   handleLogin = event => {
+    // event.preventDefault()
+    console.log("inside handleLogin")
     this.setState({
       test: !this.state.test,
     })
@@ -28,29 +30,31 @@ export default class Login extends Component {
 
   handleSubmit = event => {
     // event.preventDefault();
-    const { email, password, firstName, lastName } = this.state;
+    const { email, password} = this.state;
+    console.log( { email, password });
     axios({
       url: "/authentication/signin",
       method: "POST",
       data: {
         email,
-        password,
-        firstName,
-        lastName
+        password
       }
     })
       .then(response => {
+        console.log(response)
         //set user 
         const isAuthenticated = response.data.isAuthenticated;
         window.localStorage.setItem('isAuthenticated', isAuthenticated);
-        this.props.history.push("/search");
-        console.log(response);
+        // this.props.history.push("/profile");
+        // console.log(this.props.history);
 
       })
       .catch(error => {
-        this.setState({
-          errorMessage: error.response.data.message
-        });
+        // this.setState({
+        //   errorMessage: error.response.data.message
+        // });
+        console.log(error);
+        
       });
   };
 
@@ -63,61 +67,41 @@ export default class Login extends Component {
 
 
   render() {
-    // const isAuthenticated = window.localStorage.getItem("isAuthenticated");
+    console.log(this.state.errorMessage);
+    
+    const isAuthenticated = window.localStorage.getItem("isAuthenticated");
 
-    // if (isAuthenticated) {
-    //   return <Redirect to="/profile" />;
-    // }
+    if (isAuthenticated) {
+      return <Redirect to="/profile" />;
+    }
     // JSX
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div>    
             <Button value="login" handleOnClick={this.handleLogin}>Log In</Button>
             
             <div className="login">
-            {this.state.test && 
-              <Form>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Email address</Form.Label>
-                  <Form.Control onChange={this.handleChange} type="email" placeholder="Enter email" />
-                </Form.Group>
-            </Form> }
-            {this.state.test && 
-              <Form>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control onChange={this.handleChange} type="password" placeholder="Enter password" />
-                </Form.Group>
-            </Form> }
-            {this.state.test && 
-              <Form>
-                <button className="loginsubmit" value="submit" handleOnClick={this.handleSubmit}>Submit</button>
-            </Form> }
-            
-
-
-                {/* <Form.Group controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
-                <Form.Group controlId="formBasicChecbox">
-                  <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                  Submit
-  </Button>
-              </Form> */}
-
-
-              {/* {this.state.test && <div className="loginform">Email: <input type="text" className="loginform" name="email" onChange={this.handleChange} /></div>}
-              {this.state.test && <div className="loginform">Password: <input type="password" className="loginform" name="password" onChange={this.handleChange} /></div>}
-              {this.state.test && <button className="loginsubmit" value="submit" handleOnClick={this.handleSubmit}>Submit</button>} */}
+              {this.state.test &&
+                <Form>
+                  <Form.Group controlId="formBasicEmail">
+                    <Form.Control onChange={this.handleChange} name="email" value={this.state.email} type="email" className="form-control-home" placeholder="Enter email" />
+                  </Form.Group>
+                </Form>}
+              {this.state.test &&
+                <Form>
+                  <Form.Group controlId="formBasicEmail">
+                    <Form.Control onChange={this.handleChange} name="password" value={this.state.password} type="password" className="form-control-home" placeholder="Enter password" />
+                  </Form.Group>
+                </Form>}
+              {this.state.test &&              
+                  <Button className="loginsubmit" handleOnClick={this.handleSubmit} value="submit">Log in</Button>
+              }
 
             </div>
           </div>
         </form>
-        <p>{this.state.errorMessage}</p>
+        {/* <p>{this.state.errorMessage}</p> */}
       </div>
     );
   }
