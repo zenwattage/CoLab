@@ -21,5 +21,3 @@ export default class ButtonHolder extends Component {
     )
   }
 }
-
-// {/* <Button isHide = {this.state.HideSub} value={this.props.question} enableChangeState>{this.props.question}</Button> */}

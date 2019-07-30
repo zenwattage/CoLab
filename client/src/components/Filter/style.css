@@ -5,3 +5,7 @@
 .show{
   display: inline;
 }
+
+.statement{
+  width:200px; 
+}

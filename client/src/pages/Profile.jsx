@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from "react";
 import Nav from "../components/Nav";
-import Row from "../components/Row";
-import Col from "../components/Col";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import axios from "axios";
 import Wrapper from "../components/Wrapper/index";
 import Footer from "../components/Footer/index";
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from "react-bootstrap/Container";
 import logo from "../logo5.png";
 
 class Profile extends Component {
@@ -54,8 +56,8 @@ class Profile extends Component {
     event.preventDefault();
 
     const { bio, instagram, linkedin, other } = this.state;
-    console.log({bio, instagram, linkedin, other});
-    
+    console.log({ bio, instagram, linkedin, other });
+
     axios({
       url: "/authentication/signup",
       method: "PUT",
@@ -93,37 +95,44 @@ class Profile extends Component {
     return (
       <Fragment>
         <Nav />
-        <Wrapper />
-        <div>
-            <Row>      
-                <img src={logo} className="logo" alt="logo" width="200px"/>  
-                <h1 className="title">Your Creative Portfolio</h1>
-            </Row>
+        <Jumbotron fluid>
+          <Row className="justify-content-md-center">
+            <Col>
+              <h1>
+                Profile
+              </h1>
+            </Col>
+          </Row>
+        </Jumbotron>
 
-            {/* <Row>
-              <Col size="md-8">
-                <img src={Portfolio} className="portfolioimg" alt="portfolio" />
-              </Col>
-              <Col size="md-4">
-                <p>Here you can add to your portfolio to showcase your best work, projects, and social media accounts.</p>
-              </Col>
-            </Row> */}
 
-            <Row>
-              <Col size="md-12">
-                <p className="subtitle">Upload images of your work.</p>
-                {/* <div className="picupload">
+        <Wrapper>
+
+{/* 
+          <Row>
+            <Col>
+              <img src={logo} className="logo" alt="logo" width="200px" />
+            </Col>
+            <Col>
+              <h1 className="title">Your Profile</h1>
+            </Col>
+          </Row> */}
+
+          <Row>
+            <Col>
+              <p className="subtitle">Upload images of your work.</p>
+              {/* <div className="picupload">
                   <input type="file" onChange={this.fileSelectedHandler} />
                   <Button className="button" onClick={this.fileUploadHandler}>Upload</Button>
                 </div> */}
-              </Col>
-            </Row>
+            </Col>
+          </Row>
 
-            <Row>
-              <Col size="md-12">
+          <Row>
+            <Col size="md-12">
               <form onSubmit={this.handleSubmit}>
-                  <p className="subtitle">Tell us about your self.</p>
-                  <div className="bioform"> Bio: 
+                <p className="subtitle">Tell us about your self.</p>
+                <div className="bioform"> Bio:
                     {/* <input
                     value={this.state.bio}
                     name="bio"
@@ -131,10 +140,10 @@ class Profile extends Component {
                     type="text"
                     placeholder="Insert bio here"
                   /> */}
-                  </div>
-                 
-                   <p className="subtitle"> Add social media links.</p>
-                   <div className="bioform">Instagram:
+                </div>
+
+                <p className="subtitle"> Add social media links.</p>
+                <div className="bioform">Instagram:
                    {/* <input
                     value={this.state.instagram}
                     name="instagram"
@@ -142,9 +151,9 @@ class Profile extends Component {
                     type="text"
                     placeholder="IG handle"
                   /> */}
-                   </div>
-                  
-                  <div className="bioform">LinkedIn: 
+                </div>
+
+                <div className="bioform">LinkedIn:
                   {/* <input
                     value={this.state.twitter}
                     name="linkedin"
@@ -152,9 +161,9 @@ class Profile extends Component {
                     type="text"
                     placeholder="Linkedin profile"
                   /> */}
-                  </div>
+                </div>
 
-                  <div className="bioform">Other: 
+                <div className="bioform">Other:
                   {/* <input
                     value={this.state.other}
                     name="other"
@@ -162,16 +171,15 @@ class Profile extends Component {
                     type="text"
                     placeholder="Other site"
                   /> */}
-                  </div>
+                </div>
 
-                  <br></br>
-                  <button onClick={this.handleFormSubmit}>Submit</button>
-                </form>
-              </Col>
-            </Row>
-
-          <Footer />
-        </div>
+                <br></br>
+                <button onClick={this.handleFormSubmit}>Submit</button>
+              </form>
+            </Col>
+          </Row>
+        </Wrapper>
+        <Footer />
       </Fragment>
     );
   }

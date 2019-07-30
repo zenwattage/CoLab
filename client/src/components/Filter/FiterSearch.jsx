@@ -20,7 +20,7 @@ export default class Filter extends Component {
         <p className = "statement">{this.props.statement}</p>
         {this.props.results.map(result => (
           <div>
-            <ButtonHolder name = {result.name} question = {result.question}/>
+            <ButtonHolder name = {result.name} question = {result.searchQuestion}/>
           </div>
         ))}
       </div>
