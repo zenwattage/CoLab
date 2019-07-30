@@ -23,14 +23,14 @@
        url('http://tangledindesign.com/codepen/fonts/Calluna-Regular-webfont.svg#CallunaRegular') format('svg');
   }
   body {
-  background: rgb(73, 73, 73);
-  color: rgb(5, 133, 22);
+  background: #373E3F;
+  color:white; 
   }
   .community {
     color: lightgray;
   }
   .creative {
-    color: rgb(2, 148, 51);
+    color:#5CB85C;
   }
   .container {
       width: 590px;
@@ -119,7 +119,9 @@
 
 .IMA {
   margin-bottom: 20px;
-  color: rgb(2, 148, 51);
+  font-size:23px;
+  color:#5CB85C;
+  font-weight: bold; 
 }
 
 .inputtitle {
@@ -149,7 +151,7 @@
 }
 
 .bioform {
-  color:rgb(2, 148, 51);
+  color:#5CB85C;
 }
 
 .submitbutton {
@@ -168,5 +170,13 @@
 
 .profession{
   display: inline-grid;
-  margin-right:50px; 
+}
+
+.signupinfo{
+  width:70%;  
+  margin:auto; 
+}
+
+.IntroLine{
+  margin-bottom:40px; 
 }
