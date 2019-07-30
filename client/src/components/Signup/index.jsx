@@ -90,7 +90,8 @@ export default class Signup extends Component {
           <div className="signuppage">
 
             <form onSubmit={this.handleSubmit}>
-              <p className="IMA">I AM A:</p>
+              <h3 className="IMA">I AM A:</h3>
+              <p className="pp">Tell us about your profession.</p>
               <div>
                 {this.state.professions.map(x => (
                   <Talent profession={x.profession} talents={x.talents}

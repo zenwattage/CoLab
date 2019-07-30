@@ -1,5 +1,24 @@
 .search{
+  margin-top: 0px;
   text-align: center;
+}
+
+.title1 {
+  font-family: 'lato', sans-serif;
+  color: white;
+  font-style: bold;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-size:50px;
+}
+
+.subTitle {
+  font-family: 'lato', sans-serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #5CB85C;
+  margin-bottom: 20px;
+
 }
 
 .searchButtons{
@@ -7,7 +26,8 @@
 }
 
 .subLine{
-  color:#5CB85C;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .center{
