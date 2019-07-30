@@ -1,6 +1,29 @@
 .login {
   align-content: center;
   text-align: center;
+  /* border: 2px white solid;
+  border-radius: 4px; */
+}
+#loginbutton {
+  width: 250px;
+  height: 40px;
+  background-color: green;
+  text-align: center;
+}
+#submitbutton {
+  width: 80px;
+  height: 30px;
+  margin-bottom: 20px;
+  font-size: 10px;
+}
+.form-control-home {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+.form-group {
+  text-align: center;
 }
 .loginform {
   margin-bottom: 10px;

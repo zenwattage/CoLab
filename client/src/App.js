@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // import Login from '../src/components/Login/index';
 import Signup from '../src/components/Signup/index';
@@ -12,21 +12,21 @@ import Profile from "../src/pages/Profile";
 export default class App extends Component {
 
 
-    render() {
-      // JSX
-      return (
-        <Router>
-          <Switch>
+  render() {
+    // JSX
+    return (
+      <Router>
+        <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
           <Route path="/signup" component={Signup} />
           <Route path="/search" component={Search} />
           <Route path="/profile" component={Profile} />
           {/* <Route path="/login" component={Login} /> */}
-          <Route path="*" component={NotFound}/>
-          </Switch>
-        </Router>
-          
-      );
-    }
+          <Route path="*" component={NotFound} />
+        </Switch>
+      </Router>
+
+    );
+  }
 }
