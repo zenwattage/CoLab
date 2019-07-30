@@ -15,6 +15,11 @@ class SearchArtist extends Component {
     search: "",
     professions,
     results: [],
+    firstName: [],
+    imageUrl: [],
+    bio: [],
+    instagram: [],
+    other: [],
     error: ""
   }
 
@@ -57,10 +62,13 @@ class SearchArtist extends Component {
                 statement={x.searchStatement} className={this.state.className} />
           ))}
         </div>
+
         <div className = "center">
-        <button className="submitbutton">Submit</button>
+          <button className="submitbutton" onclick={()=>this.handleFormSubmit()}>Submit</button>
         </div>
+
         <SearchResults results={this.state.results} />
+
         <Footer />
       </Fragment>
     );

@@ -2,6 +2,9 @@ import React, { Fragment } from 'react';
 import "./style.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import ResultsCard from "../ResultsCard/index";
+
+// THIS IS THE COMPONENT WHERE THE SEARCH FUNCTION IS RAN
 
 function SearchResults(props) {
   return (
@@ -12,15 +15,15 @@ function SearchResults(props) {
           <h1 className="title">Here are your creative matches.</h1>
         </Col>
       </Row>
-{/* 
-      <ul className="list-group search-results">
-        {props.results.map(result => (
-          <li key={result} className="list-group-item">
-            <img alt="Dog" src={result} className="img-fluid" />
-          </li>
-      )
-      )}
-      </ul> */}
+
+      {/* This will be inserted into axios call forloop */}
+      <ResultsCard
+        imageUrl=""
+        firstName=""
+        bio=""
+        instagram=""
+        other=""
+      />
 
     </Fragment>
   );
