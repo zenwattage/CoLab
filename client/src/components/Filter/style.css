@@ -1,15 +1,11 @@
-.still{
-  display:block;
-};
-
-.active{
-  display: block; 
-}
-
 .hide{
   display:none;
 }
 
 .show{
   display: inline;
+}
+
+.statement{
+  width:200px; 
 }

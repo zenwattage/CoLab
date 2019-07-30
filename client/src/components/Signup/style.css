@@ -111,6 +111,7 @@
 .signupbutton {
   margin-right: 10px;
 }
+
 .signuppage {
   font-family: 'Lato', sans-serif;
   text-align: center;
@@ -121,7 +122,6 @@
   color: rgb(2, 148, 51);
 }
 
-
 .inputtitle {
   color: rgb(2, 148, 51);
 }
@@ -129,6 +129,10 @@
 .personalinput {
   margin-bottom: 10px;
   margin-left: 10px;
+}
+
+.personalinfo {
+  text-align: center;
 }
 
 .bio {
@@ -155,17 +159,14 @@
   padding: 10px;
   width: 160px;
   font-family: 'Lato', sans-serif;
-
   text-align: center;
 } 
 
-.personalinput {
-  margin-bottom: 10px;
-  margin-left: 10px;
+#profession button{
+  text-align:center; 
 }
 
-.bio {
-  text-align: left;
-  margin-left: 170px;
-  margin-bottom: 0px;
+.profession{
+  display: inline-grid;
+  margin-right:50px; 
 }

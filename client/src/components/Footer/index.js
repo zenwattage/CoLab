@@ -1,11 +1,12 @@
 import React from "react";
+import Navbar from 'react-bootstrap/Navbar';
 import "./style.css";
 
 function Footer() {
   return (
-    <footer className="footer">
-      <span>CoLab 2019</span>
-    </footer>
+    <Navbar className="footer" fixed="sticky" bg="light">
+      <Navbar.Brand className="footer2">© CoLab: 2019</Navbar.Brand>
+    </Navbar>
   );
 }
 

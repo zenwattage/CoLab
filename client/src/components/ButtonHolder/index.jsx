@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button';
+import Question from "../Question/Question";
+import "./style.css";
 
 export default class ButtonHolder extends Component {
   state = {
@@ -12,11 +14,10 @@ export default class ButtonHolder extends Component {
 
   render() {
     return (
-      <div>
+      <div className = "ButtonHolder">
         <Button value={this.props.name} enableChangeState handleOnClick={this.renderSubQuestion} >{this.props.name}</Button>
-        <Button isHide = {this.state.HideSub} value={this.props.question} enableChangeState>{this.props.question}</Button>
+        <Question isHide={this.state.HideSub} question = {this.props.question}/>      
       </div>
     )
-
   }
 }
