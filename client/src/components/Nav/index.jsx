@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css"; 
 // import Navbar from 'react-bootstrap/Navbar';
 
 // function Nav() {
@@ -19,7 +20,7 @@ import React from "react";
 function Nav() {
   return (
     <nav className="navbar">
-      <a className="navbar-brand-name" href="/">
+      <a className="navbar-brand" href="/">
         CoLab
       </a>
       <a className="navbar-brand" href="/signup">

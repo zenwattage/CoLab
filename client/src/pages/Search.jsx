@@ -37,15 +37,6 @@ class SearchArtist extends Component {
     return (
       <Fragment>
         <Nav />
-        <Jumbotron fluid>
-          <Row className="justify-content-md-center">
-            <Col>
-              <h1>
-                Search
-              </h1>
-            </Col>
-          </Row>
-        </Jumbotron>
         <Wrapper />
 
         <Row className = "search"> 

@@ -3,21 +3,18 @@ nav.navbar.navbar-default {
 }
 
 .navbar {
-  background-color: white;
+  background-color:white;
   height: 50px;
 }
 
 .navbar-brand {
   text-decoration: none;
   /* float: right; */
-  color: black;
+  color: #373E3F;
   /* margin-right: 10px; */
   font-family: 'Lato', sans-serif;
 }
 
-.navbar-brand-name {
-  text-decoration: none;
-  color: black;
-  font-size: 25px;
-  font-family: 'Lato', sans-serif;
+.navbar-brand:hover{
+  color:#373E3F; 
 }

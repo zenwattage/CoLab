@@ -88,10 +88,9 @@ export default class Signup extends Component {
           </article>
 
           <div className="signuppage">
-            <p>Please fill out the registration form to sign-up.</p>
 
             <form onSubmit={this.handleSubmit}>
-              <p className="IMA">I am a:</p>
+              <p className="IMA">I AM A:</p>
               <div>
                 {this.state.professions.map(x => (
                   <Talent profession={x.profession} talents={x.talents}
@@ -105,7 +104,7 @@ export default class Signup extends Component {
             {/* Personal info */}
             <div className="signupinfo">
               <Row className="justify-content-md-center">
-                <h4>Create your account here.</h4>
+                <h4 className = "IntroLine">Create your account here.</h4>
               </Row>
 
               <Form onSubmit={this.handleSubmit}>
@@ -172,7 +171,7 @@ export default class Signup extends Component {
                     <Form.Control value={this.state.other} name="other" onChange={this.handleChange} placeholder="Anything else?" />
                   </Form.Group>
                 </Form.Row>
-
+                <br/>
                 <button className="submitbutton">Submit</button>
 
               </Form>

@@ -6,6 +6,7 @@ import Button from "../Button/Button";
 import Form from "react-bootstrap/Form";
 
 export default class Login extends Component {
+  
   state = {
     test: false,
     email: "",
@@ -64,6 +65,7 @@ export default class Login extends Component {
     });
   };
 
+
   render() {
     console.log(this.state.errorMessage);
     
@@ -78,6 +80,7 @@ export default class Login extends Component {
         <form onSubmit={this.handleSubmit}>
           <div>    
             <Button value="login" handleOnClick={this.handleLogin}>Log In</Button>
+            
             <div className="login">
               {this.state.test &&
                 <Form>

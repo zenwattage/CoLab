@@ -7,7 +7,7 @@ const PortraitSchema = new Schema ({
         camera: Boolean
     },
     images: Array,
-    videos: Arrayt,
+    videos: Array,
 })
 
 const Portrait = mongoose.model('Portrait', PortraitSchema);
