@@ -132,13 +132,11 @@ class Profile extends Component {
             <button className="submitbutton">Submit</button>
 
           </Form>
-            </div>
+        </div>
 
-
-
-        </Wrapper>
+      </Wrapper>
       <Footer />
-      </Fragment >
+    </Fragment >
     );
   }
 };

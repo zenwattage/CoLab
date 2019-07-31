@@ -32,4 +32,16 @@ button{
   cursor: pointer;
 }
 
+@media only screen and (max-width: 420px) {
+  button{
+    font-size: 15px;
+    border-radius: 2px;
+    padding: 10px;
+    width: 150px;
+    font-family: 'Lato', sans-serif;
+    align-content: center;
+    text-align:center; 
+  }
+}
+
 

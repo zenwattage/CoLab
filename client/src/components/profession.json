@@ -16,7 +16,7 @@
       {"name":"Portrait","question":"I can freestyle","searchQuestion":"Looking for a ...?"}, 
       {"name":"Street","question":"I can freestyle","searchQuestion":"Looking for a ...?"}, 
       {"name":"Motion","question":"I can freestyle","searchQuestion":"Looking for a ...?"}],
-      "statement": "I photograph this style best:",
+      "statement": "I photograph this style(s) best:",
       "searchStatement":"The photographer I'm looking for is:"
   }
 ]

@@ -1,3 +1,4 @@
+/* SEARCH PAGE */
 .search{
   margin-top: 0px;
   text-align: center;
@@ -41,4 +42,15 @@
 /* HOME PAGE */
 .homepage {
   text-align: center;
+  margin: 0 auto;
+  align-content: center;
+  align-items: center;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 420px) {
+  .logoimg {
+    width: 250px;
+    height: auto;
+  }
 }
