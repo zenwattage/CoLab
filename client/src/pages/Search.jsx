@@ -3,7 +3,6 @@ import Nav from "../components/Nav/index";
 import Wrapper from "../components/Wrapper/index";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Jumbotron from "react-bootstrap/Jumbotron";
 import Footer from "../components/Footer/index";
 import SearchResults from "../components/SearchResults/index";
 import professions from "../components/profession.json";
@@ -37,11 +36,11 @@ class SearchArtist extends Component {
     return (
       <Fragment>
         <Nav />
-        <Wrapper />
+        <Wrapper>
 
         <Row className = "search"> 
           <Col size="md-12">
-            <h1 className="title">Search for an artist here.</h1>
+            <h1 className="title1">Find your CoLab match.</h1>
             <p className="subTitle"> Any artists matching your criteria will appear after the search is complete.</p>
             <p className = "subLine">I'm looking for a:</p>
           </Col>
@@ -59,7 +58,7 @@ class SearchArtist extends Component {
         </div>
 
         <SearchResults results={this.state.results} />
-
+        </Wrapper>
         <Footer />
       </Fragment>
     );

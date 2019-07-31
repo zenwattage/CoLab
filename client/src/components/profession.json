@@ -1,22 +1,22 @@
 [
   {
-    "profession":"dancer",
+    "profession":"Dancer",
     "talents":[
       {"name":"Hip-hop","question":"Can you freestyle?","searchQuestion":"Looking for a freestyler?"}, 
       {"name":"Ballet","question":"Can you dance en pointe?","searchQuestion":"Looking for a pointe dancer?"}, 
-      {"name":"Contemporary","question":"Can you freestyle?","searchQuestion":"Looking for a freestyler?"}, 
+      {"name":"Contemporary","question":"Can you improv?","searchQuestion":"Looking for an improver?"}, 
       {"name":"Latin","question":"Can you freestyle?","searchQuestion":"Looking for a freestyler?"}],
-      "statement": "Here's the dance I'm good at:",
-      "searchStatement":"Here's the dancer I'm looking for:"
+      "statement": "My best dance style(s) are:",
+      "searchStatement":"The dancer I'm looking for is:"
   },
   {
-    "profession":"photographer",
+    "profession":"Photographer",
     "talents":[
       {"name":"Landscape","question":"I can freestyle","searchQuestion":"Looking for a ...?"}, 
       {"name":"Portrait","question":"I can freestyle","searchQuestion":"Looking for a ...?"}, 
       {"name":"Street","question":"I can freestyle","searchQuestion":"Looking for a ...?"}, 
       {"name":"Motion","question":"I can freestyle","searchQuestion":"Looking for a ...?"}],
-      "statement": "Here's the photography I'm good at:",
-      "searchStatement":"Here's the photographer I'm looking for:"
+      "statement": "I photograph this style best:",
+      "searchStatement":"The photographer I'm looking for is:"
   }
 ]
