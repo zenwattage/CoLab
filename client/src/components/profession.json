@@ -2,12 +2,11 @@
   {
     "profession":"Dancer",
     "talents":[
-      {"name":"Hip-hop","question":"Can you freestyle?","searchQuestion":"Looking for a freestyler?"}, 
-      {"name":"Ballet","question":"Can you dance en pointe?","searchQuestion":"Looking for a pointe dancer?"}, 
-      {"name":"Contemporary","question":"Can you improv?","searchQuestion":"Looking for an improver?"}, 
-      {"name":"Latin","question":"Can you freestyle?","searchQuestion":"Looking for a freestyler?"}],
-      "statement": "My best dance style(s) are:",
-      "searchStatement":"The dancer I'm looking for is:"
+      {"name":"Hip-hop","question":"Can you freestyle?"}, 
+      {"name":"Ballet","question":"Can you dance en pointe?"}, 
+      {"name":"Contemporary","question":"Can you improv?"}, 
+      {"name":"Latin","question":"Can you freestyle?"}],
+      "statement": "My best dance style(s) are:"
   },
   {
     "profession":"Photographer",
