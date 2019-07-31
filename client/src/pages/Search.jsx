@@ -5,8 +5,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Footer from "../components/Footer/index";
 import SearchResults from "../components/SearchResults/index";
-import professions from "../components/profession.json";
-import TalentSearch from '../components/Talent/TalentSearch';
+import professions from "../components/search.json";
+import Talent from '../components/Talent/index';
 import "./style.css"; 
 
 class SearchArtist extends Component {
@@ -48,8 +48,8 @@ class SearchArtist extends Component {
 
         <div className = "searchButtons">
           {this.state.professions.map(x => (
-              <TalentSearch profession={x.profession} talents={x.talents}
-                statement={x.searchStatement} className={this.state.className} />
+              <Talent profession={x.profession} talents={x.talents}
+                statement={x.statement} className={this.state.className} />
           ))}
         </div>
 
