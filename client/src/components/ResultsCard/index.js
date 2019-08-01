@@ -5,25 +5,25 @@ function ResultsCard(props) {
   return (
     <div className="card">
       <div className="img-container">
-        <img alt={props.name} src={props.image} />
+        <img alt={props.firstName} src={props.imageUrl} />
       </div>
       <div className="content">
         <ul>
           <li>
-            <strong>Name:</strong> {props.name}
+            <strong>Name:</strong> {props.firstName}
             {/* {results.state.firstName} */}
           </li>
           <li>
-            <strong>Bio:</strong> {props.occupation}
+            <strong>Bio:</strong> {props.bio}
             {/* {results.state.bio} */}
           </li>
           <li>
-            <strong>Instagram:</strong> {props.location}
+            <strong>Instagram:</strong> {props.instagram}
             {/* {results.state.instagram} */}
 
           </li>
           <li>
-            <strong>Other:</strong> {props.name}
+            <strong>Other:</strong> {props.other}
             {/* {results.state.other} */}
           </li>
         </ul>
