@@ -2,19 +2,19 @@
   {
     "profession":"Dancer",
     "talents":[
-      {"name":"Hip-hop","question":"Looking for a freestyler?"}, 
-      {"name":"Ballet","question":"Looking for a pointe dancer?"}, 
-      {"name":"Contemporary","question":"Looking for an improver?"}, 
-      {"name":"Latin","question":"Looking for a freestyler?"}],
+      {"name":"Hip-hop"}, 
+      {"name":"Ballet"}, 
+      {"name":"Contemporary"}, 
+      {"name":"Latin"}],
       "statement": "The dancer I'm looking for is:"
   },
   {
     "profession":"Photographer",
     "talents":[
-      {"name":"Landscape","question":"Looking for a ...?"}, 
-      {"name":"Portrait","question":"Looking for a ...?"}, 
-      {"name":"Street","question":"Looking for a ...?"}, 
-      {"name":"Motion","question":"Looking for a ...?"}],
+      {"name":"Landscape"}, 
+      {"name":"Portrait"}, 
+      {"name":"Street"}, 
+      {"name":"Motion"}],
       "statement":"The photographer I'm looking for is:"
   }
 ]
