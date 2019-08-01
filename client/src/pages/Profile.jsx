@@ -66,6 +66,20 @@ class Profile extends Component {
     })
   };
 
+
+  //logout function
+  logout = () => {
+    axios
+    .get("/authentication/logout")
+    .then(
+      data => {
+        console.log(data);
+      }
+    ).catch(error => {
+      console.log(error);
+      //TODO: push user out
+    })
+  }
   render() {
     return (
       <Fragment>
@@ -78,6 +92,8 @@ class Profile extends Component {
           </Row>
 
           <div>
+
+            <button onClick={this.logout}>Logoutplaceholderbutton</button>
             <Form onSubmit={this.handleSubmit}>
               <div className="personalinfo">
                 <h3 className="personalinfotitle">Personal Info</h3>
