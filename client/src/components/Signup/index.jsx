@@ -11,7 +11,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from "react-bootstrap/Form";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip'
+import Tooltip from 'react-bootstrap/Tooltip';
+import payload from "../signupPayload.json";
 
 
 export default class Signup extends Component {
@@ -28,13 +29,31 @@ export default class Signup extends Component {
     instagram: "",
     linkedin: "",
     other: "",
+    payload
   }
+
+  convert = (payload, professions) =>{
+    const proArray = [];
+    for (var i =0; i<payload.length;i++){
+      if (payload[i].pro){
+        const pro = {"profession": professions[i].profession, "talents":[]};
+        for (var j=0; j<payload[i].talents.length;j++){
+          if (payload[i].talents[j].talent){
+            pro.talents.push(professions[i].talents[j].name)
+          }
+        }
+        proArray.push(pro); 
+      }
+    }
+    return(proArray); 
+  };
 
   handleSubmit = event => {
     event.preventDefault();
 
     const { email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other } = this.state;
-    console.log({ email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other });
+    const buttons = this.convert(this.state.payload, this.state.professions); 
+    console.log({ email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other, buttons });
 
     axios({
       url: "/authentication/signup",
@@ -48,7 +67,8 @@ export default class Signup extends Component {
         bio,
         instagram,
         linkedin,
-        other
+        other,
+        buttons
       }
     })
       .then((response) => {
@@ -68,6 +88,33 @@ export default class Signup extends Component {
     this.setState({
       [name]: value
     });
+  };
+
+  // clickPro function is to detect if the user has clicked on a profession -- if yes, set isAdded to true; else to false.
+  // bc the isAdded is passed in with css state (i.e. "still" OR "active") so clicks on it twice, it will be set to true again.
+  clickPro = (proName, isAdded) => {
+    for (var i = 0; i < this.state.professions.length; i++) {
+      if (this.state.professions[i].profession === proName) {
+        const temp = this.state.payload;
+        temp[i].pro = isAdded;
+        this.setState({ payload: temp })
+      }
+    }
+  };
+
+  // clickTalent function is to detect if the user has clicked on talents -- if yes, set talents' isAdded to true; else to false.
+  clickTalent = (proName, talent, isAdded) => {
+    for (var i = 0; i < this.state.professions.length; i++) {
+      if (this.state.professions[i].profession === proName) {
+        for (var j = 0; j < this.state.professions[i].talents.length; j++) {
+          if (this.state.professions[i].talents[j].name === talent) {
+            const temp = this.state.payload;
+            temp[i].talents[j].talent = isAdded;
+            this.setState({ payload: temp })
+          }
+        }
+      }
+    }
   };
 
   render() {
@@ -94,7 +141,8 @@ export default class Signup extends Component {
               <p className="pp">Tell us about your profession.</p>
               <div>
                 {this.state.professions.map(x => (
-                  <Talent profession={x.profession} talents={x.talents}
+                  <Talent key = {x.profession} profession={x.profession} talents={x.talents}
+                    handleOnClick={this.clickPro} handleClickTalent = {this.clickTalent}
                     statement={x.statement} className={this.state.className} />
                 ))}
               </div>
@@ -105,7 +153,7 @@ export default class Signup extends Component {
             {/* Personal info */}
             <div className="signupinfo">
               <Row className="justify-content-md-center">
-                <h4 className = "IntroLine">Create your account here.</h4>
+                <h4 className="IntroLine">Create your account here.</h4>
               </Row>
 
               <Form onSubmit={this.handleSubmit}>
@@ -140,7 +188,7 @@ export default class Signup extends Component {
 
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridAddress2">
-                  <Form.Label>Profile image</Form.Label>
+                    <Form.Label>Profile image</Form.Label>
                     <OverlayTrigger
                       key="right"
                       placement="right"
@@ -153,7 +201,7 @@ export default class Signup extends Component {
                       <Form.Control value={this.state.imageUrl} name="imageUrl" onChange={this.handleChange} />
                     </OverlayTrigger>
 
-                    
+
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridAddress2">
@@ -172,14 +220,14 @@ export default class Signup extends Component {
                     <Form.Control value={this.state.other} name="other" onChange={this.handleChange} placeholder="Anything else?" />
                   </Form.Group>
                 </Form.Row>
-                <br/>
-                <button className="submitbutton">Submit</button>
+                <br />
+                <button className="submitbutton" onClick = {this.handleSubmit}>Submit</button>
 
               </Form>
             </div>
 
             <p>{this.state.errorMessage}</p>
-            {console.log(this.state.errorMessage)}
+            {/* {console.log(this.state.errorMessage)} */}
           </div>
         </Wrapper>
         <Footer />
