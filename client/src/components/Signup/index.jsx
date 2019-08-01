@@ -128,64 +128,80 @@ export default class Signup extends Component {
       <Fragment>
         <Nav />
         <Wrapper>
-          <article className="container">
-            <blockquote>
-              <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
-            </blockquote>
-          </article>
+          <Row>
+            <Col>
+              <article className="container">
+                <blockquote>
+                  <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
+                </blockquote>
+              </article>
+            </Col>
+          </Row>
 
           <div className="signuppage">
-
-            <form onSubmit={this.handleSubmit}>
-              <h3 className="IMA">I AM A:</h3>
-              <p className="pp">Tell us about your profession.</p>
-              <div>
-                {this.state.professions.map(x => (
+            <div className="professionform">
+              <form onSubmit={this.handleSubmit}>
+                <Row>
+                  <Col>
+                    <h3 className="IMA">I AM A:</h3>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <p className="pp">Tell us about your profession.</p>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <div>
+                    {this.state.professions.map(x => (
                   <Talent key = {x.profession} profession={x.profession} talents={x.talents}
                     handleOnClick={this.clickPro} handleClickTalent = {this.clickTalent}
                     statement={x.statement} className={this.state.className} />
                 ))}
-              </div>
-            </form>
+                    </div>
+                  </Col>
+                </Row>
+              </form>
+            </div>
 
             <hr />
 
             {/* Personal info */}
             <div className="signupinfo">
               <Row className="justify-content-md-center">
-                <h4 className="IntroLine">Create your account here.</h4>
+                <Col>
+                  <h4 className="IntroLine">Create your account here.</h4>
+                </Col>
               </Row>
 
               <Form onSubmit={this.handleSubmit}>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>First name</Form.Label>
-                    <Form.Control value={this.state.firstName} name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" />
+                    <Form.Control value={this.state.firstName} size="sm" name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" />
                   </Form.Group>
-
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Last name</Form.Label>
-                    <Form.Control value={this.state.lastName} name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" />
+                    <Form.Control value={this.state.lastName} size="sm" name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" />
                   </Form.Group>
                 </Form.Row>
-
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control value={this.state.email} name="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
+                    <Form.Control value={this.state.email} size="sm" name="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
                   </Form.Group>
-
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control value={this.state.password} name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
+                    <Form.Control value={this.state.password} size="sm" name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
                   </Form.Group>
                 </Form.Row>
-
+                {/* <Form.Row> */}
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                   <Form.Label>Bio</Form.Label>
-                  <Form.Control value={this.state.bio} name="bio" onChange={this.handleChange} type="text" as="textarea" rows="6" placeholder="Tell us something interesting..." />
+                  <Form.Control value={this.state.bio} size="sm" name="bio" onChange={this.handleChange} type="text" as="textarea" rows="6" placeholder="Tell us something interesting..." />
                 </Form.Group>
-
+                {/* </Form.Row> */}
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridAddress2">
                     <Form.Label>Profile image</Form.Label>
@@ -198,36 +214,29 @@ export default class Signup extends Component {
                         </Tooltip>
                       }
                     >
-                      <Form.Control value={this.state.imageUrl} name="imageUrl" onChange={this.handleChange} />
-                    </OverlayTrigger>
-
-
-                  </Form.Group>
-
+                      <Form.Control size="sm" value={this.state.imageUrl} name="imageUrl" onChange={this.handleChange} />
+                    </OverlayTrigger>                 
+                    </Form.Group>
                   <Form.Group as={Col} controlId="formGridAddress2">
                     <Form.Label>LinkedIn</Form.Label>
-                    <Form.Control value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
+                    <Form.Control size="sm" value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
                   </Form.Group>
                 </Form.Row>
-
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridAddress2">
                     <Form.Label>Instagram</Form.Label>
-                    <Form.Control value={this.state.instagram} name="instagram" onChange={this.handleChange} />
+                    <Form.Control size="sm" value={this.state.instagram} name="instagram" onChange={this.handleChange} />
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridAddress2">
                     <Form.Label>Other</Form.Label>
-                    <Form.Control value={this.state.other} name="other" onChange={this.handleChange} placeholder="Anything else?" />
+                    <Form.Control value={this.state.other} size="sm" name="other" onChange={this.handleChange} placeholder="Anything else?" />
                   </Form.Group>
                 </Form.Row>
                 <br />
                 <button className="submitbutton" onClick = {this.handleSubmit}>Submit</button>
-
               </Form>
             </div>
-
             <p>{this.state.errorMessage}</p>
-            {/* {console.log(this.state.errorMessage)} */}
           </div>
         </Wrapper>
         <Footer />

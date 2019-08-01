@@ -20,7 +20,7 @@ export default class Login extends Component {
     profession: ""
   };
 
-  handleLogin = event => {
+  handleShowLoginForms = event => {
     // event.preventDefault()
     console.log("inside handleLogin")
     this.setState({
@@ -45,7 +45,7 @@ export default class Login extends Component {
         //set user 
         const isAuthenticated = response.data.isAuthenticated;
         window.localStorage.setItem('isAuthenticated', isAuthenticated);
-        // this.props.history.push("/profile");
+        this.props.history.push("/profile");
         // console.log(this.props.history);
 
       })
@@ -79,7 +79,7 @@ export default class Login extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>    
-            <Button value="login" handleOnClick={this.handleLogin}>Log In</Button>
+            <Button value="login" handleOnClick={this.handleShowLoginForms}>Log In</Button>
             
             <div className="login">
               {this.state.test &&
@@ -95,9 +95,8 @@ export default class Login extends Component {
                   </Form.Group>
                 </Form>}
               {this.state.test &&              
-                  <Button className="loginsubmit" handleOnClick={this.handleSubmit} value="submit">Log in</Button>
+                  <Button className="loginsubmit" handleOnClick={this.handleSubmit} value="submit">Submit</Button>
               }
-
             </div>
           </div>
         </form>
