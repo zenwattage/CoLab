@@ -7,45 +7,20 @@ function ResultsCard(props) {
   return (
     <div className="card">
       <div className="img-container">
+          <strong className="cardname">Name:</strong> {props.firstName}
         <img alt={props.firstName} src={props.imageUrl} />
       </div>
       <div className="content">
         <ul>
           <li>
-            <strong>Name:</strong> {props.firstName}
-            {/* {results.state.firstName} */}
-          </li>
-          <li>
-            <strong>Bio:</strong> {props.bio}
-            {/* {results.state.bio} */}
-          </li>
-          <li>
-            <strong>Instagram:</strong> {props.instagram}
-            {/* {results.state.instagram} */}
-
-          </li>
-          <li>
-            <strong>Other:</strong> {props.other}
-            {/* {results.state.other} */}
+            <p>Bio:</p> {props.bio}
           </li>
           <Row>
             <Col>
-              <li>
-                <p className="cardtitle">IG:</p>
-                {/* PASS IN RESULTS FROM SEARCH HERE */}
-              </li>
+            <p>Instagram:</p> {props.instagram}
             </Col>
+            <p>Other:</p> {props.other}
             <Col>
-              <li>
-                <p className="cardtitle">LI:</p>
-                {/* PASS IN RESULTS FROM SEARCH HERE */}
-              </li>
-            </Col>
-            <Col>
-              <li>
-                <p className="cardtitle">Other:</p>
-                {/* PASS IN RESULTS FROM SEARCH HERE */}
-              </li>
             </Col>
           </Row>
         </ul>
