@@ -3,11 +3,10 @@ import Nav from "../components/Nav/index";
 import Wrapper from "../components/Wrapper/index";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Jumbotron from "react-bootstrap/Jumbotron";
 import Footer from "../components/Footer/index";
 import SearchResults from "../components/SearchResults/index";
-import professions from "../components/profession.json";
-import TalentSearch from '../components/Talent/TalentSearch';
+import professions from "../components/search.json";
+import Talent from '../components/Talent/index';
 import "./style.css"; 
 
 class SearchArtist extends Component {
@@ -37,20 +36,11 @@ class SearchArtist extends Component {
     return (
       <Fragment>
         <Nav />
-        <Jumbotron fluid>
-          <Row className="justify-content-md-center">
-            <Col>
-              <h1>
-                Search
-              </h1>
-            </Col>
-          </Row>
-        </Jumbotron>
-        <Wrapper />
+        <Wrapper>
 
         <Row className = "search"> 
           <Col size="md-12">
-            <h1 className="title">Search for an artist here.</h1>
+            <h1 className="title1">Find your CoLab match.</h1>
             <p className="subTitle"> Any artists matching your criteria will appear after the search is complete.</p>
             <p className = "subLine">I'm looking for a:</p>
           </Col>
@@ -58,8 +48,8 @@ class SearchArtist extends Component {
 
         <div className = "searchButtons">
           {this.state.professions.map(x => (
-              <TalentSearch profession={x.profession} talents={x.talents}
-                statement={x.searchStatement} className={this.state.className} />
+              <Talent profession={x.profession} talents={x.talents}
+                statement={x.statement} className={this.state.className} />
           ))}
         </div>
 
@@ -68,7 +58,7 @@ class SearchArtist extends Component {
         </div>
 
         <SearchResults results={this.state.results} />
-
+        </Wrapper>
         <Footer />
       </Fragment>
     );

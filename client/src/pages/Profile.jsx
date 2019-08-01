@@ -5,62 +5,34 @@ import Row from 'react-bootstrap/Row';
 import axios from "axios";
 import Wrapper from "../components/Wrapper/index";
 import Footer from "../components/Footer/index";
-import Jumbotron from 'react-bootstrap/Jumbotron';
-// import logo from "../logo5.png";
+import Form from "react-bootstrap/Form";
 
 class Profile extends Component {
   // State to store images of work
   state = {
     // selectedFile: null,
+    firstName: "",
+    lastName: "",
     bio: "",
     instagram: "",
     linkedin: "",
     other: ""
   }
 
-  // ALL IMAGE UPLOAD HANDLERS /////////////////////////////////////////////////////////////////////
-  // Set state to the file uploaded
-  // fileSelectedHandler = event => {
-  //   this.setState({
-  //     selectedFile: event.target.files[0]
-  //   })
-  // };
-
-  // // Upload image to our own database/api
-  // fileUploadHandler = () => {
-  //   const fd = new FormData();
-  //   fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
-  //   axios.post('', fd, {
-  //     onUploadProgress: progressEvent => {
-  //       console.log("Upload progress " + Math.round((progressEvent.loaded / progressEvent.total) * 100) + "%");
-  //     }
-  //   })
-  //     .then(res => {
-  //       console.log(res);
-  //     })
-  // }
-
-  // ALL BIO HANDLERS ////////////////////////////////////////////////////////////////////
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {value: ''};
-
-  //   this.handleChange = this.handleChange.bind(this);
-  //   this.handleSubmit = this.handleSubmit.bind(this);
-  // }
-
   // THIS HAPPENS AFTER FORM IS SUBMITTED
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
 
-    const { bio, instagram, linkedin, other } = this.state;
-    console.log({ bio, instagram, linkedin, other });
+    const { firstName, lastName, bio, instagram, linkedin, other } = this.state;
+    console.log({ firstName, lastName, bio, instagram, linkedin, other });
 
     axios({
       url: "/authentication/signup",
       method: "PUT",
       data: {
+        firstName,
+        lastName,
         bio,
         instagram,
         linkedin,
@@ -69,6 +41,8 @@ class Profile extends Component {
     })
       .then((response) => {
         this.setState({
+          firstName: "",
+          lastName: "",
           bio: "",
           instagram: "",
           linkedin: "",
@@ -94,92 +68,77 @@ class Profile extends Component {
     return (
       <Fragment>
         <Nav />
-        <Jumbotron fluid>
-          <Row className="justify-content-md-center">
-            <Col>
-              <h1>
-                Profile
-              </h1>
-            </Col>
-          </Row>
-        </Jumbotron>
-
-
         <Wrapper>
-
-{/* 
           <Row>
             <Col>
-              <img src={logo} className="logo" alt="logo" width="200px" />
-            </Col>
-            <Col>
-              <h1 className="title">Your Profile</h1>
-            </Col>
-          </Row> */}
-
-          <Row>
-            <Col>
-              <p className="subtitle">Upload images of your work.</p>
-              {/* <div className="picupload">
-                  <input type="file" onChange={this.fileSelectedHandler} />
-                  <Button className="button" onClick={this.fileUploadHandler}>Upload</Button>
-                </div> */}
+              <h1>Welcome, {this.state.firstName}</h1>
             </Col>
           </Row>
 
-          <Row>
-            <Col size="md-12">
-              <form onSubmit={this.handleSubmit}>
-                <p className="subtitle">Tell us about your self.</p>
-                <div className="bioform"> Bio:
-                    {/* <input
-                    value={this.state.bio}
-                    name="bio"
-                    onChange={this.handleInputChange}
-                    type="text"
-                    placeholder="Insert bio here"
-                  /> */}
-                </div>
+        <div>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Label>First name</Form.Label>
+                <Form.Control value={this.state.firstName} name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" />
+              </Form.Group>
 
-                <p className="subtitle"> Add social media links.</p>
-                <div className="bioform">Instagram:
-                   {/* <input
-                    value={this.state.instagram}
-                    name="instagram"
-                    onChange={this.handleInputChange}
-                    type="text"
-                    placeholder="IG handle"
-                  /> */}
-                </div>
+              <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Label>Last name</Form.Label>
+                <Form.Control value={this.state.lastName} name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" />
+              </Form.Group>
+            </Form.Row>
 
-                <div className="bioform">LinkedIn:
-                  {/* <input
-                    value={this.state.twitter}
-                    name="linkedin"
-                    onChange={this.handleInputChange}
-                    type="text"
-                    placeholder="Linkedin profile"
-                  /> */}
-                </div>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control value={this.state.email} name="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
+              </Form.Group>
 
-                <div className="bioform">Other:
-                  {/* <input
-                    value={this.state.other}
-                    name="other"
-                    onChange={this.handleInputChange}
-                    type="text"
-                    placeholder="Other site"
-                  /> */}
-                </div>
+              <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control value={this.state.password} name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
+              </Form.Group>
+            </Form.Row>
 
-                <br></br>
-                <button onClick={this.handleFormSubmit}>Submit</button>
-              </form>
-            </Col>
-          </Row>
+            <Form.Group controlId="exampleForm.ControlTextarea1">
+              <Form.Label>Bio</Form.Label>
+              <Form.Control value={this.state.bio} name="bio" onChange={this.handleChange} type="text" as="textarea" rows="6" placeholder="Tell us something interesting..." />
+            </Form.Group>
+
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridAddress2">
+                <Form.Label>Profile image</Form.Label>    
+                  <Form.Control value={this.state.imageUrl} name="imageUrl" onChange={this.handleChange} />
+              </Form.Group>
+
+              <Form.Group as={Col} controlId="formGridAddress2">
+                <Form.Label>LinkedIn</Form.Label>
+                <Form.Control value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
+              </Form.Group>
+            </Form.Row>
+
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridAddress2">
+                <Form.Label>Instagram</Form.Label>
+                <Form.Control value={this.state.instagram} name="instagram" onChange={this.handleChange} />
+              </Form.Group>
+              <Form.Group as={Col} controlId="formGridAddress2">
+                <Form.Label>Other</Form.Label>
+                <Form.Control value={this.state.other} name="other" onChange={this.handleChange} placeholder="Anything else?" />
+              </Form.Group>
+            </Form.Row>
+            <br />
+            <button className="submitbutton">Submit</button>
+
+          </Form>
+            </div>
+
+
+
         </Wrapper>
-        <Footer />
-      </Fragment>
+      <Footer />
+      </Fragment >
     );
   }
 };
