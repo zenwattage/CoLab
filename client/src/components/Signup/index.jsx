@@ -32,27 +32,27 @@ export default class Signup extends Component {
     payload
   }
 
-  convert = (payload, professions) =>{
+  convert = (payload, professions) => {
     const proArray = [];
-    for (var i =0; i<payload.length;i++){
-      if (payload[i].pro){
-        const pro = {"profession": professions[i].profession, "talents":[]};
-        for (var j=0; j<payload[i].talents.length;j++){
-          if (payload[i].talents[j].talent){
+    for (var i = 0; i < payload.length; i++) {
+      if (payload[i].pro) {
+        const pro = { "profession": professions[i].profession, "talents": [] };
+        for (var j = 0; j < payload[i].talents.length; j++) {
+          if (payload[i].talents[j].talent) {
             pro.talents.push(professions[i].talents[j].name)
           }
         }
-        proArray.push(pro); 
+        proArray.push(pro);
       }
     }
-    return(proArray); 
+    return (proArray);
   };
 
   handleSubmit = event => {
     event.preventDefault();
 
     const { email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other } = this.state;
-    const buttons = this.convert(this.state.payload, this.state.professions); 
+    const buttons = this.convert(this.state.payload, this.state.professions);
     console.log({ email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other, buttons });
 
     axios({
@@ -154,11 +154,11 @@ export default class Signup extends Component {
                 <Row>
                   <Col>
                     <div>
-                    {this.state.professions.map(x => (
-                  <Talent key = {x.profession} profession={x.profession} talents={x.talents}
-                    handleOnClick={this.clickPro} handleClickTalent = {this.clickTalent}
-                    statement={x.statement} className={this.state.className} />
-                ))}
+                      {this.state.professions.map(x => (
+                        <Talent key={x.profession} profession={x.profession} talents={x.talents}
+                          handleOnClick={this.clickPro} handleClickTalent={this.clickTalent}
+                          statement={x.statement} className={this.state.className} />
+                      ))}
                     </div>
                   </Col>
                 </Row>
@@ -215,8 +215,8 @@ export default class Signup extends Component {
                       }
                     >
                       <Form.Control size="sm" value={this.state.imageUrl} name="imageUrl" onChange={this.handleChange} />
-                    </OverlayTrigger>                 
-                    </Form.Group>
+                    </OverlayTrigger>
+                  </Form.Group>
                   <Form.Group as={Col} controlId="formGridAddress2">
                     <Form.Label>LinkedIn</Form.Label>
                     <Form.Control size="sm" value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
@@ -233,7 +233,7 @@ export default class Signup extends Component {
                   </Form.Group>
                 </Form.Row>
                 <br />
-                <button className="submitbutton" onClick = {this.handleSubmit}>Submit</button>
+                <button className="submitbutton" onClick={this.handleSubmit}>Submit</button>
               </Form>
             </div>
             <p>{this.state.errorMessage}</p>
