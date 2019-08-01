@@ -16,14 +16,25 @@
   background: gray;
 }
 .card > .img-container > img {
-  width: 60%
+  width: 60%;
+  margin: 0 auto;
 }
 
 .card > .content {
   /* padding-left: 1rem; */
   /* padding-right: 1rem; */
   font-size: 15px;
-  color:black;
+  color: black;
+}
+
+.cardname {
+  background-color: white;
+  padding: 5px;
+  color: black;
+}
+
+.cardtitle {
+  margin-bottom: 5px;
 }
 
 .card > .content > ul {
@@ -32,7 +43,7 @@
 }
 
 .card > .content > ul > li {
-  margin-top: 18px;
+  margin-top: 10px;
 }
 
 .card > .remove {
