@@ -1,0 +1,18 @@
+[
+  {
+    "userId": "USER_001",
+    "properties": {
+      "freestyle": true
+    },
+    "images": [
+      "https://www.digital-photography-bureau.com/images/aldorata-1.jpg",
+      "https://privateimagedancestudio.files.wordpress.com/2008/11/ritaescalaadvertisement.jpg",
+      "http://loviesdancecompany.com/wp-content/uploads/2016/04/banner-home1b.jpg"
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=-JSO5X1TgqY",
+      "https://www.youtube.com/watch?v=F5zCGgZMaWQ",
+      "https://www.youtube.com/watch?v=GY2fE5xr6XU"
+    ]
+  }
+]

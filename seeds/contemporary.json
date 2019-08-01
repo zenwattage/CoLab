@@ -1,0 +1,18 @@
+[
+  {
+    "userId": "USER_001",
+    "properties": {
+      "freestyle": true
+    },
+    "images": [
+      "https://www.dancesocksbcn.com/wp-content/uploads/2018/04/contemporary-male-dancer.png",
+      "https://www.hcdance.com/wp-content/uploads/2017/12/ben-blog-male-dancers.jpg",
+      "https://dancemagazine.com.au/wp-content/uploads/2016/02/male-dancer.jpg"
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=TcWPiHjIExA",
+      "https://www.youtube.com/watch?v=acdAByEsydU",
+      "https://www.youtube.com/watch?v=c-tW0CkvdDI"
+    ]
+  }
+]
