@@ -22,6 +22,7 @@ function SearchResults(props) {
         firstName=""
         bio=""
         instagram=""
+        linkedin=""
         other=""
       />
 

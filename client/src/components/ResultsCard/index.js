@@ -1,31 +1,47 @@
 import React from "react";
 import "./style.css";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 function ResultsCard(props) {
   return (
     <div className="card">
       <div className="img-container">
-        <img alt={props.name} src={props.image} />
+        <ul>
+          {/* <li> */}
+            <strong className="cardname">Name:</strong>
+            {/* PASS IN RESULTS FROM SEARCH HERE */}
+          {/* </li> */}
+        </ul>
+        <img alt={props.firstName} src={props.imageUrl} />
+        {/* PASS IN RESULTS FROM SEARCH HERE */}
       </div>
       <div className="content">
         <ul>
           <li>
-            <strong>Name:</strong> {props.name}
-            {/* {results.state.firstName} */}
+            <p className="cardtitle">Bio:</p>
+            {/* PASS IN RESULTS FROM SEARCH HERE */}
           </li>
-          <li>
-            <strong>Bio:</strong> {props.occupation}
-            {/* {results.state.bio} */}
-          </li>
-          <li>
-            <strong>Instagram:</strong> {props.location}
-            {/* {results.state.instagram} */}
-
-          </li>
-          <li>
-            <strong>Other:</strong> {props.name}
-            {/* {results.state.other} */}
-          </li>
+          <Row>
+            <Col>
+              <li>
+                <p className="cardtitle">IG:</p>
+                {/* PASS IN RESULTS FROM SEARCH HERE */}
+              </li>
+            </Col>
+            <Col>
+              <li>
+                <p className="cardtitle">LI:</p>
+                {/* PASS IN RESULTS FROM SEARCH HERE */}
+              </li>
+            </Col>
+            <Col>
+              <li>
+                <p className="cardtitle">Other:</p>
+                {/* PASS IN RESULTS FROM SEARCH HERE */}
+              </li>
+            </Col>
+          </Row>
         </ul>
       </div>
       <span className="remove">𝘅</span>

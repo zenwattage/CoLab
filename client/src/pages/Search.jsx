@@ -31,6 +31,8 @@ class SearchArtist extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     // SEARCH FUNCTION GOES HERE
+    // RUSS HAS THIS WRITTEN
+    // SEARCH RESULTS COMPONENT IS RENDERED AFTER SEARCH FUNCTION
   };
   render() {
     return (
