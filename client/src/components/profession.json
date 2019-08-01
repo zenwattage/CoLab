@@ -11,10 +11,11 @@
   {
     "profession":"Photographer",
     "talents":[
-      {"name":"Landscape","question":"Can you freestyle?"}, 
-      {"name":"Portrait","question":"Can you freestyle?"}, 
-      {"name":"Street","question":"Can you freestyle?"}, 
-      {"name":"Motion","question":"Can you freestyle?"}],
-      "statement": "I photograph this style best:"
+      {"name":"Landscape","question":"I can freestyle","searchQuestion":"Looking for a ...?"}, 
+      {"name":"Portrait","question":"I can freestyle","searchQuestion":"Looking for a ...?"}, 
+      {"name":"Street","question":"I can freestyle","searchQuestion":"Looking for a ...?"}, 
+      {"name":"Motion","question":"I can freestyle","searchQuestion":"Looking for a ...?"}],
+      "statement": "I photograph this style(s) best:",
+      "searchStatement":"The photographer I'm looking for is:"
   }
 ]
