@@ -54,7 +54,7 @@ class SearchArtist extends Component {
         </div>
 
         <div className = "center">
-          <button className="submitbutton" onclick={()=>this.handleFormSubmit()}>Submit</button>
+          <button className="submitbutton" onClick={()=>this.handleFormSubmit()}>Submit</button>
         </div>
 
         <SearchResults results={this.state.results} />
