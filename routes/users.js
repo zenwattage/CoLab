@@ -117,18 +117,21 @@ router.post('/search', function (req, res, next) {
 
 
 
-
-
-
-
-
-
-
 router.get('/api', (req, res) => {
   const email = req.users; //req.session.passport.session
   res.json({
     message: 'Hello World'
   });
 });
+
+//logout routing
+router.get('/logout', function(req, res) {
+  console.log("Inside Logout");
+  req.logout();
+  res.json({
+    isAuthenticated: false
+  });
+})
+
 
 module.exports = router;
