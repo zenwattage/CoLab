@@ -45,8 +45,15 @@ export default class Login extends Component {
         //set user 
         const isAuthenticated = response.data.isAuthenticated;
         window.localStorage.setItem('isAuthenticated', isAuthenticated);
+        //redirect
         this.props.history.push("/profile");
-        // console.log(this.props.history);
+        //onSubmit - checking that user is Authed -if not logging them out
+        if(response.data === 0) {
+          this.logout();
+        }
+        this.setState({
+          //window.localstorage.removeitem('isAuthenticated');
+        })
 
       })
       .catch(error => {
@@ -70,7 +77,7 @@ export default class Login extends Component {
     console.log(this.state.errorMessage);
     
     const isAuthenticated = window.localStorage.getItem("isAuthenticated");
-
+    //console.log({isAuthenticated});
     if (isAuthenticated) {
       return <Redirect to="/profile" />;
     }
