@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import "./logo5.png";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 function NavBarStuff() {
@@ -8,7 +9,7 @@ function NavBarStuff() {
       <Navbar.Brand className="Navbar-brand" href="#">
         <img
           alt=""
-          src="logo5.png"
+          src="./logo5.png"
           width="20"
           height="30"
           className="d-inline-block align-top"

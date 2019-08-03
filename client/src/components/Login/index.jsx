@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 import Form from "react-bootstrap/Form";
 
 export default class Login extends Component {
-  
+
   state = {
     test: false,
     email: "",
@@ -17,21 +17,19 @@ export default class Login extends Component {
     results: [],
     statement: "",
     className: "still",
-    profession: ""
+    errorStatement: ""
   };
 
-  handleShowLoginForms = event => {
-    // event.preventDefault()
+  handleShowLoginForms = () => {
     console.log("inside handleLogin")
     this.setState({
       test: !this.state.test,
     })
   }
 
-  handleSubmit = event => {
-    // event.preventDefault();
-    const { email, password} = this.state;
-    console.log( { email, password });
+  handleSubmit = () => {
+    const { email, password } = this.state;
+    console.log({ email, password });
     axios({
       url: "/authentication/signin",
       method: "POST",
@@ -46,9 +44,9 @@ export default class Login extends Component {
         const isAuthenticated = response.data.isAuthenticated;
         window.localStorage.setItem('isAuthenticated', isAuthenticated);
         //redirect
-        this.props.history.push("/profile");
+        // this.props.history.push("/profile");
         //onSubmit - checking that user is Authed -if not logging them out
-        if(response.data === 0) {
+        if (response.data === 0) {
           this.logout();
         }
         this.setState({
@@ -61,7 +59,7 @@ export default class Login extends Component {
         //   errorMessage: error.response.data.message
         // });
         console.log(error);
-        
+        this.setState({ errorStatement: "Your email or password is incorrect. Please try again." });
       });
   };
 
@@ -75,7 +73,7 @@ export default class Login extends Component {
 
   render() {
     console.log(this.state.errorMessage);
-    
+
     const isAuthenticated = window.localStorage.getItem("isAuthenticated");
     //console.log({isAuthenticated});
     if (isAuthenticated) {
@@ -85,9 +83,9 @@ export default class Login extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <div>    
-            <Button value="login" handleOnClick={this.handleShowLoginForms}>Log In</Button>
-            
+          <div>
+            <Button value="login" handleOnClick={this.handleShowLoginForms} enableChangeState>Log In</Button>
+
             <div className="login">
               {this.state.test &&
                 <Form>
@@ -101,9 +99,10 @@ export default class Login extends Component {
                     <Form.Control onChange={this.handleChange} name="password" value={this.state.password} type="password" className="form-control-home" placeholder="Enter password" />
                   </Form.Group>
                 </Form>}
-              {this.state.test &&              
-                  <Button className="loginsubmit" handleOnClick={this.handleSubmit} value="submit">Submit</Button>
+              {this.state.test &&
+                <Button className="loginsubmit" handleOnClick={this.handleSubmit} value="submit">Submit</Button>
               }
+              <p className = "error">{this.state.errorStatement}</p>
             </div>
           </div>
         </form>
