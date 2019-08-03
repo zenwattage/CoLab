@@ -11,14 +11,14 @@ export default class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = { serverports: [] };
-    state = {
-      firstName: "",
-      lastName: "",
-      bio: "",
-      instagram: "",
-      linkedin: "",
-      other: ""
-    }
+    // state = {
+    //   firstName: "",
+    //   lastName: "",
+    //   bio: "",
+    //   instagram: "",
+    //   linkedin: "",
+    //   other: ""
+    // }
   }
   componentDidMount() {
     axios.get('http://localhost:8080/serverport')

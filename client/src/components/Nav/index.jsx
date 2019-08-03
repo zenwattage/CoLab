@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import "./logo5.png";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
 function NavBarStuff() {
   return (
@@ -17,9 +18,11 @@ function NavBarStuff() {
         {" CoLab"}
       </Navbar.Brand>
       <Nav className="mr-auto">
-        <Nav.Link href="/profile">Profile</Nav.Link>
-        <Nav.Link href="/search">Search</Nav.Link>
-        <Nav.Link href="#">Logout</Nav.Link>
+        <Nav.Link href="/search">Search Creatives</Nav.Link>
+        <NavDropdown title="My Account" id="basic-nav-dropdown">
+          <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+          <NavDropdown.Item href="#">Logout</NavDropdown.Item>
+        </NavDropdown>
       </Nav>
     </Navbar>
   );
