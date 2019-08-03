@@ -22,6 +22,7 @@ export default class App extends Component {
           <Route path="/signup" component={Signup} />
           <Route path="/search" component={Search} />
           <Route path="/profile" component={Profile} />
+          {/* <Route path="/logout" component={Logout} /> */}
           {/* <Route path="/login" component={Login} /> */}
           <Route path="*" component={NotFound} />
         </Switch>

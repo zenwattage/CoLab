@@ -19,7 +19,7 @@ function NavBarStuff() {
       <Nav className="mr-auto">
         <Nav.Link href="/profile">Profile</Nav.Link>
         <Nav.Link href="/search">Search</Nav.Link>
-        <Nav.Link href="#">Logout</Nav.Link>
+        <Nav.Link href="/logout">Logout</Nav.Link>
       </Nav>
     </Navbar>
   );
