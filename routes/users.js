@@ -2,10 +2,9 @@ var express = require('express');
 var router = express.Router();
 const passport = require('../passport');
 
-
 //signup route auth
 router.post('/signup', (req, res, next) => {
-console.log(req.body);
+  //console.log(req.body);
   // Custom Passport Callback
   //passing json back into object
   //first(takes callback) second(takesrequestobject)

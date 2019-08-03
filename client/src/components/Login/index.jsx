@@ -6,7 +6,6 @@ import Button from "../Button/Button";
 import Form from "react-bootstrap/Form";
 
 export default class Login extends Component {
-  
   state = {
     test: false,
     email: "",
@@ -22,16 +21,16 @@ export default class Login extends Component {
 
   handleShowLoginForms = event => {
     // event.preventDefault()
-    console.log("inside handleLogin")
+    console.log("inside handleLogin");
     this.setState({
-      test: !this.state.test,
-    })
-  }
+      test: !this.state.test
+    });
+  };
 
   handleSubmit = event => {
     // event.preventDefault();
-    const { email, password} = this.state;
-    console.log( { email, password });
+    const { email, password } = this.state;
+    console.log({ email, password });
     axios({
       url: "/authentication/signin",
       method: "POST",
@@ -41,27 +40,25 @@ export default class Login extends Component {
       }
     })
       .then(response => {
-        console.log(response)
-        //set user 
+        console.log(response);
+        //set user
         const isAuthenticated = response.data.isAuthenticated;
-        window.localStorage.setItem('isAuthenticated', isAuthenticated);
+        window.localStorage.setItem("isAuthenticated", isAuthenticated);
         //redirect
         this.props.history.push("/profile");
         //onSubmit - checking that user is Authed -if not logging them out
-        if(response.data === 0) {
+        if (response.data === 0) {
           this.logout();
         }
         this.setState({
           //window.localstorage.removeitem('isAuthenticated');
-        })
-
+        });
       })
       .catch(error => {
         // this.setState({
         //   errorMessage: error.response.data.message
         // });
         console.log(error);
-        
       });
   };
 
@@ -72,12 +69,10 @@ export default class Login extends Component {
     });
   };
 
-
   render() {
     console.log(this.state.errorMessage);
-    
+
     const isAuthenticated = window.localStorage.getItem("isAuthenticated");
-    //console.log({isAuthenticated});
     if (isAuthenticated) {
       return <Redirect to="/profile" />;
     }
@@ -85,25 +80,49 @@ export default class Login extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <div>    
-            <Button value="login" handleOnClick={this.handleShowLoginForms}>Log In</Button>
-            
+          <div>
+            <Button value="login" handleOnClick={this.handleShowLoginForms}>
+              Log In
+            </Button>
+
             <div className="login">
-              {this.state.test &&
+              {this.state.test && (
                 <Form>
                   <Form.Group controlId="formBasicEmail">
-                    <Form.Control onChange={this.handleChange} name="email" value={this.state.email} type="email" className="form-control-home" placeholder="Enter email" />
+                    <Form.Control
+                      onChange={this.handleChange}
+                      name="email"
+                      value={this.state.email}
+                      type="email"
+                      className="form-control-home"
+                      placeholder="Enter email"
+                    />
                   </Form.Group>
-                </Form>}
-              {this.state.test &&
+                </Form>
+              )}
+              {this.state.test && (
                 <Form>
                   <Form.Group controlId="formBasicEmail">
-                    <Form.Control onChange={this.handleChange} name="password" value={this.state.password} type="password" className="form-control-home" placeholder="Enter password" />
+                    <Form.Control
+                      onChange={this.handleChange}
+                      name="password"
+                      value={this.state.password}
+                      type="password"
+                      className="form-control-home"
+                      placeholder="Enter password"
+                    />
                   </Form.Group>
-                </Form>}
-              {this.state.test &&              
-                  <Button className="loginsubmit" handleOnClick={this.handleSubmit} value="submit">Submit</Button>
-              }
+                </Form>
+              )}
+              {this.state.test && (
+                <Button
+                  className="loginsubmit"
+                  handleOnClick={this.handleSubmit}
+                  value="submit"
+                >
+                  Submit
+                </Button>
+              )}
             </div>
           </div>
         </form>
