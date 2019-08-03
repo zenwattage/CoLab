@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
 import logo from "./logo5.png";
 
@@ -17,9 +18,11 @@ function NavBarStuff() {
         />
       </Navbar.Brand>
       <Nav className="mr-auto">
-        <a href="/profile" className = "navbar">Profile</a>
-        <a href="/search" className = "navbar">Search</a>
-        <a href="#" className = "navbar">Logout</a>
+        <Nav.Link href="/search">Search Creatives</Nav.Link>
+        <NavDropdown title="My Account" id="basic-nav-dropdown">
+          <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+          <NavDropdown.Item href="#">Logout</NavDropdown.Item>
+        </NavDropdown>
       </Nav>
     </Navbar>
   );
