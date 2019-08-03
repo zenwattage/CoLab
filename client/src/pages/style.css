@@ -71,6 +71,10 @@
   align-items: center;
 }
 
+.searchButtons{
+  text-align:center; 
+}
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 420px) {
   .logoimg {
