@@ -20,6 +20,7 @@ export default class Profile extends Component {
     //   other: ""
     // }
   }
+
   componentDidMount() {
     axios.get('http://localhost:8080/serverport')
       .then(response => {
@@ -29,21 +30,7 @@ export default class Profile extends Component {
         console.log(error);
       })
   }
-  //logout function
-  logout = () => {
-    axios
-    .get("/authentication/logout")
-    .then(
-      data => {
-        console.log(data);
-        // localStorage.clear();
-        localStorage.removeItem('isAuthenticated');
-      }
-    ).catch(error => {
-      console.log(error);
-      //TODO: push user out
-    })
-  }
+
   // tabRow() {
   //   return this.state.serverports.map(function (object, i) {
   //     return <TableRow obj={object} key={i} />;
@@ -53,7 +40,6 @@ export default class Profile extends Component {
       <Fragment>
         <Nav />
         <Wrapper>
-          <button onClick={this.logout}>Logout</button>
           <Row>
             <Col>
               <h1 className="welcome">Hello, {this.state.firstName}</h1>
@@ -151,87 +137,3 @@ export default class Profile extends Component {
 //     })
 // }
 
-
-
-// render() {
-//   return (
-//     <Fragment>
-//       <Nav />
-//       <Wrapper>
-//         <Row>
-//           <Col>
-//             <h1 className="welcome">Welcome, {this.state.firstName}</h1>
-//           </Col>
-//         </Row>
-
-//         <div>
-
-//           <button onClick={this.logout}>Logoutplaceholderbutton</button>
-//           <Form onSubmit={this.handleSubmit}>
-//             <div className="personalinfo">
-//               <h3 className="personalinfotitle">Personal Info</h3>
-//               <Form.Row>
-//                 <Form.Group as={Col} controlId="formGridAddress2">
-//                   <p>Profile image:</p>
-//                   <img src={logo} alt="Logo" width="100px" />
-//                   {/* <Form.Label>Profile image</Form.Label>
-//                   <Form.Control value={this.state.imageUrl} name="imageUrl" onChange={this.handleChange} /> */}
-//                 </Form.Group>
-//                 <Form.Group as={Col} controlId="formGridEmail">
-//                   <p>Name: Jordynn Otto</p>
-//                   {/* <Form.Label>First name</Form.Label>
-//                     <Form.Control value={this.state.firstName} name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" /> */}
-//                 </Form.Group>
-//                 <Form.Group as={Col} controlId="formGridPassword">
-//                   {/* <Form.Label>Last name</Form.Label>
-//                     <Form.Control value={this.state.lastName} name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" /> */}
-//                 </Form.Group>
-//                 <Form.Group as={Col} controlId="formGridEmail">
-//                   <p>Email: j_taylor92@yahoo.com</p>
-//                   {/* <Form.Label>Email</Form.Label>
-//                     <Form.Control value={this.state.email} name="email" onChange={this.handleChange} type="email" placeholder="Enter email" /> */}
-//                 </Form.Group>
-//               </Form.Row>
-//             </div>
-
-//             <div className="personalinfo">
-//               <h3 className="personalinfotitle">Portfolio</h3>
-//               {/* <Form.Row>  */}
-//               <Form.Group controlId="exampleForm.ControlTextarea1">
-//                 <p>Bio: I love to dance, it is the best thing ever.</p>
-//                 {/* <Form.Label>Bio</Form.Label>
-//                   <Form.Control value={this.state.bio} name="bio" onChange={this.handleChange} type="text" as="textarea" rows="6" placeholder="Tell us something interesting..." /> */}
-//               </Form.Group>
-//               <Form.Row>
-//                 <Form.Group as={Col} controlId="formGridAddress2">
-//                   <p>Linkedin: www.linkedin.com/jottobot</p>
-//                   {/* <Form.Label>LinkedIn</Form.Label>
-//                     <Form.Control value={this.state.linkedin} name="linkedin" onChange={this.handleChange} /> */}
-//                 </Form.Group>
-//                 <Form.Group as={Col} controlId="formGridAddress2">
-//                   <p>Instagram: @jottobot</p>
-//                   {/* <Form.Label>Instagram</Form.Label>
-//                     <Form.Control value={this.state.instagram} name="instagram" onChange={this.handleChange} /> */}
-//                 </Form.Group>
-//                 <Form.Group as={Col} controlId="formGridAddress2">
-//                   <p>Other: www.youtube.com/jottobot</p>
-//                   {/* <Form.Label>Other</Form.Label>
-//                     <Form.Control value={this.state.other} name="other" onChange={this.handleChange} placeholder="Anything else?" /> */}
-//                 </Form.Group>
-//               </Form.Row>
-//               <br />
-//               <div className="profilebuttons">
-//                 <button className="profilebutton">Edit</button>
-//                 <button className="profilebutton">Submit</button>
-//               </div>
-//             </div>
-//           </Form>
-//         </div>
-//       </Wrapper>
-//       <Footer />
-//     </Fragment >
-//   );
-// }
-// };
-
-// export default Profile;
