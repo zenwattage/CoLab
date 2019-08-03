@@ -58,7 +58,7 @@ render() {
             <p>Bio:</p> {this.state.bio}
             <p>Linkedin:</p> {this.state.linkedin}
             <p>Instagram:</p> {this.state.instagram}
-            <p>Other: www.youtube.com/jottobot</p> {this.state.imageUrl}
+            <p>Other:</p> {this.state.other}
 
             <br />
             <div className="profilebuttons">
