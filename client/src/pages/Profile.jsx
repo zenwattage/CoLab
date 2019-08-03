@@ -29,50 +29,66 @@ export default class Profile extends Component {
         console.log(error);
       })
   }
+  //logout function
+  logout = () => {
+    axios
+    .get("/authentication/logout")
+    .then(
+      data => {
+        console.log(data);
+        // localStorage.clear();
+        localStorage.removeItem('isAuthenticated');
+      }
+    ).catch(error => {
+      console.log(error);
+      //TODO: push user out
+    })
+  }
   // tabRow() {
   //   return this.state.serverports.map(function (object, i) {
   //     return <TableRow obj={object} key={i} />;
   //   });
-render() {
-  return (
-    <Fragment>
-      <Nav />
-      <Wrapper>
-        <Row>
-          <Col>
-            <h1 className="welcome">Hello, {this.state.firstName}</h1>
-          </Col>
-        </Row>
+  render() {
+    return (
+      <Fragment>
+        <Nav />
+        <Wrapper>
+          <button onClick={this.logout}>Logout</button>
+          <Row>
+            <Col>
+              <h1 className="welcome">Hello, {this.state.firstName}</h1>
+            </Col>
+          </Row>
 
-        <div className="container">
-          <div className="personalinfo">
-            <h3 className="personalinfotitle">Contact Info</h3>
-            <p>Profile image:</p> {this.state.imageUrl}
-            <p>Name:</p> {this.state.firstName}
-            <p>Email:</p> {this.state.email}
-          </div>
-
-          <div className="personalinfo">
-            <h3 className="personalinfotitle">Portfolio</h3>
-
-            <p>Bio:</p> {this.state.bio}
-            <p>Linkedin:</p> {this.state.linkedin}
-            <p>Instagram:</p> {this.state.instagram}
-            <p>Other:</p> {this.state.other}
-
-            <br />
-            <div className="profilebuttons">
-              <button className="profilebutton">Edit</button>
-              <button className="profilebutton">Submit</button>
+          <div className="container">
+            <div className="personalinfo">
+              <h3 className="personalinfotitle">Contact Info</h3>
+              <p>Profile image:</p> {this.state.imageUrl}
+              <p>Name:</p> {this.state.firstName}
+              <p>Email:</p> {this.state.email}
             </div>
 
+            <div className="personalinfo">
+              <h3 className="personalinfotitle">Portfolio</h3>
+
+              <p>Bio:</p> {this.state.bio}
+              <p>Linkedin:</p> {this.state.linkedin}
+              <p>Instagram:</p> {this.state.instagram}
+              <p>Other:</p> {this.state.other}
+
+              <br />
+              <div className="profilebuttons">
+                <button className="profilebutton">Edit</button>
+                <button className="profilebutton">Submit</button>
+              </div>
+
+            </div>
           </div>
-        </div>
-      </Wrapper>
-      <Footer />
-    </Fragment >
-  );
-}
+        </Wrapper>
+        <Footer />
+      </Fragment >
+    );
+  }
 }
 
 
