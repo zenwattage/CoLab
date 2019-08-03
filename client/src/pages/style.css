@@ -1,5 +1,25 @@
+/* SEARCH PAGE */
 .search{
+  margin-top: 0px;
   text-align: center;
+}
+
+.title1 {
+  font-family: 'lato', sans-serif;
+  color: white;
+  font-style: bold;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-size:50px;
+}
+
+.subTitle {
+  font-family: 'lato', sans-serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #5CB85C;
+  margin-bottom: 20px;
+
 }
 
 .searchButtons{
@@ -7,7 +27,8 @@
 }
 
 .subLine{
-  color:rgb(5, 133, 22);
+  color: white;
+  margin-bottom: 20px;
 }
 
 .center{
@@ -18,7 +39,42 @@
   margin-top:50px; 
 }
 
+/* PROFILE PAGE */
+.welcome {
+  margin-bottom: 80px;
+}
+.personalinfo {
+  margin: 0 auto;
+  width: 80%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 2px;
+  padding-top: 30px;
+  margin-bottom: 50px;
+}
+.personalinfotitle {
+  color: #5CB85C;
+  font-family: 'lato', sans-serif;
+  margin-bottom: 20px;
+}
+.profilebutton {
+  width: 80px;
+  margin-right: 10px;
+}
+
 /* HOME PAGE */
 .homepage {
   text-align: center;
+  margin: 0 auto;
+  align-content: center;
+  align-items: center;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 420px) {
+  .logoimg {
+    width: 250px;
+    height: auto;
+  }
 }

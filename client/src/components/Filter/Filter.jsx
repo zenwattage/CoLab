@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import "./style.css";
-import ButtonHolder from "../ButtonHolder/index";
+import Button from "../Button/Button";
 
 export default class Filter extends Component {
-
-  handleOnClick = () => {
-    this.props.handleOnClick();
-  };
 
   render() {
     // JSX
@@ -16,11 +12,11 @@ export default class Filter extends Component {
     return (
       // props.choices is the array of child buttons that has been clicked on
       // className = {this.props.choices.indexOf(result)>-1 ? "active": "still"}
-      <div id = "talent">
-        <p className = "statement">{this.props.statement}</p>
+      <div id="talent">
+        <p className="statement">{this.props.statement}</p>
         {this.props.results.map(result => (
-          <div>
-            <ButtonHolder name = {result.name} question = {result.question}/>
+          <div key={result.name} >
+            <Button value={result.name} enableChangeState handleOnClick={this.props.handleClickTalent} >{result.name}</Button>
           </div>
         ))}
       </div>

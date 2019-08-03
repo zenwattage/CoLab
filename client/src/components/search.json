@@ -6,7 +6,7 @@
       {"name":"Ballet"}, 
       {"name":"Contemporary"}, 
       {"name":"Latin"}],
-      "statement": "My best dance style(s) are:"
+      "statement": "The dancer I'm looking for is:"
   },
   {
     "profession":"Photographer",
@@ -15,6 +15,6 @@
       {"name":"Portrait"}, 
       {"name":"Street"}, 
       {"name":"Motion"}],
-      "statement": "I photograph this style best:"
+      "statement":"The photographer I'm looking for is:"
   }
 ]

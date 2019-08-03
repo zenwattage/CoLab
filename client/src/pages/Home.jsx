@@ -11,7 +11,9 @@ export default class Home extends Component {
     return (
       <div className="homepage">
         <Wrapper>
-          <img src={logo} className="logoimg" alt="logo" width="300px" />
+          {/* <div className="logoimg"> */}
+            <img src={logo} className="logoimg" alt="logo" width="300px" />
+          {/* </div> */}
           <p>"Alone we can do so little; together we can do so much." – Helen Keller</p>
           {/* RENDER THE LOGIN COMPONENT */}
           <Login />

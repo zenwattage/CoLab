@@ -1,34 +1,6 @@
 /* STYLING INCLUDED ON ALL PAGES //////////////////////////////////*/
 body {
   margin: 0;
-  /* font-family: 'lato', sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-p, h4 {
-  font-family: 'lato', sans-serif;
-  color:white;
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.title {
-  font-family: 'Varela', sans-serif;
-  text-align: center;
-}
-
-.subtitle {
-  text-align: center;
-  font-size: 20px;
-}
-
-/* PORTFOLIO PAGE ////////////////////////////////////*/
-.portfolioimg {
-  /* width: 75%; */
-}
-.bioform {
-  margin-bottom: 20px;
 }

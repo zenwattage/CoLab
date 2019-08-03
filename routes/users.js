@@ -2,10 +2,9 @@ var express = require('express');
 var router = express.Router();
 const passport = require('../passport');
 
-
 //signup route auth
 router.post('/signup', (req, res, next) => {
-console.log(req.body);
+  //console.log(req.body);
   // Custom Passport Callback
   //passing json back into object
   //first(takes callback) second(takesrequestobject)
@@ -117,18 +116,21 @@ router.post('/search', function (req, res, next) {
 
 
 
-
-
-
-
-
-
-
 router.get('/api', (req, res) => {
   const email = req.users; //req.session.passport.session
   res.json({
     message: 'Hello World'
   });
 });
+
+//logout routing
+router.get('/logout', function(req, res) {
+  console.log("Inside Logout");
+  req.logout();
+  res.json({
+    isAuthenticated: false
+  });
+})
+
 
 module.exports = router;

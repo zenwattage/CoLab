@@ -1,5 +1,5 @@
 .active{
-  background:rgba(26, 119, 2, 0.616); 
+  background:#5CB85C; 
   border-radius: 3px; 
   font-size: 20px;
   border-radius: 2px;
@@ -30,6 +30,18 @@ button{
 
 .button:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 420px) {
+  button{
+    font-size: 15px;
+    border-radius: 2px;
+    padding: 10px;
+    width: 150px;
+    font-family: 'Lato', sans-serif;
+    align-content: center;
+    text-align:center; 
+  }
 }
 
 

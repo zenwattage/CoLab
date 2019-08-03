@@ -1,23 +1,15 @@
-nav.navbar.navbar-default {
-  margin-bottom: 0;
-}
-
 .navbar {
-  background-color: white;
-  height: 50px;
-}
-
-.navbar-brand {
-  text-decoration: none;
-  /* float: right; */
-  color: black;
-  /* margin-right: 10px; */
+  background-color:white;
+  height: 70px;
   font-family: 'Lato', sans-serif;
 }
 
-.navbar-brand-name {
-  text-decoration: none;
-  color: black;
-  font-size: 25px;
+.Navbar-brand {
   font-family: 'Lato', sans-serif;
+  color: #5CB85C;
+}
+
+.mr-auto:hover {
+  float: right;
+  color: #5CB85C; 
 }
