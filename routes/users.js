@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 const passport = require('../passport');
 
-
 //signup route auth
 router.post('/signup', (req, res, next) => {
 console.log(req.body);
@@ -126,8 +125,13 @@ router.get('/api', (req, res) => {
 
 //logout routing
 router.get('/logout', function(req, res) {
+  console.log(req.Object);
+  //const isAuthenticated = window.localStorage.getItem("isAuthenticated");
+    
+
   console.log("Inside Logout");
   req.logout();
+  //window.localStorage.removeItem(isAuthenticated);
   res.json({
     isAuthenticated: false
   });
