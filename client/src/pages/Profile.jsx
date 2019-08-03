@@ -81,7 +81,8 @@ class Profile extends Component {
       console.log(error);
       //TODO: push user out
     })
-  }
+  };
+  
   render() {
     return (
       <Fragment>
@@ -95,7 +96,7 @@ class Profile extends Component {
 
           <div>
 
-            <button onClick={this.logout}>Logoutplaceholderbutton</button>
+            <button onClick={this.logout}>Logout</button>
             <Form onSubmit={this.handleSubmit}>
               <div className="personalinfo">
                 <h3 className="personalinfotitle">Personal Info</h3>
