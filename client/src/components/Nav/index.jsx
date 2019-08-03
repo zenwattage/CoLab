@@ -1,21 +1,21 @@
 import React from "react";
 import "./style.css";
-import "./logo5.png";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
+import logo from "./logo5.png";
+
 function NavBarStuff() {
   return (
     <Navbar bg="light">
       <Navbar.Brand className="Navbar-brand" href="#">
         <img
           alt=""
-          src="./logo5.png"
-          width="20"
-          height="30"
+          src={logo}
+          width="70"
+          height="90"
           className="d-inline-block align-top"
         />
-        {" CoLab"}
       </Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="/search">Search Creatives</Nav.Link>

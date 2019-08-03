@@ -9,7 +9,7 @@ import SearchResults from "../components/SearchResults/index";
 import professions from "../components/search.json";
 import Talent from '../components/Talent/index';
 import "./style.css";
-import payload from "../components/signupPayload.json";
+import payload from "../components/searchPayload.json";
 import search from "../components/search.json";
 
 export default class SearchArtist extends Component {
@@ -24,6 +24,20 @@ export default class SearchArtist extends Component {
     error: "",
     payload
   }
+
+  // change payload to its orginal false
+  // Origin = (payload) =>{
+  //   for (var i =0; i<payload.length;i++){
+  //     if (payload[i].pro){
+  //       return(!)
+  //     }; 
+  //     for (var j=0; j<payload[i].talents.length;j++){
+  //       if (payload[i].talents[j].talent){
+  //         payload[i].talents[j].talent = false; 
+  //       }
+  //     }
+  //   }
+  // }
 
   // convert function is to convert payload(which has Boolean values) to strings 
   convert = (payload, professions) => {
@@ -85,6 +99,7 @@ export default class SearchArtist extends Component {
   // clickPro function is to detect if the user has clicked on a profession -- if yes, set isAdded to true; else to false.
   // bc the isAdded is passed in with css state (i.e. "still" OR "active") so clicks on it twice, it will be set to true again.
   clickPro = (proName, isAdded) => {
+    // this.Origin(this.state.payload); 
     for (var i = 0; i < this.state.professions.length; i++) {
       if (this.state.professions[i].profession === proName) {
         const temp = this.state.payload;
@@ -96,6 +111,7 @@ export default class SearchArtist extends Component {
 
   // clickTalent function is to detect if the user has clicked on talents -- if yes, set talents' isAdded to true; else to false.
   clickTalent = (proName, talent, isAdded) => {
+    // this.Origin(this.state.payload); 
     for (var i = 0; i < this.state.professions.length; i++) {
       if (this.state.professions[i].profession === proName) {
         for (var j = 0; j < this.state.professions[i].talents.length; j++) {
@@ -123,7 +139,7 @@ export default class SearchArtist extends Component {
             </Col>
           </Row>
           <form onSubmit={this.handleSubmit}>
-            <div>
+            <div className="searchButtons">
               {this.state.professions.map(x => (
                 <Talent key={x.profession} profession={x.profession} talents={x.talents}
                   handleOnClick={this.clickPro} handleClickTalent={this.clickTalent}
