@@ -77,11 +77,11 @@ export default class Signup extends Component {
         window.localStorage.setItem('isAuthenticated', isAuthenticated);
         this.props.history.push("/search");
       })
-      .catch((error) => {
-        this.setState({
-          errorMessage: error.response.data.message
-        });
+    .catch((error) => {
+      this.setState({
+        errorMessage: error.response.data.message
       });
+    });
   };
 
   handleChange = (event) => {
