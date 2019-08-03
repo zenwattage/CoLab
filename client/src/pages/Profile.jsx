@@ -74,6 +74,8 @@ class Profile extends Component {
     .then(
       data => {
         console.log(data);
+        // localStorage.clear();
+        localStorage.removeItem('isAuthenticated');
       }
     ).catch(error => {
       console.log(error);
