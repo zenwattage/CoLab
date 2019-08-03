@@ -48,12 +48,7 @@ export default class Login extends Component {
         this.props.history.push("/profile");
         //onSubmit - checking that user is Authed -if not logging them out
         if (response.data === 0) {
-          // window.localStorage.removeItem('isAuthenticated');
           this.logout();
-
-          window.localStorage.clear();
-
-          window.localStorage.removeItem('isAuthenticated');
         }
         this.setState({
           //window.localstorage.removeitem('isAuthenticated');
@@ -78,7 +73,6 @@ export default class Login extends Component {
     console.log(this.state.errorMessage);
 
     const isAuthenticated = window.localStorage.getItem("isAuthenticated");
-    //console.log({isAuthenticated});
     if (isAuthenticated) {
       return <Redirect to="/profile" />;
     }

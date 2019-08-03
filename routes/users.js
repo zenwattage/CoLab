@@ -4,7 +4,7 @@ const passport = require('../passport');
 
 //signup route auth
 router.post('/signup', (req, res, next) => {
-console.log(req.body);
+  //console.log(req.body);
   // Custom Passport Callback
   //passing json back into object
   //first(takes callback) second(takesrequestobject)
@@ -125,13 +125,8 @@ router.get('/api', (req, res) => {
 
 //logout routing
 router.get('/logout', function(req, res) {
-  console.log(req.Object);
-  //const isAuthenticated = window.localStorage.getItem("isAuthenticated");
-    
-
   console.log("Inside Logout");
   req.logout();
-  //window.localStorage.removeItem(isAuthenticated);
   res.json({
     isAuthenticated: false
   });
