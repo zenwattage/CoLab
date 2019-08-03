@@ -14,11 +14,11 @@ export default class Home extends Component {
           {/* <div className="logoimg"> */}
             <img src={logo} className="logoimg" alt="logo" width="300px" />
           {/* </div> */}
-          <p>"Alone we can do so little; together we can do so much." – Helen Keller</p>
+          <p className="quote">"Alone we can do so little; together we can do so much." – Helen Keller</p>
           {/* RENDER THE LOGIN COMPONENT */}
           <Login />
           {/* LINK TO SIGNUP COMPONENT PAGE */}
-          <Button link="/signup" value="signup">Sign Up</Button>
+          <Button id="homepagebutton" link="/signup" value="signup">Sign Up</Button>
         </Wrapper>
         <Footer />
       </div>
