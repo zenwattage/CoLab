@@ -16,7 +16,7 @@ export default class Login extends Component {
     results: [],
     statement: "",
     className: "still",
-    profession: ""
+    errorStatement: ""
   };
 
   handleShowLoginForms = event => {
@@ -45,7 +45,7 @@ export default class Login extends Component {
         const isAuthenticated = response.data.isAuthenticated;
         window.localStorage.setItem("isAuthenticated", isAuthenticated);
         //redirect
-        this.props.history.push("/profile");
+        // this.props.history.push("/profile");
         //onSubmit - checking that user is Authed -if not logging them out
         if (response.data === 0) {
           this.logout();
@@ -59,6 +59,7 @@ export default class Login extends Component {
         //   errorMessage: error.response.data.message
         // });
         console.log(error);
+        this.setState({ errorStatement: "Your email or password is incorrect. Please try again." });
       });
   };
 
@@ -81,10 +82,7 @@ export default class Login extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <Button value="login" handleOnClick={this.handleShowLoginForms}>
-              Log In
-            </Button>
-
+            <Button value="login" handleOnClick={this.handleShowLoginForms} enableChangeState>Log In</Button>
             <div className="login">
               {this.state.test && (
                 <Form>
@@ -112,17 +110,11 @@ export default class Login extends Component {
                       placeholder="Enter password"
                     />
                   </Form.Group>
-                </Form>
-              )}
-              {this.state.test && (
-                <Button
-                  className="loginsubmit"
-                  handleOnClick={this.handleSubmit}
-                  value="submit"
-                >
-                  Submit
-                </Button>
-              )}
+                </Form>)}
+              {this.state.test &&
+                <Button className="loginsubmit" handleOnClick={this.handleSubmit} value="submit">Submit</Button>
+              }
+              <p className="error">{this.state.errorStatement}</p>
             </div>
           </div>
         </form>

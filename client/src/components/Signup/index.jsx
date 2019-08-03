@@ -32,6 +32,7 @@ export default class Signup extends Component {
     payload
   }
 
+  // convert function is to convert payload(which has Boolean values) to strings 
   convert = (payload, professions) => {
     const proArray = [];
     for (var i = 0; i < payload.length; i++) {
