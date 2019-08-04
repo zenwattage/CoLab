@@ -11,6 +11,7 @@
     "linkedin": "",
     "other": "Huh?",
     "saved": ["Eleven", "Joyce"],
+    "professions": ["Dancing", "Photography"],
     "talents": ["Smoking", "Swearing", "Saving World"]
   },
   {
@@ -25,6 +26,7 @@
     "linkedin": "What?",
     "other": "Huh?",
     "saved": ["Eleven", "Joyce"],
+    "professions": ["Dancing", "Photography"],
     "talents": ["Smoking", "Swearing", "Saving World"]
   },
   {
@@ -39,6 +41,7 @@
     "linkedin": "What?",
     "other": "Huh?",
     "saved": ["Eleven", "Bobbie"],
+    "professions": ["Dancing", "Photography"],
     "talents": ["Flaying", "Morphing", "Consuming"]
   }
 ]

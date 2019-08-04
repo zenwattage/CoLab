@@ -12,6 +12,7 @@ const UserSchema = new Schema({
   linkedin: { type: String, default: "" },
   other: { type: String, default: "" },
   saved: { type: Array, default: "" },
+  professions: { type: Array, default: "" },
   talents: { type: Array, default: "" }
 });
 

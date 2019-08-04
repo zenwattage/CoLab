@@ -75,6 +75,12 @@ export default class Signup extends Component {
       buttons
     });
 
+    // CAUTION: LOGGERS AHEAD
+    console.log(buttons.);
+    
+
+
+
     axios({
       url: "/authentication/signup",
       method: "POST",
