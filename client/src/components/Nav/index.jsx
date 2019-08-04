@@ -34,7 +34,7 @@ export default class NavBarStuff extends Component {
     }
     return (
       <Navbar bg="light">
-        <Navbar.Brand className="Navbar-brand" href="#">
+        <Navbar.Brand className="Navbar-brand" href="/home">
           <img
             alt=""
             src={logo}
@@ -44,7 +44,7 @@ export default class NavBarStuff extends Component {
           />
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/search">Search Creatives</Nav.Link>
+          <Nav.Link href="/search">Search</Nav.Link>
           <NavDropdown title="My Account" id="basic-nav-dropdown">
             <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
             <NavDropdown.Item onClick={this.logout}>Logout</NavDropdown.Item>

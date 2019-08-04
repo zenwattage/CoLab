@@ -1,28 +1,22 @@
 .navbar {
   height: 70px;
   font-family: 'Lato', sans-serif;
+  color: #373E3F; 
 }
-
-.Navbar-brand {
-  font-family: 'Lato', sans-serif;
-  color: #5CB85C;
+.d-inline-block {
+  padding: 8px;
 }
-
-.mr-auto:hover {
+.navbar-light .navbar-nav .nav-link {
   float: right;
-  color: #5CB85C; 
 }
-
-.navbar{
-  color: #373E3F; 
+.navbar-light .navbar-nav .nav-link:hover  {
+  color: rgb(38, 109, 38);
+  font-weight: bold;
 }
-
-.navbar:hover{
-  text-decoration: none; 
-  color: #373E3F; 
-  background:#5CB85C; 
-}
-
-.navbar:active{
+/* .navbar:active{
   background: #373E3F; 
+} */
+
+#basic-nav-dropdown {
+  font-size: 15px;
 }
