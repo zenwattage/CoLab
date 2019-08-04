@@ -1,31 +1,28 @@
 import React from "react";
 import "./style.css";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 function ResultsCard(props) {
   return (
-    <div className="card">
+    <div className="card" data-aos="fade-right" data-aos-duration="1500">>
       <div className="img-container">
-        <img alt={props.name} src={props.image} />
+        <strong className="cardname">Name:</strong> {props.firstName}
+        <img alt={props.firstName} src={props.imageUrl} />
       </div>
       <div className="content">
         <ul>
           <li>
-            <strong>Name:</strong> {props.name}
-            {/* {results.state.firstName} */}
+            <p>Bio:</p> {props.bio}
           </li>
-          <li>
-            <strong>Bio:</strong> {props.occupation}
-            {/* {results.state.bio} */}
-          </li>
-          <li>
-            <strong>Instagram:</strong> {props.location}
-            {/* {results.state.instagram} */}
-
-          </li>
-          <li>
-            <strong>Other:</strong> {props.name}
-            {/* {results.state.other} */}
-          </li>
+          <Row>
+            <Col>
+              <p>Instagram:</p> {props.instagram}
+            </Col>
+            <p>Other:</p> {props.other}
+            <Col>
+            </Col>
+          </Row>
         </ul>
       </div>
       <span className="remove">𝘅</span>

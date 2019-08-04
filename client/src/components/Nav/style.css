@@ -1,20 +1,22 @@
-nav.navbar.navbar-default {
-  margin-bottom: 0;
-}
-
 .navbar {
-  background-color:white;
-  height: 50px;
-}
-
-.navbar-brand {
-  text-decoration: none;
-  /* float: right; */
-  color: #373E3F;
-  /* margin-right: 10px; */
+  height: 70px;
   font-family: 'Lato', sans-serif;
+  color: #373E3F; 
 }
+.d-inline-block {
+  padding: 8px;
+}
+.navbar-light .navbar-nav .nav-link {
+  float: right;
+}
+.navbar-light .navbar-nav .nav-link:hover  {
+  color: rgb(38, 109, 38);
+  font-weight: bold;
+}
+/* .navbar:active{
+  background: #373E3F; 
+} */
 
-.navbar-brand:hover{
-  color:#373E3F; 
+#basic-nav-dropdown {
+  font-size: 15px;
 }

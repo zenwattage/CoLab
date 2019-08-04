@@ -4,6 +4,8 @@ import Button from "../components/Button/Button";
 import logo from "../logo5.png";
 import Login from "../components/Login/index";
 import Wrapper from "../components/Wrapper/index";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default class Home extends Component {
   render() {
@@ -11,12 +13,17 @@ export default class Home extends Component {
     return (
       <div className="homepage">
         <Wrapper>
-          <img src={logo} className="logoimg" alt="logo" width="300px" />
-          <p>"Alone we can do so little; together we can do so much." – Helen Keller</p>
-          {/* RENDER THE LOGIN COMPONENT */}
+          <div data-aos="zoom-out" data-aos-duration="1200">
+            <img src={logo} className="logoimg" alt="logo" width="300px" />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="1000">
+            <p className="quote">"Alone we can do so little; together we can do so much." – Helen Keller</p>
+          </div>
+         
           <Login />
-          {/* LINK TO SIGNUP COMPONENT PAGE */}
-          <Button link="/signup" value="signup">Sign Up</Button>
+         
+          <Button id="homepagebutton" link="/signup" value="signup">Sign Up</Button>
+
         </Wrapper>
         <Footer />
       </div>

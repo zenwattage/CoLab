@@ -23,8 +23,11 @@
        url('http://tangledindesign.com/codepen/fonts/Calluna-Regular-webfont.svg#CallunaRegular') format('svg');
   }
   body {
-  background: #373E3F;
+  /* background: #373E3F; */
   color:white; 
+  /* height: 3000px;  */
+  /* background: linear-gradient(25deg, #465250 0%, #394141 51%, rgb(25, 28, 29) 85%); */
+  background: linear-gradient(25deg, rgb(25, 28, 29) 0%, #394141 51%, #465250 85%);
   }
   .community {
     color: lightgray;
@@ -131,8 +134,13 @@
 }
 
 .IntroLine{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
   margin-bottom:40px; 
   font-size: 30px;
+  color:#5CB85C;
+  text-align: center;
 }
 
 .inputtitle {
@@ -184,7 +192,45 @@
 }
 
 .signupinfo{
-  width:70%;  
   margin:auto; 
 }
 
+/* MEDIA QUERIES */
+@media only screen and (max-width: 420px) {
+  .IntroLine{
+    font-size:25px;
+    text-align: center;
+  }
+    .creative {
+      color:#5CB85C;
+      margin-left: 20px;
+    }
+    .container {
+        width: 590px;
+        margin: 140px auto;
+        position: relative;
+    }
+    blockquote {
+        width: 265px;
+        font: 1.25em CallunaRegular;
+        letter-spacing: .095em;
+        /* float: left; */
+        padding: 45px 0px 30px 25px;
+        margin: 0;
+        margin-top: 10px;
+        border-top: 2px dotted black;
+        border-bottom: 2px dotted black;
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+    }
+        blockquote strong:first-child {
+            margin-left: 15px;
+            letter-spacing: 0;
+        }
+        blockquote strong:last-child {
+            font: 2em "Museo 700";
+            text-transform: uppercase;
+            letter-spacing: 0;
+        }
+
+}  

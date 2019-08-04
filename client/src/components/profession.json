@@ -2,19 +2,19 @@
   {
     "profession":"Dancer",
     "talents":[
-      {"name":"Hip-hop","question":"Can you freestyle?"}, 
-      {"name":"Ballet","question":"Can you dance en pointe?"}, 
-      {"name":"Contemporary","question":"Can you improv?"}, 
-      {"name":"Latin","question":"Can you freestyle?"}],
+      {"name":"Hip-hop"}, 
+      {"name":"Ballet"}, 
+      {"name":"Contemporary"}, 
+      {"name":"Latin"}],
       "statement": "My best dance style(s) are:"
   },
   {
     "profession":"Photographer",
     "talents":[
-      {"name":"Landscape","question":"Can you freestyle?"}, 
-      {"name":"Portrait","question":"Can you freestyle?"}, 
-      {"name":"Street","question":"Can you freestyle?"}, 
-      {"name":"Motion","question":"Can you freestyle?"}],
+      {"name":"Landscape"}, 
+      {"name":"Portrait"}, 
+      {"name":"Street"}, 
+      {"name":"Motion"}],
       "statement": "I photograph this style best:"
   }
 ]

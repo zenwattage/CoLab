@@ -1,38 +1,56 @@
-import React from "react";
-import "./style.css"; 
-// import Navbar from 'react-bootstrap/Navbar';
+import React, { Component } from "react";
+import "./style.css";
+import { Redirect } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Nav from "react-bootstrap/Nav";
+import logo from "./logo5.png";
+import axios from "axios";
 
-// function Nav() {
-//   return (
-//   <Navbar bg="light" variant="light">
-//     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-//     <Nav className="mr-auto">
-//       <Nav.Link href="#home">Home</Nav.Link>
-//       <Nav.Link href="#signup">Features</Nav.Link>
-//       <Nav.Link href="#search">Pricing</Nav.Link>
-//       <Nav.Link href="#profile">Pricing</Nav.Link>
-//     </Nav>
-//   </Navbar>
-// )}
+export default class NavBarStuff extends Component {
+  state ={
+    logout:false
+  };
+  //logout function
+  logout = () => {
+    axios
+    .get("/authentication/logout")
+    .then(
+      data => {
+        console.log(data);
+        // localStorage.clear();
+        localStorage.removeItem('isAuthenticated');
+        this.setState({logout:true})
+      }
+    ).catch(error => {
+      console.log(error);
+      //TODO: push user out
+    })
+  }; 
 
-// export default Nav;
-
-function Nav() {
-  return (
-    <nav className="navbar">
-      <a className="navbar-brand" href="/">
-        CoLab
-      </a>
-      <a className="navbar-brand" href="/signup">
-        Sign Up
-      </a>
-      <a className="navbar-brand" href="/profile">
-        Profile
-      </a>
-      <a className="navbar-brand" href="/search">
-        Search
-      </a>
-    </nav>
-  )}
-
-export default Nav;
+  render(){
+    if (this.state.logout) {
+      return <Redirect to="/" />;
+    }
+    return (
+      <Navbar bg="light">
+        <Navbar.Brand className="Navbar-brand" href="/home">
+          <img
+            alt=""
+            src={logo}
+            width="70"
+            height="90"
+            className="d-inline-block align-top"
+          />
+        </Navbar.Brand>
+        <Nav className="mr-auto">
+          <Nav.Link href="/search">Search</Nav.Link>
+          <NavDropdown title="My Account" id="basic-nav-dropdown">
+            <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+            <NavDropdown.Item onClick={this.logout}>Logout</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar>
+    );
+  }
+}

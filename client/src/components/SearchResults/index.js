@@ -18,11 +18,11 @@ function SearchResults(props) {
 
       {/* This will be inserted into axios call forloop */}
       <ResultsCard
-        imageUrl=""
-        firstName=""
-        bio=""
-        instagram=""
-        other=""
+        imageUrl={props.imageUrl}
+        firstName={props.firstName}
+        bio={props.bio}
+        instagram={props.instagram}
+        other={props.other}
       />
 
     </Fragment>
