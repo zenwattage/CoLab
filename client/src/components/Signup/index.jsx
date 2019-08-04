@@ -10,15 +10,9 @@ import Talent from "../Talent";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
-<<<<<<< HEAD
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-=======
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
 import payload from "../signupPayload.json";
-
->>>>>>> master
 
 export default class Signup extends Component {
   state = {
@@ -32,36 +26,30 @@ export default class Signup extends Component {
     bio: "",
     instagram: "",
     linkedin: "",
-<<<<<<< HEAD
-    other: ""
-  };
-=======
     other: "",
     payload
-  }
->>>>>>> master
+  };
 
-  // convert function is to convert payload(which has Boolean values) to strings 
+  // convert function is to convert payload(which has Boolean values) to strings
   convert = (payload, professions) => {
     const proArray = [];
     for (var i = 0; i < payload.length; i++) {
       if (payload[i].pro) {
-        const pro = { "profession": professions[i].profession, "talents": [] };
+        const pro = { profession: professions[i].profession, talents: [] };
         for (var j = 0; j < payload[i].talents.length; j++) {
           if (payload[i].talents[j].talent) {
-            pro.talents.push(professions[i].talents[j].name)
+            pro.talents.push(professions[i].talents[j].name);
           }
         }
         proArray.push(pro);
       }
     }
-    return (proArray);
+    return proArray;
   };
 
   handleSubmit = event => {
     event.preventDefault();
 
-<<<<<<< HEAD
     const {
       email,
       password,
@@ -73,6 +61,7 @@ export default class Signup extends Component {
       linkedin,
       other
     } = this.state;
+    const buttons = this.convert(this.state.payload, this.state.professions);
     console.log({
       email,
       password,
@@ -84,11 +73,6 @@ export default class Signup extends Component {
       linkedin,
       other
     });
-=======
-    const { email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other } = this.state;
-    const buttons = this.convert(this.state.payload, this.state.professions);
-    console.log({ email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other,  });
->>>>>>> master
 
     axios({
       url: "/authentication/signup",
@@ -111,18 +95,11 @@ export default class Signup extends Component {
         window.localStorage.setItem("isAuthenticated", isAuthenticated);
         this.props.history.push("/search");
       })
-<<<<<<< HEAD
       .catch(error => {
         this.setState({
           errorMessage: error.response.data.message
         });
-=======
-    .catch((error) => {
-      this.setState({
-        errorMessage: error.response.data.message
->>>>>>> master
       });
-    });
   };
 
   handleChange = event => {
@@ -139,7 +116,7 @@ export default class Signup extends Component {
       if (this.state.professions[i].profession === proName) {
         const temp = this.state.payload;
         temp[i].pro = isAdded;
-        this.setState({ payload: temp })
+        this.setState({ payload: temp });
       }
     }
   };
@@ -152,7 +129,7 @@ export default class Signup extends Component {
           if (this.state.professions[i].talents[j].name === talent) {
             const temp = this.state.payload;
             temp[i].talents[j].talent = isAdded;
-            this.setState({ payload: temp })
+            this.setState({ payload: temp });
           }
         }
       }
@@ -170,37 +147,13 @@ export default class Signup extends Component {
       <Fragment>
         <Nav />
         <Wrapper>
-<<<<<<< HEAD
-          <article className="container">
-            <blockquote>
-              <strong>Welcome</strong> to{" "}
-              <em className="creative">our creative</em>{" "}
-              <strong className="community">community</strong>
-            </blockquote>
-          </article>
-
-          <div className="signuppage">
-
-            <form onSubmit={this.handleSubmit}>
-              <h3 className="IMA">I AM A:</h3>
-              <p className="pp">Tell us about your profession.</p>
-              <div>
-                {this.state.professions.map(x => (
-                  <Talent
-                    profession={x.profession}
-                    talents={x.talents}
-                    statement={x.statement}
-                    className={this.state.className}
-                  />
-                ))}
-              </div>
-            </form>
-=======
           <Row>
             <Col>
               <article className="container">
                 <blockquote>
-                  <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
+                  <strong>Welcome</strong> to{" "}
+                  <em className="creative">our creative</em>{" "}
+                  <strong className="community">community</strong>
                 </blockquote>
               </article>
             </Col>
@@ -223,16 +176,21 @@ export default class Signup extends Component {
                   <Col>
                     <div>
                       {this.state.professions.map(x => (
-                        <Talent key={x.profession} profession={x.profession} talents={x.talents}
-                          handleOnClick={this.clickPro} handleClickTalent={this.clickTalent}
-                          statement={x.statement} className={this.state.className} />
+                        <Talent
+                          key={x.profession}
+                          profession={x.profession}
+                          talents={x.talents}
+                          handleOnClick={this.clickPro}
+                          handleClickTalent={this.clickTalent}
+                          statement={x.statement}
+                          className={this.state.className}
+                        />
                       ))}
                     </div>
                   </Col>
                 </Row>
               </form>
             </div>
->>>>>>> master
 
             <hr />
 
@@ -248,69 +206,57 @@ export default class Signup extends Component {
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>First name</Form.Label>
-<<<<<<< HEAD
                     <Form.Control
                       value={this.state.firstName}
+                      size="sm"
                       name="firstName"
                       onChange={this.handleChange}
                       type="name"
                       placeholder="Enter first name"
                     />
-=======
-                    <Form.Control value={this.state.firstName} size="sm" name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" />
->>>>>>> master
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Last name</Form.Label>
-<<<<<<< HEAD
                     <Form.Control
                       value={this.state.lastName}
+                      size="sm"
                       name="lastName"
                       onChange={this.handleChange}
                       type="name"
                       placeholder="Enter last name"
                     />
-=======
-                    <Form.Control value={this.state.lastName} size="sm" name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" />
->>>>>>> master
                   </Form.Group>
                 </Form.Row>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
-<<<<<<< HEAD
                     <Form.Control
                       value={this.state.email}
+                      size="sm"
                       name="email"
                       onChange={this.handleChange}
                       type="email"
                       placeholder="Enter email"
                     />
-=======
-                    <Form.Control value={this.state.email} size="sm" name="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
->>>>>>> master
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Password</Form.Label>
-<<<<<<< HEAD
                     <Form.Control
                       value={this.state.password}
+                      size="sm"
                       name="password"
                       onChange={this.handleChange}
                       type="password"
                       placeholder="Create password"
                     />
-=======
-                    <Form.Control value={this.state.password} size="sm" name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
->>>>>>> master
                   </Form.Group>
                 </Form.Row>
                 {/* <Form.Row> */}
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                   <Form.Label>Bio</Form.Label>
-<<<<<<< HEAD
                   <Form.Control
                     value={this.state.bio}
+                    size="sm"
                     name="bio"
                     onChange={this.handleChange}
                     type="text"
@@ -318,9 +264,6 @@ export default class Signup extends Component {
                     rows="6"
                     placeholder="Tell us something interesting..."
                   />
-=======
-                  <Form.Control value={this.state.bio} size="sm" name="bio" onChange={this.handleChange} type="text" as="textarea" rows="6" placeholder="Tell us something interesting..." />
->>>>>>> master
                 </Form.Group>
                 {/* </Form.Row> */}
                 <Form.Row>
@@ -335,35 +278,29 @@ export default class Signup extends Component {
                         </Tooltip>
                       }
                     >
-<<<<<<< HEAD
                       <Form.Control
+                        size="sm"
                         value={this.state.imageUrl}
                         name="imageUrl"
                         onChange={this.handleChange}
                       />
-=======
-                      <Form.Control size="sm" value={this.state.imageUrl} name="imageUrl" onChange={this.handleChange} />
->>>>>>> master
                     </OverlayTrigger>
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridAddress2">
                     <Form.Label>LinkedIn</Form.Label>
-<<<<<<< HEAD
                     <Form.Control
+                      size="sm"
                       value={this.state.linkedin}
                       name="linkedin"
                       onChange={this.handleChange}
                     />
-=======
-                    <Form.Control size="sm" value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
->>>>>>> master
                   </Form.Group>
                 </Form.Row>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridAddress2">
                     <Form.Label>Instagram</Form.Label>
-<<<<<<< HEAD
                     <Form.Control
+                      size="sm"
                       value={this.state.instagram}
                       name="instagram"
                       onChange={this.handleChange}
@@ -373,25 +310,17 @@ export default class Signup extends Component {
                     <Form.Label>Other</Form.Label>
                     <Form.Control
                       value={this.state.other}
+                      size="sm"
                       name="other"
                       onChange={this.handleChange}
                       placeholder="Anything else?"
                     />
                   </Form.Group>
                 </Form.Row>
-                <br/>
-                <button className="submitbutton">Submit</button>
-=======
-                    <Form.Control size="sm" value={this.state.instagram} name="instagram" onChange={this.handleChange} />
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridAddress2">
-                    <Form.Label>Other</Form.Label>
-                    <Form.Control value={this.state.other} size="sm" name="other" onChange={this.handleChange} placeholder="Anything else?" />
-                  </Form.Group>
-                </Form.Row>
                 <br />
-                <button className="submitbutton" onClick={this.handleSubmit}>Submit</button>
->>>>>>> master
+                <button className="submitbutton" onClick={this.handleSubmit}>
+                  Submit
+                </button>
               </Form>
             </div>
             <p>{this.state.errorMessage}</p>
