@@ -11,6 +11,8 @@ import Talent from '../components/Talent/index';
 import "./style.css";
 import payload from "../components/searchPayload.json";
 import search from "../components/search.json";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default class SearchArtist extends Component {
   state = {
@@ -133,7 +135,9 @@ export default class SearchArtist extends Component {
 
           <Row className="search">
             <Col size="md-12">
-              <h1 className="title1">Find your CoLab match.</h1>
+              <div data-aos="zoom-in">
+                <h1 className="title1">Meet Your Match.</h1>
+              </div>
               <p className="subTitle"> Any artists matching your criteria will appear after the search is complete.</p>
               <p className="subLine">I'm looking for a:</p>
             </Col>
