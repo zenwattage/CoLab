@@ -71,7 +71,8 @@ export default class Signup extends Component {
       bio,
       instagram,
       linkedin,
-      other
+      other,
+      buttons
     });
 
     axios({
