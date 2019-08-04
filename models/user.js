@@ -12,7 +12,7 @@ const UserSchema = new Schema({
   instagram: {type: String, default: ''},
   linkedin: {type: String, default: ''},
   other: {type: String, default: ''},
-  talents: Array,
+  buttons: [{'profession':String},{'talents':Array}]
 });
 
 

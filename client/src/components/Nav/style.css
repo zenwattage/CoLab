@@ -8,10 +8,10 @@
   color: #5CB85C;
 }
 
-.mr-auto:hover {
+/* .mr-auto:hover {
   float: right;
   color: #5CB85C; 
-}
+} */
 
 .navbar{
   color: #373E3F; 
@@ -23,6 +23,9 @@
   background:#5CB85C; 
 }
 
-.navbar:active{
-  background: #373E3F; 
+.navbar-item:active{
+  color:white !important; 
+  background:#5CB85C !important; 
 }
+
+
