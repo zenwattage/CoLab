@@ -8,10 +8,7 @@ import NotFound from '../src/components/NotFound';
 import Search from '../src/pages/Search';
 import Profile from "../src/pages/Profile";
 
-
 export default class App extends Component {
-
-
   render() {
     // JSX
     return (

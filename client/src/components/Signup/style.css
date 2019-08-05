@@ -193,6 +193,16 @@
   margin:auto; 
 }
 
+.signupForm{
+  width:80%; 
+  display: inline-block; 
+}
+
+.hint{
+  display: flex; 
+  color:#5CB85C; 
+}
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 420px) {
   .IntroLine{

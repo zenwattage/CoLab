@@ -1,7 +1,7 @@
 .navbar {
   height: 80px;
   font-family: 'Lato', sans-serif;
-  color: #373E3F; 
+  color: #495057; 
 }
 
 .d-inline-block {
@@ -10,17 +10,13 @@
   justify-content: flex-start;
 }
 
-.navbar-expand {
-  justify-content: flex-end;
-}
-
 .navbar-item:active{
   color:white !important; 
   background:rgb(38, 109, 38) !important; 
 } 
 
 .nav-link{
-  color:#373E3F !important; 
+  color:#495057 !important; 
 }
 
 .navbar-light .navbar-nav .nav-link:hover  {
@@ -34,7 +30,7 @@
 
 .nav-search{
   display: block;
-  color:#373E3F; 
+  color:#495057; 
   padding: .5rem 1rem;
 }
 
