@@ -77,20 +77,34 @@
   font-family: 'Libre Baskerville', serif;
   font-size: 20px;
 }
-#homepagebutton {
+.homepagebutton {
   -webkit-transition-duration: 0.2s; /* Safari */
   transition-duration: 0.2s;
   font-size: 20px;
   font-display: bold;
   width: 180px;
-  border-color: white;
+  border-color: #5CB85C;
+  color:#5CB85C; 
 }
-#homepagebutton:hover {
+
+.homepagebutton:hover {
     background-color: #5CB85C; /* Green */
     color: white;
     border-color: #5CB85C;
   }
 
+  .homepagebutton:visited{
+    background-color: #5CB85C; /* Green */
+    color: white;
+    border-color: #5CB85C;
+  }
+.quote{
+  margin:0px 10px 40px 10px; 
+}
+
+.quoteBlock{
+  display: inline-flex; 
+}
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 420px) {

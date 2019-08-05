@@ -18,7 +18,7 @@ export default class NavBarStuff extends Component {
     .then(
       data => {
         console.log(data);
-        // localStorage.clear();
+        localStorage.clear();
         localStorage.removeItem('isAuthenticated');
         this.setState({logout:true})
       }
@@ -44,10 +44,10 @@ export default class NavBarStuff extends Component {
           />
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/search">Search</Nav.Link>
+          <a href="/search" className = "nav-search">Search</a>
           <NavDropdown title="My Account" id="basic-nav-dropdown">
-            <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-            <NavDropdown.Item onClick={this.logout}>Logout</NavDropdown.Item>
+            <NavDropdown.Item href="/profile" className ="navbar-item">Profile</NavDropdown.Item>
+            <NavDropdown.Item onClick={this.logout} className ="navbar-item">Logout</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar>

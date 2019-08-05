@@ -10,14 +10,9 @@
   background-color: green;
   text-align: center;
 }
-#submitbutton {
-  width: 80px;
-  height: 30px;
-  margin-bottom: 20px;
-  font-size: 10px;
-}
+
 .form-control-home {
-  width: 150px;
+  width: 180px;
   margin: 0 auto;
   text-align: center;
   margin-top: 20px;
@@ -29,10 +24,22 @@
   margin-bottom: 10px;
 }
 .loginsubmit {
-  width: 90px;
-  margin-bottom: 10px;
+  width: 180px;
+  margin: 0 auto;
+  text-align: center;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
 }
-#homepagebutton {
+
+.homepagebutton {
+  color: white;
+  background: none;
   -webkit-transition-duration: 0.2s; /* Safari */
   transition-duration: 0.2s;
   font-size: 20px;
@@ -40,13 +47,16 @@
   width: 180px; 
   border-color: #5CB85C;
 }
-#homepagebutton:hover {
+
+.homepagebutton:hover {
     background-color: #5CB85C; /* Green */
     color: white;
   }
-#submitlogin {
-  background-color: #5CB85C;
-  width: 100px;
-  font-size: 15px;
-  border-color: #5CB85C;
+
+
+.error{
+  margin-top: 15px;
+  width: 180px;
+  display: inline-block;
+  opacity: 0.6;
 }
