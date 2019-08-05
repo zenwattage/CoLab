@@ -33,7 +33,8 @@ export default class Signup extends Component {
     bio: "",
     instagram: "",
     linkedin: "",
-    other: ""
+    other: "",
+    userPortfolio: ""
   };
 
   // convert function is to convert payload(which has Boolean values) to strings
@@ -66,7 +67,8 @@ export default class Signup extends Component {
       bio,
       instagram,
       linkedin,
-      other
+      other,
+      userPortfolio
     } = this.state;
     const buttons = this.convert(this.state.payload, this.state.professions);
     console.log({
@@ -79,7 +81,7 @@ export default class Signup extends Component {
       instagram,
       linkedin,
       other,
-      buttons
+      userPortfolio
     });
 
     console.log(buttons);
@@ -115,6 +117,7 @@ export default class Signup extends Component {
         linkedin,
         userProfession,
         userTalent,
+        userPortfolio,
         other
       }
     })
@@ -332,6 +335,16 @@ export default class Signup extends Component {
                       value={this.state.instagram}
                       name="instagram"
                       onChange={this.handleChange}
+                    />
+                  </Form.Group>
+                  <Form.Group as={Col} controlId="formGridAddress2">
+                    <Form.Label>Portfolio Images</Form.Label>
+                    <Form.Control
+                      value={this.state.userPortfolio}
+                      size="sm"
+                      name="userPortfolio"
+                      onChange={this.handleChange}
+                      placeholder="Got any good pics?"
                     />
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridAddress2">
