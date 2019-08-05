@@ -16,13 +16,17 @@ export default class Home extends Component {
           <div data-aos="zoom-out" data-aos-duration="1200">
             <img src={logo} className="logoimg" alt="logo" width="300px" />
           </div>
-          <div data-aos="zoom-in" data-aos-duration="1000">
-            <p className="quote">"Alone we can do so little; together we can do so much." – Helen Keller</p>
+          <div data-aos="zoom-in" data-aos-duration="1000" className ="quoteBlock">
+          <i class="fas fa-quote-left"></i>
+          <p className="quote quoteMark"> Alone we can do so little; together we can do so much.</p>
+          <i class="fas fa-quote-right"></i> 
+          {/* <p> – Helen Keller</p> */}
+          
           </div>
-         
+
           <Login />
-         
-          <Button id="homepagebutton" link="/signup" value="signup">Sign Up</Button>
+
+          <Button className="homepagebutton" link="/signup" value="signup">Sign Up</Button>
 
         </Wrapper>
         <Footer />

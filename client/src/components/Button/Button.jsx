@@ -34,6 +34,7 @@ export default class Button extends Component {
             value={this.props.value}
             id={this.props.id}
             className={this.state.className}
+            class = {this.props.className}
             onClick={this.handleOnClick}>{this.props.children}</button>
         </a>
       </div>

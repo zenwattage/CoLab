@@ -4,8 +4,10 @@ import "./style.css";
 
 function Footer() {
   return (
-    <Navbar className="footer" fixed="sticky" bg="light">
-      <Navbar.Brand className="footer2">© CoLab: 2019</Navbar.Brand>
+    <Navbar navbar-expand navbar-light bg-light className="footer">
+      <div>
+        <p className="center">© CoLab: 2019</p>
+      </div>
     </Navbar>
   );
 }

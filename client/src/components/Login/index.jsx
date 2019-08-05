@@ -83,7 +83,7 @@ export default class Login extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <Button value="login" id="homepagebutton" handleOnClick={this.handleShowLoginForms} enableChangeState>Log In</Button>
+            <Button value="login" className="homepagebutton" handleOnClick={this.handleShowLoginForms}>Log In</Button>
             <div className="login">
               {this.state.test && (
                 <Form>
@@ -113,9 +113,12 @@ export default class Login extends Component {
                   </Form.Group>
                 </Form>)}
               {this.state.test &&
-                <Button id="submitlogin" className="loginsubmit" handleOnClick={this.handleSubmit} value="submit">Submit</Button>
+                <Button className="loginsubmit" handleOnClick={this.handleSubmit} value="submit">Submit</Button>
               }
-              <p className="error">{this.state.errorStatement}</p>
+              {this.state.test &&
+                <p className="error">{this.state.errorStatement}</p>
+              }
+              <br/>
             </div>
           </div>
         </form>

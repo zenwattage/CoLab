@@ -21,7 +21,9 @@ export default class SearchArtist extends Component {
     firstName: "",
     imageUrl: "",
     bio: "",
+    email: "",
     instagram: "",
+    linkedin: "",
     other: "",
     error: "",
     payload
