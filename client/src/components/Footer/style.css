@@ -1,13 +1,13 @@
 .footer {
   display: block !important; 
   height: 20px;
-  position:fixed; 
-  position: absolute;
+  /* position: fixed;  */
+  /* position: absolute; */
+  position: sticky;
   display: inline-flex;
   background:#f8f9fa!important; 
   color:rgba(0,0,0,.5); 
-  border:20px solid #f8f9fa; 
-  position:sticky; 
+  border:20px solid #f8f9fa;  
   margin-top:100px; 
   margin-bottom: 20px #f8f9fa;
   }

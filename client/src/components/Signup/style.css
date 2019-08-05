@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Sketch Block';
   src: url('http://tangledindesign.com/codepen/fonts/sketch_block-webfont.eot');
   src: url('http://tangledindesign.com/codepen/fonts/sketch_block-webfont.eot?#iefix') format('embedded-opentype'),
@@ -46,8 +46,7 @@
       margin-bottom: 50px;
       border-top: 2px dotted black;
       border-bottom: 2px dotted black;
-      /* -webkit-transform: rotate(-3deg); */
-      /* -moz-transform: rotate(-3deg); */
+    
   }
   .container:before {
       content: "";
@@ -105,7 +104,7 @@
           blockquote:first-letter {
               margin-top: -29px;
           }
-      }
+      } */
 
 .signupbutton {
   margin-right: 10px;
@@ -129,6 +128,7 @@
   margin-bottom: 20px;
   font-style: italic;
   letter-spacing: .5px;
+  margin-top: 50px;
 }
 
 .IntroLine{

@@ -1,21 +1,30 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment, Component } from "react";
 import { Redirect } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import Wrapper from "../Wrapper";
 import Footer from "../Footer/index";
 import Nav from "../Nav/index";
 import "./style.css";
 import professions from "../profession.json";
-import Talent from "../Talent"
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Talent from "../Talent";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 import payload from "../signupPayload.json";
+import Opener from "../Opener/Opener";
 
 export default class Signup extends Component {
-
   state = {
+    // payload for handling state of buttons
+    payload,
+    // user arrays for profession and talent passing
     professions,
+    // // prof/talent choices to be passed to DB
+    // userProfession: "",
+    // userTalent: "",
+    // all other user items
     email: "",
     firstName: "",
     lastName: "",
@@ -28,34 +37,78 @@ export default class Signup extends Component {
     other: "",
     payload,
     validator:[false, false, false, false],
-    hint:"*This field is required."
+    hint:"*This field is required.",
+    userPortfolio: ""
   }
 
-  // convert function is to convert payload(which has Boolean values) to strings 
+  // convert function is to convert payload(which has Boolean values) to strings
   convert = (payload, professions) => {
     const proArray = [];
     for (var i = 0; i < payload.length; i++) {
       if (payload[i].pro) {
-        const pro = { "profession": professions[i].profession, "talents": [] };
+        const pro = { profession: professions[i].profession, talents: [] };
         for (var j = 0; j < payload[i].talents.length; j++) {
           if (payload[i].talents[j].talent) {
-            pro.talents.push(professions[i].talents[j].name)
+            pro.talents.push(professions[i].talents[j].name);
           }
         }
         proArray.push(pro);
+        console.log(professions);
       }
     }
-    return (proArray);
+    return proArray;
   };
 
   handleSubmit = event => {
     // const validateArray = [this.state.firstName, this.state.lastName, this.state.email, this.state.password]; 
     event.preventDefault();
 
-    const { email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other } = this.state;
+    const {
+      email,
+      password,
+      firstName,
+      lastName,
+      imageUrl,
+      bio,
+      instagram,
+      linkedin,
+      other,
+      userPortfolio
+    } = this.state;
+    
     const buttons = this.convert(this.state.payload, this.state.professions);
-    console.log({ email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other});
 
+    console.log({
+      email,
+      password,
+      firstName,
+      lastName,
+      imageUrl,
+      bio,
+      instagram,
+      linkedin,
+      other,
+      userPortfolio
+    });
+
+    console.log(buttons);
+
+    // Gettin' Buttoned Up
+    // Empty arrays to store data taken from the button variable.
+    // These are sent in the axios POST, to the user schema
+
+    let userProfession = [];
+    let userTalent = [];
+
+    // CAUTION: LOGGERS AHEAD
+    for (let i = 0; i < buttons.length; i++) {
+      const element = buttons[i];
+      console.log(element);
+      console.log("Profession: " + element.profession);
+      console.log("Talents: " + element.talents);
+      userProfession.push(element.profession);
+      userTalent.push(element.talents);
+    }
 
     (this.validate([this.state.firstName, this.state.lastName, this.state.email, this.state.password]))
     && axios({
@@ -70,23 +123,25 @@ export default class Signup extends Component {
         bio,
         instagram,
         linkedin,
-        other,
-        buttons
+        userProfession,
+        userTalent,
+        userPortfolio,
+        other
       }
     })
-      .then((response) => {
+      .then(response => {
         const isAuthenticated = response.data.isAuthenticated;
-        window.localStorage.setItem('isAuthenticated', isAuthenticated);
+        window.localStorage.setItem("isAuthenticated", isAuthenticated);
         this.props.history.push("/search");
       })
-      .catch((error) => {
+      .catch(error => {
         this.setState({
           errorMessage: error.response.data.message
         });
       });
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -100,7 +155,7 @@ export default class Signup extends Component {
       if (this.state.professions[i].profession === proName) {
         const temp = this.state.payload;
         temp[i].pro = isAdded;
-        this.setState({ payload: temp })
+        this.setState({ payload: temp });
       }
     }
   };
@@ -113,7 +168,7 @@ export default class Signup extends Component {
           if (this.state.professions[i].talents[j].name === talent) {
             const temp = this.state.payload;
             temp[i].talents[j].talent = isAdded;
-            this.setState({ payload: temp })
+            this.setState({ payload: temp });
           }
         }
       }
@@ -150,22 +205,15 @@ export default class Signup extends Component {
       <Fragment>
         <Nav />
         <Wrapper>
-          <Row>
-            <Col>
-              <article className="opener">
-                <blockquote>
-                  <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
-                </blockquote>
-              </article>
-            </Col>
-          </Row>
+
+          <Opener />
 
           <div className="signuppage">
             <div className="professionform">
               <form onSubmit={this.handleSubmit}>
                 <Row>
                   <Col>
-                    <h3 className="IMA">I AM A:</h3>
+                    {/* <h3 className="IMA">I AM A:</h3> */}
                   </Col>
                 </Row>
                 <Row>
@@ -177,9 +225,15 @@ export default class Signup extends Component {
                   <Col>
                     <div>
                       {this.state.professions.map(x => (
-                        <Talent key={x.profession} profession={x.profession} talents={x.talents}
-                          handleOnClick={this.clickPro} handleClickTalent={this.clickTalent}
-                          statement={x.statement} className={this.state.className} />
+                        <Talent
+                          key={x.profession}
+                          profession={x.profession}
+                          talents={x.talents}
+                          handleOnClick={this.clickPro}
+                          handleClickTalent={this.clickTalent}
+                          statement={x.statement}
+                          className={this.state.className}
+                        />
                       ))}
                     </div>
                   </Col>
@@ -199,33 +253,42 @@ export default class Signup extends Component {
 
               <Form onSubmit={this.handleSubmit} className="signupForm" noValidate>
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>First name</Form.Label>
-                    <Form.Control value={this.state.firstName} size="sm" name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" required />
+                    <Form.Control value={this.state.firstName} size="sm" name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name"/>
                     {(this.state.validator[0]) && <div className="hint">{this.state.hint}</div>}
                   </Form.Group>
-                  <Form.Group as={Col} controlId="formGridPassword">
+                  <Form.Group as={Col} controlId="formGridLastName">
                     <Form.Label>Last name</Form.Label>
-                    <Form.Control value={this.state.lastName} size="sm" name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" required />
+                    <Form.Control value={this.state.lastName} size="sm" name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name"/>
                     {(this.state.validator[1]) && <div className="hint">{this.state.hint}</div>}
                   </Form.Group>
                 </Form.Row>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control value={this.state.email} size="sm" name="email" onChange={this.handleChange} type="email" placeholder="Enter email" required />
+                    <Form.Control value={this.state.email} size="sm" name="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
                     {(this.state.validator[2]) && <div className="hint">{this.state.hint}</div>}              
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control value={this.state.password} size="sm" name="password" onChange={this.handleChange} type="password" placeholder="Create password" required />
+                    <Form.Control value={this.state.password} size="sm" name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
                     {(this.state.validator[3]) && <div className="hint">{this.state.hint}</div>}              
                   </Form.Group>
                 </Form.Row>
                 {/* <Form.Row> */}
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                   <Form.Label>Bio</Form.Label>
-                  <Form.Control value={this.state.bio} size="sm" name="bio" onChange={this.handleChange} type="text" as="textarea" rows="6" placeholder="Tell us something interesting..." />
+                  <Form.Control
+                    value={this.state.bio}
+                    size="sm"
+                    name="bio"
+                    onChange={this.handleChange}
+                    type="text"
+                    as="textarea"
+                    rows="6"
+                    placeholder="Tell us something interesting..."
+                  />
                 </Form.Group>
                 {/* </Form.Row> */}
                 <Form.Row>
@@ -235,7 +298,7 @@ export default class Signup extends Component {
                         placeholder="Please upload a link to an image of your best work"
                         onChange={this.handleChange} />
                   </Form.Group>
-                  <Form.Group as={Col} controlId="formGridAddress2">
+                  <Form.Group as={Col} controlId="formGridAddress3">
                     <Form.Label>LinkedIn</Form.Label>
                     <Form.Control size="sm" value={this.state.linkedin} name="linkedin"
                       placeholder="Enter LinkedIn URL"
@@ -243,15 +306,41 @@ export default class Signup extends Component {
                   </Form.Group>
                 </Form.Row>
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formGridAddress2">
+                  <Form.Group as={Col} controlId="formGridAddress4">
                     <Form.Label>Instagram</Form.Label>
                     <Form.Control size="sm" value={this.state.instagram}
                       name="instagram" onChange={this.handleChange}
                       placeholder="Enter Instagram URL" />
                   </Form.Group>
-                  <Form.Group as={Col} controlId="formGridAddress2">
+                  <Form.Group as={Col} controlId="formGridAddress5">
+                    <Form.Label>Portfolio link</Form.Label>
+                    <OverlayTrigger
+                      key="right"
+                      placement="right"
+                      overlay={
+                        <Tooltip id={`tooltip-${"right"}`}>
+                          Please include a link to your online portfolio if applicable.
+                        </Tooltip>
+                      }
+                    >
+                  <Form.Control
+                        size="sm"
+                        value={this.state.userPortfolio}
+                        name="userPortfolio"
+                        onChange={this.handleChange}
+                        placeholder="Enter Portfolio URL"
+                      />
+                    </OverlayTrigger>
+                  </Form.Group>
+                  <Form.Group as={Col} controlId="formGridAddress6">
                     <Form.Label>Other</Form.Label>
-                    <Form.Control value={this.state.other} size="sm" name="other" onChange={this.handleChange} placeholder="Anything else?" />
+                    <Form.Control
+                      value={this.state.other}
+                      size="sm"
+                      name="other"
+                      onChange={this.handleChange}
+                      placeholder="Anything else?"
+                    />
                   </Form.Group>
                 </Form.Row>
                 <br />
@@ -263,6 +352,6 @@ export default class Signup extends Component {
         </Wrapper>
         <Footer />
       </Fragment>
-    )
+    );
   }
 }
