@@ -54,7 +54,7 @@ export default class Signup extends Component {
 
     const { email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other } = this.state;
     const buttons = this.convert(this.state.payload, this.state.professions);
-    console.log({ email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other, buttons });
+    console.log({ email, password, firstName, lastName, imageUrl, bio, instagram, linkedin, other,  });
 
     axios({
       url: "/authentication/signup",

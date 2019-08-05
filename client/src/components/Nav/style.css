@@ -1,19 +1,13 @@
 .navbar {
   height: 70px;
   font-family: 'Lato', sans-serif;
+  color: #373E3F; 
+}
+.d-inline-block {
+  padding: 8px;
 }
 
-.Navbar-brand {
-  font-family: 'Lato', sans-serif;
-  color: #5CB85C;
-}
-
-/* .mr-auto:hover {
-  float: right;
-  color: #5CB85C; 
-} */
-
-.navbar{
+/* .navbar{
   color: #373E3F; 
 }
 
@@ -21,11 +15,37 @@
   text-decoration: none; 
   color: #373E3F; 
   background:#5CB85C; 
-}
+}*/
 
 .navbar-item:active{
   color:white !important; 
-  background:#5CB85C !important; 
+  background:rgb(38, 109, 38) !important; 
+} 
+
+.nav-link{
+  color:#373E3F !important; 
 }
 
+.navbar-light .navbar-nav .nav-link:hover  {
+  color: rgb(38, 109, 38) !important;
+  font-weight: bold;
+}
+/* .navbar:active{
+  background: #373E3F; 
+} */
 
+#basic-nav-dropdown {
+  font-size: 15px;
+}
+
+.nav-search{
+  display: block;
+  color:#373E3F; 
+  padding: .5rem 1rem;
+}
+
+.nav-search:hover  {
+  color: rgb(38, 109, 38);
+  font-weight: bold;
+  text-decoration:none;
+}
