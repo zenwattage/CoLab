@@ -43,7 +43,7 @@ export default class NavBarStuff extends Component {
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
-        <Nav className="mr-auto">
+        <Nav className="justify-content-end">
           <a href="/search" className = "nav-search">Search</a>
           <NavDropdown title="My Account" id="basic-nav-dropdown">
             <NavDropdown.Item href="/profile" className ="navbar-item">Profile</NavDropdown.Item>

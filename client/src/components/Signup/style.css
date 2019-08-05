@@ -23,10 +23,7 @@
        url('http://tangledindesign.com/codepen/fonts/Calluna-Regular-webfont.svg#CallunaRegular') format('svg');
   }
   body {
-  /* background: #373E3F; */
   color:white; 
-  /* height: 3000px;  */
-  /* background: linear-gradient(25deg, #465250 0%, #394141 51%, rgb(25, 28, 29) 85%); */
   background: linear-gradient(25deg, rgb(25, 28, 29) 0%, #394141 51%, #465250 85%);
   }
   .community {
@@ -35,7 +32,7 @@
   .creative {
     color:#5CB85C;
   }
-  .container {
+  .opener {
       width: 590px;
       margin: 140px auto;
       position: relative;
@@ -44,14 +41,13 @@
       width: 565px;
       font: 2.55em CallunaRegular;
       letter-spacing: .075em;
-      /* float: left; */
-      padding: 45px 0px 30px 25px;
+      padding: 10px 100px 30px 25px;
       margin: 0;
-      margin-top: 10px;
+      margin-bottom: 50px;
       border-top: 2px dotted black;
       border-bottom: 2px dotted black;
-      -webkit-transform: rotate(-3deg);
-      -moz-transform: rotate(-3deg);
+      /* -webkit-transform: rotate(-3deg); */
+      /* -moz-transform: rotate(-3deg); */
   }
   .container:before {
       content: "";
@@ -121,7 +117,7 @@
 }
 
 .IMA {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   /* font-size:23px; */
   color:#5CB85C;
   font-weight: bold; 
@@ -130,7 +126,9 @@
 
 .pp {
   font-size: 18px;
+  margin-bottom: 20px;
   font-style: italic;
+  letter-spacing: .5px;
 }
 
 .IntroLine{
@@ -200,6 +198,11 @@
   display: inline-block; 
 }
 
+.hint{
+  display: flex; 
+  color:#5CB85C; 
+}
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 420px) {
   .IntroLine{
@@ -210,8 +213,8 @@
       color:#5CB85C;
       margin-left: 20px;
     }
-    .container {
-        width: 590px;
+    .opener {
+        width: 400px;
         margin: 140px auto;
         position: relative;
     }
@@ -219,14 +222,13 @@
         width: 265px;
         font: 1.25em CallunaRegular;
         letter-spacing: .095em;
-        /* float: left; */
         padding: 45px 0px 30px 25px;
         margin: 0;
         margin-top: 10px;
         border-top: 2px dotted black;
         border-bottom: 2px dotted black;
-        -webkit-transform: rotate(-3deg);
-        -moz-transform: rotate(-3deg);
+        /* -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg); */
     }
         blockquote strong:first-child {
             margin-left: 15px;

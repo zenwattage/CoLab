@@ -1,21 +1,14 @@
 .navbar {
-  height: 70px;
+  height: 80px;
   font-family: 'Lato', sans-serif;
   color: #495057; 
 }
+
 .d-inline-block {
   padding: 8px;
+  float: left;
+  justify-content: flex-start;
 }
-
-/* .navbar{
-  color: #373E3F; 
-}
-
-.navbar:hover{
-  text-decoration: none; 
-  color: #373E3F; 
-  background:#5CB85C; 
-}*/
 
 .navbar-item:active{
   color:white !important; 
@@ -30,9 +23,6 @@
   color: rgb(38, 109, 38) !important;
   font-weight: bold;
 }
-/* .navbar:active{
-  background: #373E3F; 
-} */
 
 #basic-nav-dropdown {
   font-size: 15px;
