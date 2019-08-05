@@ -176,25 +176,25 @@ export default class Signup extends Component {
                 </Col>
               </Row>
 
-              <Form onSubmit={this.handleSubmit}>
+              <Form onSubmit={this.handleSubmit} className = "signupForm" noValidate>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>First name</Form.Label>
-                    <Form.Control value={this.state.firstName} size="sm" name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" />
+                    <Form.Control value={this.state.firstName} size="sm" name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name" required/>
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Last name</Form.Label>
-                    <Form.Control value={this.state.lastName} size="sm" name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" />
+                    <Form.Control value={this.state.lastName} size="sm" name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name" required/>
                   </Form.Group>
                 </Form.Row>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control value={this.state.email} size="sm" name="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
+                    <Form.Control value={this.state.email} size="sm" name="email" onChange={this.handleChange} type="email" placeholder="Enter email" required/>
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control value={this.state.password} size="sm" name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
+                    <Form.Control value={this.state.password} size="sm" name="password" onChange={this.handleChange} type="password" placeholder="Create password" required/>
                   </Form.Group>
                 </Form.Row>
                 {/* <Form.Row> */}
@@ -234,7 +234,7 @@ export default class Signup extends Component {
                   </Form.Group>
                 </Form.Row>
                 <br />
-                <button className="submitbutton" onClick={this.handleSubmit}>Submit</button>
+                <button className="submitbutton homepagebutton" onClick={this.handleSubmit}>Submit</button>
               </Form>
             </div>
             <p>{this.state.errorMessage}</p>

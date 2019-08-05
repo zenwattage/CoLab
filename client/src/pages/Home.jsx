@@ -18,7 +18,7 @@ export default class Home extends Component {
           </div>
           <div data-aos="zoom-in" data-aos-duration="1000" className ="quoteBlock">
           <i class="fas fa-quote-left"></i>
-          <p className="quote quoteMark"> "Alone we can do so little; together we can do so much." – Helen Keller</p>
+          <p className="quote quoteMark">"Alone we can do so little; together we can do so much." – Helen Keller</p>
           <i class="fas fa-quote-right"></i>
           </div>
 

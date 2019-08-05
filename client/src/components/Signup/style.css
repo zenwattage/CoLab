@@ -195,6 +195,11 @@
   margin:auto; 
 }
 
+.signupForm{
+  width:80%; 
+  display: inline-block; 
+}
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 420px) {
   .IntroLine{
