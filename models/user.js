@@ -14,15 +14,8 @@ const UserSchema = new Schema({
   saved: { type: Array, default: "" },
   userProfession: { type: Array, default: "" },
   userTalent: { type: Array, default: "" },
-  buttons: [{ profession: String }, { talents: Array }]
+  userPortfolio: { type: Array, default: "" }
 });
-
-// const UserSchema = new Schema({
-//   username: String,
-//   password: String,
-//   email: String,
-//   bio: String
-// });
 
 const User = mongoose.model("User", UserSchema);
 
