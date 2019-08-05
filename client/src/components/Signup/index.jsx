@@ -16,7 +16,14 @@ import payload from "../signupPayload.json";
 
 export default class Signup extends Component {
   state = {
+    // payload for handling state of buttons
+    payload,
+    // user arrays for profession and talent passing
     professions,
+    // // prof/talent choices to be passed to DB
+    // userProfession: "",
+    // userTalent: "",
+    // all other user items
     email: "",
     firstName: "",
     lastName: "",
@@ -26,8 +33,7 @@ export default class Signup extends Component {
     bio: "",
     instagram: "",
     linkedin: "",
-    other: "",
-    payload
+    other: ""
   };
 
   // convert function is to convert payload(which has Boolean values) to strings
@@ -42,6 +48,7 @@ export default class Signup extends Component {
           }
         }
         proArray.push(pro);
+        console.log(professions);
       }
     }
     return proArray;
@@ -75,11 +82,24 @@ export default class Signup extends Component {
       buttons
     });
 
+    console.log(buttons);
+
+    // Gettin' Buttoned Up
+    // Empty arrays to store data taken from the button variable.
+    // These are sent in the axios POST, to the user schema
+
+    let userProfession = [];
+    let userTalent = [];
+
     // CAUTION: LOGGERS AHEAD
-    console.log(buttons.);
-    
-
-
+    for (let i = 0; i < buttons.length; i++) {
+      const element = buttons[i];
+      console.log(element);
+      console.log("Profession: " + element.profession);
+      console.log("Talents: " + element.talents);
+      userProfession.push(element.profession);
+      userTalent.push(element.talents);
+    }
 
     axios({
       url: "/authentication/signup",
@@ -93,8 +113,9 @@ export default class Signup extends Component {
         bio,
         instagram,
         linkedin,
-        other,
-        buttons
+        userProfession,
+        userTalent,
+        other
       }
     })
       .then(response => {
