@@ -13,7 +13,8 @@ const UserSchema = new Schema({
   other: { type: String, default: "" },
   saved: { type: Array, default: "" },
   userProfession: { type: Array, default: "" },
-  userTalent: { type: Array, default: "" }
+  userTalent: { type: Array, default: "" },
+  buttons: [{ profession: String }, { talents: Array }]
 });
 
 // const UserSchema = new Schema({
