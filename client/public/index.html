@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-    <!-- Animation -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Lato|Varela&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
-    <title>CoLab Co-Create</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://kit.fontawesome.com/08e9fd02c5.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <!-- Animation -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Lato|Varela&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <title>CoLab</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://kit.fontawesome.com/08e9fd02c5.js"></script>
+  <script>
+    AOS.init();
+//     (function() {
+//     var cors_api_host = 'cors-anywhere.herokuapp.com';
+//     var cors_api_url = 'https://' + cors_api_host + '/';
+//     var slice = [].slice;
+//     var origin = window.location.protocol + '//' + window.location.host;
+//     var open = XMLHttpRequest.prototype.open;
+//     XMLHttpRequest.prototype.open = function() {
+//         var args = slice.call(arguments);
+//         var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
+//         if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
+//             targetOrigin[1] !== cors_api_host) {
+//             args[1] = cors_api_url + args[1];
+//         }
+//         return open.apply(this, args);
+//     };
+// })();
+  </script>
+</body>
+
 </html>

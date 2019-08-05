@@ -232,7 +232,7 @@ export default class Signup extends Component {
 
               <Form onSubmit={this.handleSubmit}>
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>First name</Form.Label>
                     <Form.Control
                       value={this.state.firstName}
@@ -243,7 +243,7 @@ export default class Signup extends Component {
                       placeholder="Enter first name"
                     />
                   </Form.Group>
-                  <Form.Group as={Col} controlId="formGridPassword">
+                  <Form.Group as={Col} controlId="formGridLastName">
                     <Form.Label>Last name</Form.Label>
                     <Form.Control
                       value={this.state.lastName}
@@ -302,7 +302,7 @@ export default class Signup extends Component {
                       placement="right"
                       overlay={
                         <Tooltip id={`tooltip-${"right"}`}>
-                          Please upload a link to an image of your best work.
+                          Please upload a link to a photo of yourself.
                         </Tooltip>
                       }
                     >
@@ -314,7 +314,7 @@ export default class Signup extends Component {
                       />
                     </OverlayTrigger>
                   </Form.Group>
-                  <Form.Group as={Col} controlId="formGridAddress2">
+                  <Form.Group as={Col} controlId="formGridAddress3">
                     <Form.Label>LinkedIn</Form.Label>
                     <Form.Control
                       size="sm"
@@ -325,7 +325,7 @@ export default class Signup extends Component {
                   </Form.Group>
                 </Form.Row>
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formGridAddress2">
+                  <Form.Group as={Col} controlId="formGridAddress4">
                     <Form.Label>Instagram</Form.Label>
                     <Form.Control
                       size="sm"
@@ -334,7 +334,7 @@ export default class Signup extends Component {
                       onChange={this.handleChange}
                     />
                   </Form.Group>
-                  <Form.Group as={Col} controlId="formGridAddress2">
+                  <Form.Group as={Col} controlId="formGridAddress5">
                     <Form.Label>Other</Form.Label>
                     <Form.Control
                       value={this.state.other}
