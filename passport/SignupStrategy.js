@@ -15,7 +15,8 @@ const SignupStrategy = new Strategy(
       linkedin,
       other,
       userProfession,
-      userTalent
+      userTalent,
+      userPortfolio
     } = req.body;
     User.findOne({
       email
@@ -43,7 +44,8 @@ const SignupStrategy = new Strategy(
           other,
           bio,
           userProfession,
-          userTalent
+          userTalent,
+          userPortfolio
         });
 
         newUser.save((error, inserted) => {
