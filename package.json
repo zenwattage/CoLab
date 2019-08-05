@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "cd client && npm run start && node app.js && mongod"
+    "start": "cd client && npm run start && node app.js"
   },
   "dependencies": {
     "antd": "^3.20.7",

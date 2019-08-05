@@ -7,7 +7,7 @@ const MotionSchema = new Schema ({
         camera: Boolean
     },
     images: Array,
-    videos: Arrayt,
+    videos: Array,
 })
 
 const Motion = mongoose.model('Motion', MotionSchema);
