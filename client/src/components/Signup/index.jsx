@@ -131,7 +131,7 @@ export default class Signup extends Component {
         <Wrapper>
           <Row>
             <Col>
-              <article className="container">
+              <article className="opener">
                 <blockquote>
                   <strong>Welcome</strong> to <em className="creative">our creative</em>  <strong className="community">community</strong>
                 </blockquote>

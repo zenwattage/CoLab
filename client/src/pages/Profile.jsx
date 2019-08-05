@@ -31,10 +31,6 @@ export default class Profile extends Component {
       })
   }
 
-  // tabRow() {
-  //   return this.state.serverports.map(function (object, i) {
-  //     return <TableRow obj={object} key={i} />;
-  //   });
   render() {
     return (
       <Fragment>
@@ -46,7 +42,7 @@ export default class Profile extends Component {
             </Col>
           </Row>
 
-          <div className="container">
+          <div>
             <div className="personalinfo">
               <h3 className="personalinfotitle">Contact Info</h3>
               <p>Profile image:</p> {this.state.imageUrl}

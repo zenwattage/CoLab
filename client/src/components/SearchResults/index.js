@@ -21,7 +21,9 @@ function SearchResults(props) {
         imageUrl={props.imageUrl}
         firstName={props.firstName}
         bio={props.bio}
+        email={props.email}
         instagram={props.instagram}
+        linkedin={props.linkedin}
         other={props.other}
       />
 

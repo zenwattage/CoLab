@@ -5,26 +5,41 @@ import Row from 'react-bootstrap/Row';
 
 function ResultsCard(props) {
   return (
-    <div className="card" data-aos="fade-right" data-aos-duration="1500">>
+    <div className="card" data-aos="fade-right" data-aos-duration="1500">
       <div className="img-container">
-        <strong className="cardname">Name:</strong> {props.firstName}
+        <strong className="cardname">Name: Jordynn</strong> {props.firstName}
+        <img
+          alt="cat"
+          src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"
+          className="img"
+        />
         <img alt={props.firstName} src={props.imageUrl} />
       </div>
       <div className="content">
         <ul>
           <li>
-            <p>Bio:</p> {props.bio}
+            <strong className="bioresult">Bio: {props.bio}
+            </strong>
           </li>
           <Row>
             <Col>
-              <p>Instagram:</p> {props.instagram}
+              <strong>Email:</strong> {props.email}
             </Col>
-            <p>Other:</p> {props.other}
+            <strong>Instagram:</strong> {props.instagram}
+            <Col>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <strong>Linkedin:</strong> {props.linkedin}
+            </Col>
+            <strong>Other:</strong> {props.other}
             <Col>
             </Col>
           </Row>
         </ul>
       </div>
+      {/* EITHER KEEP REMOVE OR ADD FAVORITE */}
       <span className="remove">𝘅</span>
       {/* WE WILL BE ADDING A "FAVORITE" OPTION HERE SO USERS CAN SAVE OTHER USERS */}
     </div>
