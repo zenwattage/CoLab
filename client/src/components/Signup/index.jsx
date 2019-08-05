@@ -13,6 +13,7 @@ import Form from "react-bootstrap/Form";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import payload from "../signupPayload.json";
+import Opener from "../Opener/Opener";
 
 export default class Signup extends Component {
   state = {
@@ -178,24 +179,15 @@ export default class Signup extends Component {
       <Fragment>
         <Nav />
         <Wrapper>
-          <Row>
-            <Col>
-              <article className="opener">
-                <blockquote>
-                  <strong>Welcome</strong> to{" "}
-                  <em className="creative">our creative</em>{" "}
-                  <strong className="community">community</strong>
-                </blockquote>
-              </article>
-            </Col>
-          </Row>
+
+          <Opener />
 
           <div className="signuppage">
             <div className="professionform">
               <form onSubmit={this.handleSubmit}>
                 <Row>
                   <Col>
-                    <h3 className="IMA">I AM A:</h3>
+                    {/* <h3 className="IMA">I AM A:</h3> */}
                   </Col>
                 </Row>
                 <Row>
@@ -299,7 +291,7 @@ export default class Signup extends Component {
                 {/* </Form.Row> */}
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridAddress2">
-                    <Form.Label>Profile image</Form.Label>
+                    <Form.Label>Account image</Form.Label>
                     <OverlayTrigger
                       key="right"
                       placement="right"
@@ -338,14 +330,23 @@ export default class Signup extends Component {
                     />
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridAddress5">
-                    <Form.Label>Portfolio Images</Form.Label>
-                    <Form.Control
-                      value={this.state.userPortfolio}
-                      size="sm"
-                      name="userPortfolio"
-                      onChange={this.handleChange}
-                      placeholder="Got any good pics?"
-                    />
+                    <Form.Label>Portfolio link</Form.Label>
+                    <OverlayTrigger
+                      key="right"
+                      placement="right"
+                      overlay={
+                        <Tooltip id={`tooltip-${"right"}`}>
+                          Please include a link to your online portfolio if applicable.
+                        </Tooltip>
+                      }
+                    >
+                  <Form.Control
+                        size="sm"
+                        value={this.state.userPortfolio}
+                        name="userPortfolio"
+                        onChange={this.handleChange}
+                      />
+                    </OverlayTrigger>
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridAddress6">
                     <Form.Label>Other</Form.Label>
