@@ -22,7 +22,8 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react-awesome-button": "^6.1.2",
-    "react-bootstrap": "^1.0.0-beta.10"
+    "react-bootstrap": "^1.0.0-beta.10",
+    "react-spring": "^8.0.27"
   },
   "description": "## Installation open a seperate windows command prompt and type: ```mongod```",
   "main": "app.js",
