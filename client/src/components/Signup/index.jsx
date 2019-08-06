@@ -35,8 +35,13 @@ export default class Signup extends Component {
     instagram: "",
     linkedin: "",
     other: "",
+<<<<<<< HEAD
     validator:[false, false, false, false],
     hint:"*This field is required.",
+=======
+    validator: [false, false, false, false],
+    hint: "*This field is required.",
+>>>>>>> master
     userPortfolio: ""
   }
 
@@ -74,7 +79,7 @@ export default class Signup extends Component {
       other,
       userPortfolio
     } = this.state;
-    
+
     const buttons = this.convert(this.state.payload, this.state.professions);
 
     console.log({
@@ -110,34 +115,34 @@ export default class Signup extends Component {
     }
 
     (this.validate([this.state.firstName, this.state.lastName, this.state.email, this.state.password]))
-    && axios({
-      url: "/authentication/signup",
-      method: "POST",
-      data: {
-        email,
-        password,
-        firstName,
-        lastName,
-        imageUrl,
-        bio,
-        instagram,
-        linkedin,
-        userProfession,
-        userTalent,
-        userPortfolio,
-        other
-      }
-    })
-      .then(response => {
-        const isAuthenticated = response.data.isAuthenticated;
-        window.localStorage.setItem("isAuthenticated", isAuthenticated);
-        this.props.history.push("/search");
+      && axios({
+        url: "/authentication/signup",
+        method: "POST",
+        data: {
+          email,
+          password,
+          firstName,
+          lastName,
+          imageUrl,
+          bio,
+          instagram,
+          linkedin,
+          userProfession,
+          userTalent,
+          userPortfolio,
+          other
+        }
       })
-      .catch(error => {
-        this.setState({
-          errorMessage: error.response.data.message
+        .then(response => {
+          const isAuthenticated = response.data.isAuthenticated;
+          window.localStorage.setItem("isAuthenticated", isAuthenticated);
+          this.props.history.push("/search");
+        })
+        .catch(error => {
+          this.setState({
+            errorMessage: error.response.data.message
+          });
         });
-      });
   };
 
   handleChange = event => {
@@ -175,22 +180,22 @@ export default class Signup extends Component {
   };
 
   // validation
-  validate = (arr) =>{
-    var isValid = true; 
-    for (var i=0; i<arr.length;i++){
-      if (arr[i]===""){
-        const temp = this.state.validator; 
+  validate = (arr) => {
+    var isValid = true;
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] === "") {
+        const temp = this.state.validator;
         temp[i] = true;
-        this.setState({validator:temp}); 
-        isValid =false; 
+        this.setState({ validator: temp });
+        isValid = false;
       }
-      else{
-        const temp = this.state.validator; 
+      else {
+        const temp = this.state.validator;
         temp[i] = false;
-        this.setState({validator:temp}); 
+        this.setState({ validator: temp });
       }
     }
-    return isValid; 
+    return isValid;
   };
 
   render() {
@@ -254,28 +259,27 @@ export default class Signup extends Component {
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>First name</Form.Label>
-                    <Form.Control value={this.state.firstName} size="sm" name="firstName" onChange={this.handleChange} type="name" placeholder="Enter first name"/>
+                    <Form.Control value={this.state.firstName} size="sm" name="firstName" onChange={this.handleChange} type="name" />
                     {(this.state.validator[0]) && <div className="hint">{this.state.hint}</div>}
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridLastName">
                     <Form.Label>Last name</Form.Label>
-                    <Form.Control value={this.state.lastName} size="sm" name="lastName" onChange={this.handleChange} type="name" placeholder="Enter last name"/>
+                    <Form.Control value={this.state.lastName} size="sm" name="lastName" onChange={this.handleChange} type="name" />
                     {(this.state.validator[1]) && <div className="hint">{this.state.hint}</div>}
                   </Form.Group>
                 </Form.Row>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control value={this.state.email} size="sm" name="email" onChange={this.handleChange} type="email" placeholder="Enter email" />
-                    {(this.state.validator[2]) && <div className="hint">{this.state.hint}</div>}              
+                    <Form.Control value={this.state.email} size="sm" name="email" onChange={this.handleChange} type="email" />
+                    {(this.state.validator[2]) && <div className="hint">{this.state.hint}</div>}
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control value={this.state.password} size="sm" name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
-                    {(this.state.validator[3]) && <div className="hint">{this.state.hint}</div>}              
+                    {(this.state.validator[3]) && <div className="hint">{this.state.hint}</div>}
                   </Form.Group>
                 </Form.Row>
-                {/* <Form.Row> */}
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                   <Form.Label>Bio</Form.Label>
                   <Form.Control
@@ -289,45 +293,53 @@ export default class Signup extends Component {
                     placeholder="Tell us something interesting..."
                   />
                 </Form.Group>
-                {/* </Form.Row> */}
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridAddress2">
                     <Form.Label>Profile image</Form.Label>
-                      <Form.Control size="sm" value={this.state.imageUrl} name="imageUrl"
-                        placeholder="Please upload a link to an image of your best work"
-                        onChange={this.handleChange} />
+                    <OverlayTrigger
+                      key="bottom"
+                      placement="bottom"
+                      overlay={
+                        <Tooltip id={`tooltip-${"bottm"}`}>
+                          Please include a link to a profile image.
+                        </Tooltip>
+                      }
+                    >
+                      <Form.Control
+                        size="sm"
+                        value={this.state.userPortfolio}
+                        name="userPortfolio"
+                        onChange={this.handleChange}
+                      />
+                    </OverlayTrigger>
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridAddress3">
                     <Form.Label>LinkedIn</Form.Label>
-                    <Form.Control size="sm" value={this.state.linkedin} name="linkedin"
-                      placeholder="Enter LinkedIn URL"
-                      onChange={this.handleChange} />
+                    <Form.Control size="sm" value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
                   </Form.Group>
                 </Form.Row>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridAddress4">
                     <Form.Label>Instagram</Form.Label>
                     <Form.Control size="sm" value={this.state.instagram}
-                      name="instagram" onChange={this.handleChange}
-                      placeholder="Enter Instagram URL" />
+                      name="instagram" onChange={this.handleChange} />
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridAddress5">
                     <Form.Label>Portfolio link</Form.Label>
                     <OverlayTrigger
-                      key="right"
-                      placement="right"
+                      key="bottom"
+                      placement="bottom"
                       overlay={
-                        <Tooltip id={`tooltip-${"right"}`}>
+                        <Tooltip id={`tooltip-${"bottom"}`}>
                           Please include a link to your online portfolio if applicable.
                         </Tooltip>
                       }
                     >
-                  <Form.Control
+                      <Form.Control
                         size="sm"
                         value={this.state.userPortfolio}
                         name="userPortfolio"
                         onChange={this.handleChange}
-                        placeholder="Enter Portfolio URL"
                       />
                     </OverlayTrigger>
                   </Form.Group>
@@ -338,7 +350,7 @@ export default class Signup extends Component {
                       size="sm"
                       name="other"
                       onChange={this.handleChange}
-                      placeholder="Anything else?"
+                      placeholder="Anything else you'd like to share?"
                     />
                   </Form.Group>
                 </Form.Row>

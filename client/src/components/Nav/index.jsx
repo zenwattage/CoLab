@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./style.css";
 import { Redirect } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
 import logo from "./logo5.png";
 import axios from "axios";
