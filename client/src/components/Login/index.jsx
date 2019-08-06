@@ -4,7 +4,6 @@ import axios from "axios";
 import "./style.css";
 import Button from "../Button/Button";
 import Form from "react-bootstrap/Form";
-// import Button from "react-bootstrap/Button";
 
 export default class Login extends Component {
   state = {

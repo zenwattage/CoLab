@@ -11,5 +11,11 @@
   text-align: center;
   margin: auto;
   font-style: italic; 
-  margin-bottom:5px; 
+  margin-bottom:10px; 
+}
+
+@media only screen and (max-width: 420px) {
+  .statement{
+    margin-bottom:5px; 
+  }
 }

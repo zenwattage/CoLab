@@ -22,8 +22,8 @@ function Match() {
     ref.current = []
     set([])
     ref.current.push(setTimeout(() => set(['Meet', 'your', 'Match']), 100))
-    ref.current.push(setTimeout(() => set(['Meet', 'Match']), 5000))
-    ref.current.push(setTimeout(() => set(['Meet', 'Creative', 'Match']), 8000))
+    ref.current.push(setTimeout(() => set(['Meet', 'Match']), 3000))
+    ref.current.push(setTimeout(() => set(['Meet', 'Creative', 'Match']), 7000))
   }, [])
 
   useEffect(() => void reset(), [reset])

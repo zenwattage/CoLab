@@ -12,7 +12,7 @@ function SearchResults(props) {
       <Row>
         <Col size="md-12">
           <hr />
-          <h1 className="title">Here are your creative matches.</h1>
+          <h1 className="title">Your creative matches...</h1>
         </Col>
       </Row>
 

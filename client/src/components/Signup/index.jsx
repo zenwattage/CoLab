@@ -271,7 +271,7 @@ export default class Signup extends Component {
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control value={this.state.password} size="sm" name="password" onChange={this.handleChange} type="password" placeholder="Create password" />
+                    <Form.Control value={this.state.password} size="sm" name="password" onChange={this.handleChange} type="password" />
                     {(this.state.validator[3]) && <div className="hint">{this.state.hint}</div>}
                   </Form.Group>
                 </Form.Row>
@@ -308,17 +308,6 @@ export default class Signup extends Component {
                       />
                     </OverlayTrigger>
                   </Form.Group>
-                  <Form.Group as={Col} controlId="formGridAddress3">
-                    <Form.Label>LinkedIn</Form.Label>
-                    <Form.Control size="sm" value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
-                  </Form.Group>
-                </Form.Row>
-                <Form.Row>
-                  <Form.Group as={Col} controlId="formGridAddress4">
-                    <Form.Label>Instagram</Form.Label>
-                    <Form.Control size="sm" value={this.state.instagram}
-                      name="instagram" onChange={this.handleChange} />
-                  </Form.Group>
                   <Form.Group as={Col} controlId="formGridAddress5">
                     <Form.Label>Portfolio link</Form.Label>
                     <OverlayTrigger
@@ -337,6 +326,18 @@ export default class Signup extends Component {
                         onChange={this.handleChange}
                       />
                     </OverlayTrigger>
+                  </Form.Group>
+                 
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group as={Col} controlId="formGridAddress4">
+                    <Form.Label>Instagram</Form.Label>
+                    <Form.Control size="sm" value={this.state.instagram}
+                      name="instagram" onChange={this.handleChange} />
+                  </Form.Group>
+                  <Form.Group as={Col} controlId="formGridAddress3">
+                    <Form.Label>LinkedIn</Form.Label>
+                    <Form.Control size="sm" value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
                   </Form.Group>
                   <Form.Group as={Col} controlId="formGridAddress6">
                     <Form.Label>Other</Form.Label>
