@@ -32,22 +32,22 @@ export default class NavBarStuff extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <Navbar bg="light" className = "top-Nav">
-        <Navbar.Brand className="Navbar-brand" href="/home">
-          <img
-            alt=""
-            src={logo}
-            width="70"
-            height="90"
-            className="d-inline-block align-top"
-          />
-        </Navbar.Brand>
-        <Nav navbar-expand="true" className="justify-content-end">
-          <a href="/search" className="nav-search">Search</a>
-          <a href="/profile" className="nav-search">Profile</a>
-          <a href="/saved" className="nav-search">Saved</a>
-          <button onClick={this.logout} className="nav-search navbar-item">Logout</button>
-        </Nav>
+      <Navbar bg="light" className="top-Nav">
+          <Navbar.Brand className="Navbar-brand" href="/home">
+            <img
+              alt=""
+              src={logo}
+              width="70"
+              height="90"
+              className="d-inline-block align-top"
+            />
+          </Navbar.Brand>
+          <Nav navbar-expand="true" className="justify-content-end">
+            <a href="/search" className="nav-search">Search</a>
+            <a href="/profile" className="nav-search">Profile</a>
+            <a href="/saved" className="nav-search">Saved</a>
+            <button onClick={this.logout} className="nav-search navbar-item">Logout</button>
+          </Nav>
       </Navbar>
     );
   }

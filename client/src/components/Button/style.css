@@ -30,7 +30,7 @@
 
 .profession{
   margin-right:15px; 
-  display: inline-block; 
+  display: inline-grid; 
 }
 
 /* .button {
@@ -53,13 +53,12 @@ button:focus {outline:0;}
     font-size: 15px;
     border-radius: 2px;
     padding: 10px;
-    width: 150px;
     font-family: 'Lato', sans-serif;
     align-content: center;
     text-align:center; 
   }
   .profession{
-    display:table-cell; 
+    display:inline-grid; 
   }
 }
 
