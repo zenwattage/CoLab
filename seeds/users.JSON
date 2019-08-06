@@ -10,9 +10,14 @@
     "instagram": "@photodude12",
     "linkedin": "",
     "other": "Huh?",
-    "saved": ["Eleven", "Joyce"],
-    "professions": ["Dancing", "Photography"],
-    "talents": ["Smoking", "Swearing", "Saving World"]
+    "saved": ["Eleven", "Will"],
+    "userProfession": ["Dancing"],
+    "userTalent": ["Ballet", "Latin"],
+    "userPortfolio": [
+      "https://i.ytimg.com/vi/BEm8MzrdkJ0/maxresdefault.jpg",
+      "https://i.ytimg.com/vi/BEm8MzrdkJ0/maxresdefault.jpg",
+      "https://i.ytimg.com/vi/BEm8MzrdkJ0/maxresdefault.jpg"
+    ]
   },
   {
     "_id": "USER_003",
@@ -26,8 +31,13 @@
     "linkedin": "What?",
     "other": "Huh?",
     "saved": ["Eleven", "Joyce"],
-    "professions": ["Dancing", "Photography"],
-    "talents": ["Smoking", "Swearing", "Saving World"]
+    "userProfession": ["Photography"],
+    "userTalent": ["Landscape", "Portrait"],
+    "userPortfolio": [
+      "https://fsmedia.imgix.net/3f/67/10/03/5ce9/49a2/ae34/49fa9fae8f67/the-mind-flayer-stares-down-its-prey-billy-in-the-starcourt-mall-food-court.png?rect=32%2C0%2C2330%2C1166&auto=format%2Ccompress&dpr=2&w=650",
+      "https://fsmedia.imgix.net/3f/67/10/03/5ce9/49a2/ae34/49fa9fae8f67/the-mind-flayer-stares-down-its-prey-billy-in-the-starcourt-mall-food-court.png?rect=32%2C0%2C2330%2C1166&auto=format%2Ccompress&dpr=2&w=650",
+      "https://fsmedia.imgix.net/3f/67/10/03/5ce9/49a2/ae34/49fa9fae8f67/the-mind-flayer-stares-down-its-prey-billy-in-the-starcourt-mall-food-court.png?rect=32%2C0%2C2330%2C1166&auto=format%2Ccompress&dpr=2&w=650"
+    ]
   },
   {
     "_id": "USER_004",
@@ -41,7 +51,7 @@
     "linkedin": "What?",
     "other": "Huh?",
     "saved": ["Eleven", "Bobbie"],
-    "professions": ["Dancing", "Photography"],
-    "talents": ["Flaying", "Morphing", "Consuming"]
+    "professions": ["Dancing"],
+    "talents": ["Hip-hop"]
   }
 ]
