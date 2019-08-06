@@ -35,8 +35,8 @@ export default class Signup extends Component {
     instagram: "",
     linkedin: "",
     other: "",
-    validator: [false, false, false, false],
-    hint: "*This field is required.",
+    validator:[false, false, false, false],
+    hint:"*This field is required.",
     userPortfolio: ""
   }
 

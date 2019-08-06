@@ -17,9 +17,9 @@ export default class Home extends Component {
             <img src={logo} className="logoimg" alt="logo" width="300px" />
           </div>
           <div data-aos="zoom-in" data-aos-duration="1000" className ="quoteBlock">
-          <i class="fas fa-quote-left"></i>
+          <i className="fas fa-quote-left"></i>
           <p className="quote quoteMark"> Alone we can do so little; together we can do so much.</p>
-          <i class="fas fa-quote-right"></i> 
+          <i className="fas fa-quote-right"></i> 
           {/* <p> – Helen Keller</p> */}
           
           </div>

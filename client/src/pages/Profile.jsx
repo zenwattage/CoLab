@@ -59,10 +59,10 @@ export default class Profile extends Component {
               <p>Other:</p> {this.state.other}
 
               <br />
-              <div className="profilebuttons">
+              {/* <div className="profilebuttons">
                 <button className="profilebutton">Edit</button>
                 <button className="profilebutton">Submit</button>
-              </div>
+              </div> */}
 
             </div>
           </div>
