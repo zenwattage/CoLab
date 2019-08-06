@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./style.css";
+import classNames from 'classnames';
 
 export default class Button extends Component {
   handleFilter = () => {
@@ -32,8 +33,7 @@ export default class Button extends Component {
             type="button"
             value={this.props.value}
             id={this.props.id}
-            className={this.state.className}
-            class={this.props.className}
+            className={classNames([this.state.className, this.props.className])}
             onClick={this.handleOnClick}>{this.props.children}</button>
         </a>
       </div>
