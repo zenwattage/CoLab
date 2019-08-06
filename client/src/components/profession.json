@@ -43,5 +43,14 @@
       {"name":"Ceramics"}, 
       {"name":"Sculpture"}],
       "statement": "My strongest medium(s) are:"
+  },
+  {
+  "profession":"Designer",
+  "talents":[
+    {"name":"Graphic"}, 
+    {"name":"Web"}, 
+    {"name":"Interior"}, 
+    {"name":"Fashion"}],
+    "statement": "My strongest type(s) are:"
   }
 ]

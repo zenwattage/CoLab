@@ -43,6 +43,15 @@
       {"name":"Ceramics"}, 
       {"name":"Sculpture"}],
       "statement": "Wanted medium:"
-  }
+  },
+  {
+    "profession":"Designer",
+    "talents":[
+      {"name":"Graphic"}, 
+      {"name":"Web"}, 
+      {"name":"Interior"}, 
+      {"name":"Fashion"}],
+      "statement": "Wanted type:"
+    }
 
 ]
