@@ -32,7 +32,7 @@ export default class NavBarStuff extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <Navbar bg="light">
+      <Navbar bg="light" className = "top-Nav">
         <Navbar.Brand className="Navbar-brand" href="/home">
           <img
             alt=""

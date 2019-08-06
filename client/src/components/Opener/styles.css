@@ -26,6 +26,10 @@ body {
   line-height: 80px;
 }
 
+.opener{
+  display: inline-block;
+  text-align:center; 
+}
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 420px) {
