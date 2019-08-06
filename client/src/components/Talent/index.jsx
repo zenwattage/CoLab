@@ -21,7 +21,7 @@ export default class Talent extends Component {
   render() {
     return (
       <div className="profession">
-        <Button enableChangeState value={this.props.profession} handleOnClick={this.showTalents}>{this.props.profession}</Button>
+        <Button className = "buttonsGroup" enableChangeState value={this.props.profession} handleOnClick={this.showTalents}>{this.props.profession}</Button>
         {(!this.state.hideTalents) && (<Filter
           handleClickTalent={this.clickTalent}
           results={this.props.talents}

@@ -46,7 +46,7 @@ export default class NavBarStuff extends Component {
           <a href="/search" className="nav-search">Search</a>
           <a href="/profile" className="nav-search">Profile</a>
           <a href="/saved" className="nav-search">Saved</a>
-          <a onClick={this.logout} className="nav-search navbar-item">Logout</a>
+          <button onClick={this.logout} className="nav-search navbar-item">Logout</button>
         </Nav>
       </Navbar>
     );

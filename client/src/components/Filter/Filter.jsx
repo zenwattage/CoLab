@@ -10,7 +10,7 @@ export default class Filter extends Component {
         <p className="statement">{this.props.statement}</p>
         {this.props.results.map(result => (
           <div key={result.name} >
-            <Button value={result.name} enableChangeState handleOnClick={this.props.handleClickTalent} >{result.name}</Button>
+            <Button value={result.name} enableChangeState handleOnClick={this.props.handleClickTalent} className = "buttonsGroup">{result.name}</Button>
           </div>
         ))}
       </div>

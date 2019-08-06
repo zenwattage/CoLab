@@ -1,5 +1,5 @@
 .active{
-  background:#5CB85C; 
+  background:#5CB85C!important; 
   color:white; 
   border-radius: 3px; 
   font-size: 20px;
@@ -10,7 +10,7 @@
   margin-bottom: 10px;
 }
 
-button{
+.buttonsGroup{
   color:white; 
   background:none; 
   border:1px solid #5CB85C; 
@@ -40,6 +40,8 @@ button{
   width: 160px;
   font-family: 'Lato', sans-serif;
 } */
+
+button:focus {outline:0;}
 
 .button:hover {
   cursor: pointer;
