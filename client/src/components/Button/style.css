@@ -5,7 +5,6 @@
   font-size: 20px;
   border-radius: 2px;
   padding: 10px;
-  width: 200px;
   font-family: 'Lato', sans-serif;
   text-align:center; 
 }
@@ -25,6 +24,10 @@ button{
   background:none; 
   border:1px solid #5CB85C; 
   margin-bottom:5px;
+}
+
+.profession{
+  margin-right:15px; 
 }
 
 /* .button {
@@ -49,6 +52,9 @@ button{
     font-family: 'Lato', sans-serif;
     align-content: center;
     text-align:center; 
+  }
+  .profession{
+    display:table-cell; 
   }
 }
 
