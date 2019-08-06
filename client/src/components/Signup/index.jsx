@@ -35,8 +35,8 @@ export default class Signup extends Component {
     instagram: "",
     linkedin: "",
     other: "",
-    validator:[false, false, false, false],
-    hint:"*This field is required.",
+    validator: [false, false, false, false],
+    hint: "*This field is required.",
     userPortfolio: ""
   }
 
@@ -252,28 +252,36 @@ export default class Signup extends Component {
 
               <Form onSubmit={this.handleSubmit} className="signupForm" noValidate>
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formGridName">
-                    <Form.Label>First name</Form.Label>
-                    <Form.Control value={this.state.firstName} size="sm" name="firstName" onChange={this.handleChange} type="name" />
-                    {(this.state.validator[0]) && <div className="hint">{this.state.hint}</div>}
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridLastName">
-                    <Form.Label>Last name</Form.Label>
-                    <Form.Control value={this.state.lastName} size="sm" name="lastName" onChange={this.handleChange} type="name" />
-                    {(this.state.validator[1]) && <div className="hint">{this.state.hint}</div>}
-                  </Form.Group>
+                  <Col sm="6">
+                    <Form.Group controlId="formGridName">
+                      <Form.Label>First name</Form.Label>
+                      <Form.Control value={this.state.firstName} size="sm" name="firstName" onChange={this.handleChange} type="name" />
+                      {(this.state.validator[0]) && <div className="hint">{this.state.hint}</div>}
+                    </Form.Group>
+                  </Col>
+                  <Col sm="6">
+                    <Form.Group as={Col} controlId="formGridLastName">
+                      <Form.Label>Last name</Form.Label>
+                      <Form.Control value={this.state.lastName} size="sm" name="lastName" onChange={this.handleChange} type="name" />
+                      {(this.state.validator[1]) && <div className="hint">{this.state.hint}</div>}
+                    </Form.Group>
+                  </Col>
                 </Form.Row>
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control value={this.state.email} size="sm" name="email" onChange={this.handleChange} type="email" />
-                    {(this.state.validator[2]) && <div className="hint">{this.state.hint}</div>}
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control value={this.state.password} size="sm" name="password" onChange={this.handleChange} type="password" />
-                    {(this.state.validator[3]) && <div className="hint">{this.state.hint}</div>}
-                  </Form.Group>
+                  <Col sm="6">
+                    <Form.Group controlId="formGridEmail">
+                      <Form.Label>Email</Form.Label>
+                      <Form.Control value={this.state.email} size="sm" name="email" onChange={this.handleChange} type="email" />
+                      {(this.state.validator[2]) && <div className="hint">{this.state.hint}</div>}
+                    </Form.Group>
+                  </Col>
+                  <Col sm="6">
+                    <Form.Group controlId="formGridPassword">
+                      <Form.Label>Password</Form.Label>
+                      <Form.Control value={this.state.password} size="sm" name="password" onChange={this.handleChange} type="password" />
+                      {(this.state.validator[3]) && <div className="hint">{this.state.hint}</div>}
+                    </Form.Group>
+                  </Col>
                 </Form.Row>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                   <Form.Label>Bio</Form.Label>
@@ -289,66 +297,75 @@ export default class Signup extends Component {
                   />
                 </Form.Group>
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formGridAddress2">
-                    <Form.Label>Profile image</Form.Label>
-                    <OverlayTrigger
-                      key="bottom"
-                      placement="bottom"
-                      overlay={
-                        <Tooltip id={`tooltip-${"bottm"}`}>
-                          Please include a link to a profile image.
+                  <Col sm="6">
+                    <Form.Group controlId="formGridAddress2">
+                      <Form.Label>Profile image</Form.Label>
+                      <OverlayTrigger
+                        key="bottom"
+                        placement="bottom"
+                        overlay={
+                          <Tooltip id={`tooltip-${"bottm"}`}>
+                            Please include a link to a profile image.
                         </Tooltip>
-                      }
-                    >
-                      <Form.Control
-                        size="sm"
-                        value={this.state.userPortfolio}
-                        name="userPortfolio"
-                        onChange={this.handleChange}
-                      />
-                    </OverlayTrigger>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridAddress5">
-                    <Form.Label>Portfolio link</Form.Label>
-                    <OverlayTrigger
-                      key="bottom"
-                      placement="bottom"
-                      overlay={
-                        <Tooltip id={`tooltip-${"bottom"}`}>
-                          Please include a link to your online portfolio if applicable.
+                        }
+                      >
+                        <Form.Control
+                          size="sm"
+                          value={this.state.userPortfolio}
+                          name="userPortfolio"
+                          onChange={this.handleChange}
+                        />
+                      </OverlayTrigger>
+                    </Form.Group>
+                  </Col>
+                  <Col sm="6">
+                    <Form.Group controlId="formGridAddress5">
+                      <Form.Label>Portfolio link</Form.Label>
+                      <OverlayTrigger
+                        key="bottom"
+                        placement="bottom"
+                        overlay={
+                          <Tooltip id={`tooltip-${"bottom"}`}>
+                            Please include a link to your online portfolio if applicable.
                         </Tooltip>
-                      }
-                    >
-                      <Form.Control
-                        size="sm"
-                        value={this.state.userPortfolio}
-                        name="userPortfolio"
-                        onChange={this.handleChange}
-                      />
-                    </OverlayTrigger>
-                  </Form.Group>
-                 
+                        }
+                      >
+                        <Form.Control
+                          size="sm"
+                          value={this.state.userPortfolio}
+                          name="userPortfolio"
+                          onChange={this.handleChange}
+                        />
+                      </OverlayTrigger>
+                    </Form.Group>
+                  </Col>
                 </Form.Row>
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formGridAddress4">
-                    <Form.Label>Instagram</Form.Label>
-                    <Form.Control size="sm" value={this.state.instagram}
-                      name="instagram" onChange={this.handleChange} />
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridAddress3">
-                    <Form.Label>LinkedIn</Form.Label>
-                    <Form.Control size="sm" value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridAddress6">
-                    <Form.Label>Other</Form.Label>
-                    <Form.Control
-                      value={this.state.other}
-                      size="sm"
-                      name="other"
-                      onChange={this.handleChange}
-                      placeholder="Anything else you'd like to share?"
-                    />
-                  </Form.Group>
+                  <Col sm="4">
+                    <Form.Group as={Col} controlId="formGridAddress4">
+                      <Form.Label>Instagram</Form.Label>
+                      <Form.Control size="sm" value={this.state.instagram}
+                        name="instagram" onChange={this.handleChange} />
+                    </Form.Group>
+                  </Col>
+                  <Col sm="4">
+                    <Form.Group as={Col} controlId="formGridAddress3">
+                      <Form.Label>LinkedIn</Form.Label>
+                      <Form.Control size="sm" value={this.state.linkedin} name="linkedin" onChange={this.handleChange} />
+                    </Form.Group>
+                  </Col>
+                  <Col sm="4">
+                    <Form.Group as={Col} controlId="formGridAddress6">
+                      <Form.Label>Other</Form.Label>
+                      <Form.Control
+                        value={this.state.other}
+                        size="sm"
+                        name="other"
+                        onChange={this.handleChange}
+                        placeholder="Anything else you'd like to share?"
+                      />
+                    </Form.Group>
+                  </Col>
                 </Form.Row>
                 <br />
                 <button className="submitbutton homepagebutton" onClick={this.handleSubmit}>Submit</button>
