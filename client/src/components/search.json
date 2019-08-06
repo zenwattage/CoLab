@@ -6,7 +6,7 @@
       {"name":"Ballet"}, 
       {"name":"Contemporary"}, 
       {"name":"Latin"}],
-      "statement": "The dancer I'm looking for is:"
+      "statement": "Wanted style:"
   },
   {
     "profession":"Photographer",
@@ -15,6 +15,6 @@
       {"name":"Portrait"}, 
       {"name":"Street"}, 
       {"name":"Motion"}],
-      "statement":"The photographer I'm looking for is:"
+      "statement":"Wanted style:"
   }
 ]

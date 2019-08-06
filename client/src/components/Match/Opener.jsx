@@ -26,12 +26,12 @@ function Match() {
     ref.current.push(setTimeout(() => set(['Meet', 'Creative', 'Match']), 8000))
   }, [])
 
-  useEffect(() => void reset(), [])
+  useEffect(() => void reset(), [reset])
 
   return (
     <div className = "meetYourMatch">
       {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
-        <animated.div className="transitions-item" key={key} style={rest} onClick={reset}>
+        <animated.div className="transitions-item" key={key} style={rest}>
           <animated.div style={{ overflow: 'hidden', height: innerHeight }}>{item}</animated.div>
         </animated.div>
       ))}
