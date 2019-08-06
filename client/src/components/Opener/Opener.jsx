@@ -29,7 +29,7 @@ function Opener() {
   useEffect(() => void reset(), [])
 
   return (
-    <div>
+    <div className = "opener">
       {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
         <animated.div className="transitions-item" key={key} style={rest} onClick={reset}>
           <animated.div style={{ overflow: 'hidden', height: innerHeight }}>{item}</animated.div>

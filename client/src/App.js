@@ -7,6 +7,7 @@ import Home from '../src/pages/Home';
 import NotFound from '../src/components/NotFound';
 import Search from '../src/pages/Search';
 import Profile from "../src/pages/Profile";
+import Saved from "../src/pages/Saved";
 
 export default class App extends Component {
   render() {
@@ -21,6 +22,7 @@ export default class App extends Component {
           <Route path="/profile" component={Profile} />
           {/* <Route path="/login" component={Login} /> */}
           <Route path="*" component={NotFound} />
+          <Route path="/saved" component={Saved} />
         </Switch>
       </Router>
 

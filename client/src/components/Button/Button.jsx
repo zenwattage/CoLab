@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import "./style.css";
 
 export default class Button extends Component {
-
   handleFilter = () => {
     if (this.state.className === "still") {
       this.setState({ className: "active" });
