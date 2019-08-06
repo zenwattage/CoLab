@@ -6,6 +6,7 @@
   color:#495057!important; 
   border:20px solid #f8f9fa;  
   margin-bottom:0px !important; 
+  width:100%!important;
   height: 60px;
   }
 
@@ -18,5 +19,6 @@
 @media only screen and (max-width: 420px) {
  .footer {
    margin-top: 70px;
+   width:100%!important;
  }  
 }  
