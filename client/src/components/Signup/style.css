@@ -205,39 +205,5 @@
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 420px) {
-  .IntroLine{
-    font-size:25px;
-    text-align: center;
-  }
-    .creative {
-      color:#5CB85C;
-      margin-left: 20px;
-    }
-    .opener {
-        width: 400px;
-        margin: 140px auto;
-        position: relative;
-    }
-    blockquote {
-        width: 265px;
-        font: 1.25em CallunaRegular;
-        letter-spacing: .095em;
-        padding: 45px 0px 30px 25px;
-        margin: 0;
-        margin-top: 10px;
-        border-top: 2px dotted black;
-        border-bottom: 2px dotted black;
-        /* -webkit-transform: rotate(-3deg);
-        -moz-transform: rotate(-3deg); */
-    }
-        blockquote strong:first-child {
-            margin-left: 15px;
-            letter-spacing: 0;
-        }
-        blockquote strong:last-child {
-            font: 2em "Museo 700";
-            text-transform: uppercase;
-            letter-spacing: 0;
-        }
-
+  
 }  

@@ -26,7 +26,7 @@ function Opener() {
     ref.current.push(setTimeout(() => set(['Welcome', 'Creative', 'Community']), 8000))
   }, [])
 
-  useEffect(() => void reset(), [])
+  useEffect(() => void reset(), [reset])
 
   return (
     <div>

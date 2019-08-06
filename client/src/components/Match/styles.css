@@ -1,17 +1,4 @@
-/* html,
 body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-    color:white; 
-    background: linear-gradient(25deg, rgb(25, 28, 29) 0%, #394141 51%, #465250 85%);
-    } */
-
-
-body {
-  /* font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
-    segoe ui, arial, sans-serif; */
   font-family: sans-serif;
   background: transparent;
   -webkit-touch-callout: none;
@@ -23,41 +10,23 @@ body {
   cursor: default;
   height:100%; 
   margin:0; 
-  /* background: #f0f0f0; */
 }
 
-/* #root {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* #root > div {
-  width: 400px;
-} */
-
-.transitions-item {
-  overflow: hidden;
-  width: 100%;
-  color: white;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 5em;
-  font-weight: 800;
-  text-transform: uppercase;
-  will-change: transform, opacity, height;
-  white-space: nowrap;
-  cursor: pointer;
-  line-height: 80px;
-}
-
-.meetYourMatch{
-  margin-top:50px; 
+/* MEDIA QUERIES */
+@media only screen and (max-width: 420px) {
+ .transitions-item {
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 3.3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    will-change: transform, opacity, height;
+    white-space: nowrap;
+    cursor: pointer;
+    line-height: 60px;
+ }
 }
