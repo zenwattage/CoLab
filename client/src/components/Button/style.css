@@ -30,6 +30,7 @@
 
 .profession{
   margin-right:15px; 
+  display: inline-block; 
 }
 
 /* .button {
