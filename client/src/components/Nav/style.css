@@ -1,7 +1,12 @@
 .navbar {
-  height: 80px;
+  height: 65px;
   font-family: 'Lato', sans-serif;
   color: #495057; 
+  position:fixed;
+  top:0; 
+  width:100%; 
+  z-index:100; 
+  
 }
 
 .d-inline-block {
@@ -10,9 +15,10 @@
   justify-content: flex-start;
 }
 
-.navbar-item:active{
-  color:white !important; 
-  background:rgb(38, 109, 38) !important; 
+.navbar-item:hover{
+  color: rgb(38, 109, 38) !important;
+  cursor: pointer;
+  float: right;
 } 
 
 .nav-link{
@@ -38,4 +44,12 @@
   color: rgb(38, 109, 38);
   font-weight: bold;
   text-decoration:none;
+}
+
+.top-Nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-bottom: 100px;
+  z-index: 100;
 }

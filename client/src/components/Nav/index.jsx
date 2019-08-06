@@ -8,27 +8,27 @@ import logo from "./logo5.png";
 import axios from "axios";
 
 export default class NavBarStuff extends Component {
-  state ={
-    logout:false
+  state = {
+    logout: false
   };
   //logout function
   logout = () => {
     axios
-    .get("/authentication/logout")
-    .then(
-      data => {
-        console.log(data);
-        localStorage.clear();
-        localStorage.removeItem('isAuthenticated');
-        this.setState({logout:true})
-      }
-    ).catch(error => {
-      console.log(error);
-      //TODO: push user out
-    })
-  }; 
+      .get("/authentication/logout")
+      .then(
+        data => {
+          console.log(data);
+          localStorage.clear();
+          localStorage.removeItem('isAuthenticated');
+          this.setState({ logout: true })
+        }
+      ).catch(error => {
+        console.log(error);
+        //TODO: push user out
+      })
+  };
 
-  render(){
+  render() {
     if (this.state.logout) {
       return <Redirect to="/" />;
     }
@@ -44,11 +44,10 @@ export default class NavBarStuff extends Component {
           />
         </Navbar.Brand>
         <Nav navbar-expand="true" className="justify-content-end">
-          <a href="/search" className = "nav-search">Search</a>
-          <NavDropdown title="My Account" id="basic-nav-dropdown">
-            <NavDropdown.Item href="/profile" className ="navbar-item">Profile</NavDropdown.Item>
-            <NavDropdown.Item onClick={this.logout} className ="navbar-item">Logout</NavDropdown.Item>
-          </NavDropdown>
+          <a href="/search" className="nav-search">Search</a>
+          <a href="/profile" className="nav-search">Profile</a>
+          <a href="/saved" className="nav-search">Saved</a>
+          <a onClick={this.logout} className="nav-search navbar-item">Logout</a>
         </Nav>
       </Navbar>
     );
