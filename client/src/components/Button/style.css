@@ -8,48 +8,32 @@
   width: 200px;
   font-family: 'Lato', sans-serif;
   text-align:center; 
-}
-
-button{
-  font-size: 20px;
-  border-radius: 2px;
-  padding: 10px;
-  width: 200px;
-  font-family: 'Lato', sans-serif;
-  align-content: center;
-  text-align:center; 
+  margin-bottom: 10px;
 }
 
 button{
   color:white; 
   background:none; 
   border:1px solid #5CB85C; 
-  margin-bottom:5px;
-}
-
-/* .button {
+  margin-bottom: 10px;
   font-size: 20px;
   border-radius: 2px;
-  margin-right: 10px;
   padding: 10px;
-  width: 160px;
+  width: 200px;
   font-family: 'Lato', sans-serif;
-} */
+  align-content: center;
+  text-align:center;
+}
+
+.profession {
+  margin-bottom: 50px;
+}
 
 .button:hover {
   cursor: pointer;
 }
 
 @media only screen and (max-width: 420px) {
-  button{
-    font-size: 15px;
-    border-radius: 2px;
-    padding: 10px;
-    width: 150px;
-    font-family: 'Lato', sans-serif;
-    align-content: center;
-    text-align:center; 
-  }
 }
 
 

@@ -40,7 +40,7 @@
 .homepagebutton {
   color: white;
   background: none;
-  -webkit-transition-duration: 0.2s; /* Safari */
+  -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
   font-size: 20px;
   font-display: bold;
@@ -49,7 +49,7 @@
 }
 
 .homepagebutton:hover {
-    background-color: #5CB85C; /* Green */
+    background-color: #5CB85C;
     color: white;
   }
 
