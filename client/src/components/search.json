@@ -36,13 +36,22 @@
       "statement": "Wanted language:"
   },
   {
-    "profession":"Web Developer",
+    "profession":"Visual Artist",
     "talents":[
       {"name":"Paint"}, 
       {"name":"Draw"}, 
       {"name":"Ceramics"}, 
       {"name":"Sculpture"}],
       "statement": "Wanted medium:"
-  }
+  },
+  {
+    "profession":"Designer",
+    "talents":[
+      {"name":"Graphic"}, 
+      {"name":"Web"}, 
+      {"name":"Interior"}, 
+      {"name":"Fashion"}],
+      "statement": "Wanted type:"
+    }
 
 ]
