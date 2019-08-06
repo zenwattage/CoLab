@@ -25,16 +25,16 @@ export default class Button extends Component {
   };
 
   render() {
-    
-    return (!this.props.isHide) &&(
-      <div className = "Buttons">
+
+    return (!this.props.isHide) && (
+      <div className="Buttons">
         <a href={this.props.link}>
           <button
             type="button"
             value={this.props.value}
             id={this.props.id}
             className={this.state.className}
-            class = {this.props.className}
+            class={this.props.className}
             onClick={this.handleOnClick}>{this.props.children}</button>
         </a>
       </div>
