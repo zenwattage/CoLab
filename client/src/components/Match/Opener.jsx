@@ -29,7 +29,7 @@ function Match() {
   useEffect(() => void reset(), [])
 
   return (
-    <div className="opener">
+    <div className = "meetYourMatch">
       {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
         <animated.div className="transitions-item" key={key} style={rest} onClick={reset}>
           <animated.div style={{ overflow: 'hidden', height: innerHeight }}>{item}</animated.div>

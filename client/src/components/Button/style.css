@@ -1,5 +1,6 @@
 .active{
   background:#5CB85C; 
+  color:white; 
   border-radius: 3px; 
   font-size: 20px;
   border-radius: 2px;
@@ -17,6 +18,13 @@ button{
   font-family: 'Lato', sans-serif;
   align-content: center;
   text-align:center; 
+}
+
+button{
+  color:white; 
+  background:none; 
+  border:1px solid #5CB85C; 
+  margin-bottom:5px;
 }
 
 /* .button {

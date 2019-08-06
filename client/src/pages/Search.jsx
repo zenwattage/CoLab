@@ -30,20 +30,6 @@ export default class SearchArtist extends Component {
     payload
   };
 
-  // change payload to its orginal false
-  // Origin = (payload) =>{
-  //   for (var i =0; i<payload.length;i++){
-  //     if (payload[i].pro){
-  //       return(!)
-  //     };
-  //     for (var j=0; j<payload[i].talents.length;j++){
-  //       if (payload[i].talents[j].talent){
-  //         payload[i].talents[j].talent = false;
-  //       }
-  //     }
-  //   }
-  // }
-
   // convert function is to convert payload(which has Boolean values) to strings
   convert = (payload, professions) => {
     const proArray = [];
@@ -166,7 +152,7 @@ export default class SearchArtist extends Component {
                 Any artists matching your criteria will appear after the search
                 is complete.
               </p>
-              <p className="subLine">I'm looking for a:</p>
+              <p className="pp">I'm looking for a:</p>
             </Col>
           </Row>
           <form onSubmit={this.handleSubmit}>
@@ -185,7 +171,7 @@ export default class SearchArtist extends Component {
             </div>
           </form>
           <div className="center">
-            <button className="submitbutton" onClick={this.handleSubmit}>
+            <button className="submitbutton homepagebutton" onClick={this.handleSubmit}>
               Submit
             </button>
           </div>
