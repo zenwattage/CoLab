@@ -86,19 +86,15 @@ export default class Signup extends Component {
 
     console.log(buttons);
 
-    // Gettin' Buttoned Up
     // Empty arrays to store data taken from the button variable.
     // These are sent in the axios POST, to the user schema
 
     let userProfession = [];
     let userTalent = [];
 
-    // CAUTION: LOGGERS AHEAD
+    //
     for (let i = 0; i < buttons.length; i++) {
       const element = buttons[i];
-      console.log(element);
-      console.log("Profession: " + element.profession);
-      console.log("Talents: " + element.talents);
       userProfession.push(element.profession);
       userTalent.push(element.talents);
     }

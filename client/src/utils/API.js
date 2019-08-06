@@ -1,9 +1,16 @@
-import axios from "axios";
+// Saved hits our Mongoose API
+const router = require("express").Router();
+const userController = require("../../../controllers/userController");
 
-export default {
-    // Saves a talent document to the database
-    saveTalent: function(talentData) {
-        return axios.post("/api/talents")
-    }
+// "/api/books"
+router.route("/search")
+    .get(userController.search);
+    .post(books.)
 
-}
+// !  .get(booksCon.findAll)
+//  ! .post(booksCon.create);
+
+// !"/api/books/:id"
+// !router.route("/:id").delete(booksCon.remove);
+
+module.exports = router;

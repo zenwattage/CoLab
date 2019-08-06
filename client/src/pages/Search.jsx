@@ -93,19 +93,29 @@ export default class SearchArtist extends Component {
       buttons
     });
 
+    //* This is where the user's button selections are passed into the variable for the databse
+
+    // Empty arrays to store data taken from the button variable.
+    // These are sent in the axios POST, to the user schema
+
+    let professionSearch = [];
+    let talentSearch = [];
+
+    //
+    for (let i = 0; i < buttons.length; i++) {
+      const element = buttons[i];
+      professionSearch.push(element.profession);
+      talentSearch.push(element.talents);
+      console.log("Profession: " + professionSearch);
+      console.log("Profession: " + talentSearch);
+    }
+
     axios({
-      url: "/authentication/signup",
+      url: "/authentication/search",
       method: "GET",
       data: {
-        email,
-        password,
-        firstName,
-        lastName,
-        imageUrl,
-        bio,
-        instagram,
-        linkedin,
-        other
+        talentSearch,
+        professionSearch
       }
     })
       .then(response => {
