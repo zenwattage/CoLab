@@ -16,5 +16,32 @@
       {"name":"Street"}, 
       {"name":"Motion"}],
       "statement": "My best style(s) are:"
+  },
+  {
+    "profession":"Videographer",
+    "talents":[
+      {"name":"Documentary"}, 
+      {"name":"Drone"}, 
+      {"name":"Event"}, 
+      {"name":"Music"}],
+      "statement": "My best style(s) are:"
+  },
+  {
+    "profession":"Web Developer",
+    "talents":[
+      {"name":"React"}, 
+      {"name":"Javascript"}, 
+      {"name":"Node"}, 
+      {"name":"CSS"}],
+      "statement": "My strongest langague(s) are:"
+  },
+  {
+    "profession":"Visual Artist",
+    "talents":[
+      {"name":"Paint"}, 
+      {"name":"Draw"}, 
+      {"name":"Ceramics"}, 
+      {"name":"Sculpture"}],
+      "statement": "My strongest medium(s) are:"
   }
 ]
