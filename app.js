@@ -16,9 +16,10 @@ const app = express();
 
 // Require our db models
 var db = require("./models");
+mongoose.Promise = global.Promise; 
 //database connection
 mongoose.connect(process.env.MONGODB_URI||"mongodb://team:team1234@ds347367.mlab.com:47367/heroku_lqf3dq9g", 
-{ useNewUrlParser: true });
+{ useMongoClient: true });
 
 app.use(logger("dev"));
 app.use(express.json());
