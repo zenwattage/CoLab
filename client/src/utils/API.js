@@ -3,9 +3,9 @@ const router = require("express").Router();
 const userController = require("../../../controllers/userController");
 
 // "/api/books"
-router.route("/search")
-    .get(userController.search);
-    .post(books.)
+router.route("/authentication/search")
+    .get(userController.search)
+    .post(books.);
 
 // !  .get(booksCon.findAll)
 //  ! .post(booksCon.create);

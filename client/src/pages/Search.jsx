@@ -14,6 +14,9 @@ import search from "../components/search.json";
 // import AOS from 'aos';
 import "aos/dist/aos.css";
 
+// * API import..
+import API from "../utils/APInew";
+
 export default class SearchArtist extends Component {
   state = {
     search,
@@ -68,66 +71,60 @@ export default class SearchArtist extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const {
-      email,
-      password,
-      firstName,
-      lastName,
-      imageUrl,
-      bio,
-      instagram,
-      linkedin,
-      other
-    } = this.state;
     const buttons = this.convert(this.state.payload, this.state.search);
-    console.log({
-      email,
-      password,
-      firstName,
-      lastName,
-      imageUrl,
-      bio,
-      instagram,
-      linkedin,
-      other,
-      buttons
-    });
 
     //* This is where the user's button selections are passed into the variable for the databse
-
     // Empty arrays to store data taken from the button variable.
     // These are sent in the axios POST, to the user schema
 
     let professionSearch = [];
     let talentSearch = [];
 
-    //
     for (let i = 0; i < buttons.length; i++) {
       const element = buttons[i];
       professionSearch.push(element.profession);
       talentSearch.push(element.talents);
-      console.log("Profession: " + professionSearch);
-      console.log("Profession: " + talentSearch);
     }
 
+    // * Ping API for DB Search
+    // API.searchUsers(professionSearch, talentSearch).then(res => {
+    //   console.log(res);
+    // });
+
     axios({
-      url: "/authentication/search",
+      url: "/api/searchRoute",
       method: "GET",
       data: {
-        talentSearch,
-        professionSearch
+        professionSearch,
+        talentSearch
       }
     })
       .then(response => {
-        const isAuthenticated = response.data.isAuthenticated;
-        window.localStorage.setItem("isAuthenticated", isAuthenticated);
-        this.props.history.push("/search");
+        console.log(response);
       })
       .catch(error => {
-        this.setState({
-          errorMessage: error.response.data.message
-        });
+        console.log(error);
       });
+
+    // !   axios({
+    // !     url: "/authentication/search",
+    // !     method: "GET",
+    // !     data: {
+    // !       talentSearch,
+    // !       professionSearch
+    // !     }
+    // !   })
+    //!     .then(response => {
+    //!       const isAuthenticated = response.data.isAuthenticated;
+    //!       window.localStorage.setItem("isAuthenticated", isAuthenticated);
+    //!       this.props.history.push("/search");
+    //!     })
+
+    //!     .catch(error => {
+    //!       this.setState({
+    //!         errorMessage: error.response.data.message
+    //!       });
+    //!     });
   };
 
   // clickPro function is to detect if the user has clicked on a profession -- if yes, set isAdded to true; else to false.

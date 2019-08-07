@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const passport = require("../passport");
 const db = require("../models");
+const userController = require("../controllers/userController");
 
 //signup route auth
 router.post("/signup", (req, res, next) => {
@@ -79,34 +80,41 @@ router.post("/profile", function(req, res, next) {
 });
 
 //search auth route
-router.route("/search", function(req, res, next) {
-  passport.authenticate("local-signin", function(error, user, info) {
-    if (error) {
-      return res.status(500).json({
-        message: error || "Oops, something happened!"
-      });
-    }
+// router.route("/search", function(req, res, next) {
+//   passport.authenticate("local-signin", function(error, user, info) {
+//     if (error) {
+//       return res.status(500).json({
+//         message: error || "Oops, something happened!"
+//       });
+//     }
 
-    //persistent login
-    req.logIn(user, function(error) {
-      if (error) {
-        return res.status(500).json({
-          message: error || "Oops, something happened!"
-        });
-      }
+//     //persistent login
+//     req.logIn(user, function(error) {
+//       if (error) {
+//         return res.status(500).json({
+//           message: error || "Oops, something happened!"
+//         });
+//       }
 
-      user.isAuthenticated = true;
-      //TODO - dont send password to user client
-    });
-  })(req, res, next);
+//       user.isAuthenticated = true;
+//       //TODO - dont send password to user client
+//     });
+//   })(req, res, next);
+// });
+
+// * /api/search
+router.route("/search", function(req, res) {
+  console.log("Checking in from searchRoute" + req + res);
+
+  userController.search;
 });
 
-router.get("/api", (req, res) => {
-  const email = req.users; //req.session.passport.session
-  res.json({
-    message: "Hello World"
-  });
-});
+//! router.get("/api", (req, res) => {
+//!   const email = req.users; //!req.session.passport.session
+//!   res.json({
+//!     message: "Hello World"
+//!   });
+//! });
 
 //logout routing
 router.get("/logout", function(req, res) {
