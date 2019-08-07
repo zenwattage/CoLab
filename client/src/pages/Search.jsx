@@ -27,7 +27,8 @@ export default class SearchArtist extends Component {
     linkedin: "",
     other: "",
     error: "",
-    payload
+    payload,
+    searchResults: []
   };
 
   // convert function is to convert payload(which has Boolean values) to strings
@@ -99,6 +100,7 @@ export default class SearchArtist extends Component {
         const isAuthenticated = response.data.isAuthenticated;
         window.localStorage.setItem("isAuthenticated", isAuthenticated);
         this.props.history.push("/search");
+        // this.setState({searchResults:response.data})
       })
       .catch(error => {
         this.setState({
@@ -176,7 +178,7 @@ export default class SearchArtist extends Component {
             </button>
           </div>
 
-          <SearchResults results={this.state.results} />
+          <SearchResults searchResults={this.state.searchResults} />
         </Wrapper>
         <Footer />
       </Fragment>
