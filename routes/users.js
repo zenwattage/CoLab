@@ -102,13 +102,6 @@ router.post("/profile", function(req, res, next) {
 //   })(req, res, next);
 // });
 
-// * /api/search
-router.route("/search", function(req, res) {
-  console.log("Checking in from searchRoute" + req + res);
-
-  userController.search;
-});
-
 //! router.get("/api", (req, res) => {
 //!   const email = req.users; //!req.session.passport.session
 //!   res.json({
