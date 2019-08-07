@@ -92,8 +92,8 @@ export default class SearchArtist extends Component {
     // });
 
     axios({
-      url: "/search",
-      method: "GET",
+      url: "/api/search",
+      method: "POST",
       data: {
         professionSearch,
         talentSearch

@@ -36,9 +36,9 @@ app.use(passport.initialize());
 //add coookie to browser
 app.use(passport.session());
 
-app.use("/", indexRouter);
-app.use("/authentication", usersRouter);
+// app.use("/", indexRouter);
 app.use("/api", searchRouter);
+app.use("/authentication", usersRouter);
 
 app.listen(PORT, () => log(`Server listening on PORT ${PORT}`));
 

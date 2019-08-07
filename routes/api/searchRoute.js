@@ -1,11 +1,12 @@
-const router = require("express").Router();
+const express = require("express");
+const router = express.Router();
 const userController = require("../../controllers/userController");
 
 // * /api/search
-router.route("/search", function(req, res) {
+router.post("/search", function(req, res) {
   console.log("Checking in from searchRoute" + req + res);
 
-  userController.search;
+  // userController.search;
 });
 
 module.exports = router;
