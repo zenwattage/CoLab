@@ -35,7 +35,7 @@ router.post("/search", function(req, res) {
     .find({})
     // .find(req.query)
     // .sort({ date: -1 })
-    .then(res => res.json(res), console.log(res))
+    .then(res => console.log(res))
     .catch(err => res.status(422).json(err));
 
   // userController.search;
