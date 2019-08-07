@@ -16,12 +16,29 @@ function SearchResults(props) {
         </Col>
       </Row>
 
-      {/* This will be inserted into axios call forloop */}
+      {/* The code below will be unleashed once we get data back from backend */}
+      {/* {props.searchResults.map(x => (
+        <ResultsCard
+        imageUrl={x.imageUrl}
+        firstName={x.firstName}
+        portfolio={x.portfolio}
+        bio={x.bio}
+        profession={x.professsion}
+        talent={x.talent}
+        email={x.email}
+        instagram={x.instagram}
+        linkedin={x.linkedin}
+        other={x.other}
+        />
+      ))} */}
       <ResultsCard
         imageUrl={props.imageUrl}
         firstName={props.firstName}
         bio={props.bio}
         email={props.email}
+        portfolio={props.portfolio}
+        profession={props.professsion}
+        talent={props.talent}
         instagram={props.instagram}
         linkedin={props.linkedin}
         other={props.other}
