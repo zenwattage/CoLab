@@ -23,6 +23,21 @@ function ResultsCard(props) {
           </li>
           <Row>
             <Col>
+              <strong>Portfolio:</strong> {props.Portfolio}
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <strong>Professsion:</strong> {props.Professsion}
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <strong>Talent:</strong> {props.Talent}
+            </Col>
+          </Row>
+          <Row>
+            <Col>
               <strong>Email:</strong> {props.email}
             </Col>
             <strong>Instagram:</strong> {props.instagram}
@@ -40,7 +55,7 @@ function ResultsCard(props) {
         </ul>
       </div>
       {/* EITHER KEEP REMOVE OR ADD FAVORITE */}
-      <span className="remove">𝘅</span>
+      <span className="heart"><i class="far fa-heart"></i></span>
       {/* WE WILL BE ADDING A "FAVORITE" OPTION HERE SO USERS CAN SAVE OTHER USERS */}
     </div>
   );

@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import axios from "axios";
 import Wrapper from "../Wrapper";
 import Footer from "../Footer/index";
-import Nav from "../Nav/index";
 import "./style.css";
 import professions from "../profession.json";
 import Talent from "../Talent";
@@ -202,7 +201,6 @@ export default class Signup extends Component {
     // JSX
     return (
       <Fragment>
-        <Nav />
         <Wrapper>
 
           <Opener />

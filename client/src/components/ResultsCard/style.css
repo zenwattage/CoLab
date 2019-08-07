@@ -35,17 +35,18 @@
   margin-top: 10px;
 }
 
-.card > .remove {
+.card > .heart {
   color: black;
-  font-size: 48px;
+  font-size: 29px;
   position: absolute;
-  top: -20px;
+  top: -5px;
   right: 5px;
   cursor: pointer;
 }
 
-.card > .remove:hover {
+.card > .heart:hover {
   color: #d50000;
+  
 }
 
 .cardname {
