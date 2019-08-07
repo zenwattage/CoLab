@@ -198,6 +198,8 @@ export default class Signup extends Component {
     const isAuthenticated = window.localStorage.getItem("isAuthenticated");
     if (isAuthenticated) {
       return <Redirect to="/search" />;
+    } else if (!isAuthenticated) {
+      return <Redirect to="/" />;
     }
     // JSX
     return (
