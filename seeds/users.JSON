@@ -45,7 +45,7 @@
     "userPortfolio": "",
     "saved": [],
     "professions": ["Photography"],
-    "talents": ["Street", "Landscape"]
+    "talents": ["Landscape"]
   },
   {
     "_id": "USER_004",
@@ -61,7 +61,7 @@
     "userPortfolio": "https://www.madimontphoto.com",
     "saved": [],
     "professions": ["Photography"],
-    "talents": ["Motion"]
+    "talents": ["Motion", "Portrait"]
   },
   {
     "_id": "USER_005",
@@ -94,6 +94,70 @@
     "saved": [],
     "professions": ["Photography"],
     "talents": ["Portrait"]
+  },
+  {
+    "_id": "USER_007",
+    "email": "michellestephens@yahoo.com",
+    "password": "1234",
+    "firstName": "Michelle",
+    "lastName": "Stephens",
+    "imageUrl": "https://images.unsplash.com/photo-1481882466320-51765fd9fe21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60",
+    "bio": "Hi CoLab! My husband and I are starting our own ad agency, but before we do I'd like to build my portfolio.",
+    "instagram": "https://www.instagram.com/michelleshell",
+    "linkedin": "https://www.linkedin.com/64802",
+    "other": "https://www.stephenscreative.com" ,
+    "userPortfolio": "",
+    "saved": [],
+    "professions": ["Photography"],
+    "talents": ["Landscape"]
+  },
+  {
+    "_id": "USER_008",
+    "email": "michael.photo@gmail.com",
+    "password": "1234",
+    "firstName": "Michael",
+    "lastName": "Meyers",
+    "imageUrl": "https://images.unsplash.com/photo-1519841399418-61cbec46a2f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60",
+    "bio": "I recently picked up an old camera my Dad gave to me (Nikon D850) and fell in love. Looking to practice shooting portraits, specifically black and white.",
+    "instagram": "https://www.instagram.com/robdawgphotog/",
+    "linkedin": "https://www.linkedin.com/94039",
+    "other": "" ,
+    "userPortfolio": "https://www.michaelmeyersphoto.com",
+    "saved": [],
+    "professions": ["Photography"],
+    "talents": ["Portrait"]
+  },
+  {
+    "_id": "USER_009",
+    "email": "jon.photo@gmail.com",
+    "password": "1234",
+    "firstName": "Jon",
+    "lastName": "Forrest",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB2Jg4Qs8vTlecseyqpdS5L6_yjiksqxfo0GKERTZIIaG1GoO7",
+    "bio": "NYC is one of my favorite cities. Whenever I am there find myself constantly distracted with taking pics of street performers Any dancers or movement artists out there wanting to collaborate???",
+    "instagram": "https://instagram.com/forrestjon",
+    "linkedin": "https://www.linkedin.com/749303",
+    "other": "Break dancers would be cool..." ,
+    "userPortfolio": "",
+    "saved": [],
+    "professions": ["Photography"],
+    "talents": ["Street"]
+  },
+  {
+    "_id": "USER_002",
+    "email": "kylie.jacobsen@yahoo.com",
+    "password": "1234",
+    "firstName": "Kylie",
+    "lastName": "Jacobsen",
+    "imageUrl": "https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60",
+    "bio": "My name is Kylie and I am finishing up the fashion design program at FIDM. I have been taking photos of my dancer friends for fun, and I discovered I am kind of good at action shots :) Hoping to link up with a web designer to build a portfolio",
+    "instagram": "https://instagram.com/kylieslife12",
+    "linkedin": "https://www.linkedin.com/112224",
+    "other": "https://www.youtube.com/kylieslife12" ,
+    "userPortfolio": "",
+    "saved": [],
+    "professions": ["Photography"],
+    "talents": ["Motion"]
   }
 
 ]
