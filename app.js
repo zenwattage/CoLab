@@ -17,7 +17,8 @@ const app = express();
 // Require our db models
 var db = require("./models");
 //database connection
-mongoose.connect("mongodb://localhost/newColabDB", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI||"mongodb://team:team1234@ds347367.mlab.com:47367/heroku_lqf3dq9g", 
+{ useNewUrlParser: true });
 
 app.use(logger("dev"));
 app.use(express.json());
