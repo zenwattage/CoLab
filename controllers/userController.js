@@ -6,7 +6,7 @@ module.exports = {
   search: function(req, res) {
     console.log("I'm inside userController" + req);
     db.users
-      .find(req.body)
+      .find({ userProfession: "Dancer" })
       // .find(req.query)
       // .sort({ date: -1 })
       .then(QueryRes => res.json(QueryRes))

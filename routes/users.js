@@ -79,36 +79,6 @@ router.post("/profile", function(req, res, next) {
   })(req, res, next);
 });
 
-//search auth route
-// router.route("/search", function(req, res, next) {
-//   passport.authenticate("local-signin", function(error, user, info) {
-//     if (error) {
-//       return res.status(500).json({
-//         message: error || "Oops, something happened!"
-//       });
-//     }
-
-//     //persistent login
-//     req.logIn(user, function(error) {
-//       if (error) {
-//         return res.status(500).json({
-//           message: error || "Oops, something happened!"
-//         });
-//       }
-
-//       user.isAuthenticated = true;
-//       //TODO - dont send password to user client
-//     });
-//   })(req, res, next);
-// });
-
-//! router.get("/api", (req, res) => {
-//!   const email = req.users; //!req.session.passport.session
-//!   res.json({
-//!     message: "Hello World"
-//!   });
-//! });
-
 //logout routing
 router.get("/logout", function(req, res) {
   console.log("Inside Logout");

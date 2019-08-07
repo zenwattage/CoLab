@@ -1,10 +1,11 @@
 //? This file's purpose is:
 //? To control the logic that runs
 //? when USER pings "/search"
+const mongoose = require("mongoose");
 const express = require("express");
+const db = require("../../models");
 const router = express.Router();
 const userController = require("../../controllers/userController");
-const db = require("../../models");
 
 //* /api/search
 router.post("/search", function(req, res) {
@@ -24,16 +25,17 @@ router.post("/search", function(req, res) {
     professionQuery.push(element1);
     talentQuery.push(element2);
   }
-  console.log("Profession Query: " + professionQuery);
-  console.log("Talent Query: " + talentQuery);
+  console.log("searchRoute! Profession Query: " + professionQuery);
+  console.log("searchRoute! Talent Query: " + talentQuery);
 
   // * THIS CODE PERFORMS THE DB SEARCH
 
-  db.users
-    .find({ userProfession: "Dancer" })
+  // TODO ADD THIS IN { userProfession: "Dancer" }
+  db.user
+    .find({})
     // .find(req.query)
     // .sort({ date: -1 })
-    .then(QueryRes => res.json(QueryRes))
+    .then(res => res.json(res), console.log(res))
     .catch(err => res.status(422).json(err));
 
   // userController.search;
