@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const passport = require("./passport");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const searchRouter = require("./routes/api/searchRoute");
 const PORT = process.env.PORT || 8080;
 const log = console.log;
 
@@ -37,6 +38,7 @@ app.use(passport.session());
 
 app.use("/", indexRouter);
 app.use("/authentication", usersRouter);
+app.use("/api", searchRouter);
 
 app.listen(PORT, () => log(`Server listening on PORT ${PORT}`));
 

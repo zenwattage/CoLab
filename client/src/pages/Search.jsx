@@ -86,13 +86,13 @@ export default class SearchArtist extends Component {
       talentSearch.push(element.talents);
     }
 
-    // * Ping API for DB Search
+    // // * Ping API for DB Search
     // API.searchUsers(professionSearch, talentSearch).then(res => {
     //   console.log(res);
     // });
 
     axios({
-      url: "/api/searchRoute",
+      url: "/search",
       method: "GET",
       data: {
         professionSearch,
