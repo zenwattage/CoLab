@@ -15,7 +15,7 @@ import search from "../components/search.json";
 import "aos/dist/aos.css";
 
 // * API import..
-import API from "../utils/APInew";
+// import API from "../utils/APInew";
 
 export default class SearchArtist extends Component {
   state = {

@@ -1,4 +1,4 @@
-// This file is made by node-mongo-seed, and should not be touched
+// This file is made by node-mongo-seeds, and should not be touched
 
 module.exports = {
   undefined: "localhost/newColabDB",
