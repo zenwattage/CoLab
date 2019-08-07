@@ -1,65 +1,146 @@
 [
   {
-    "profession":"Dancer",
-    "talents":[
-      {"name":"Hip-hop"}, 
-      {"name":"Ballet"}, 
-      {"name":"Contemporary"}, 
-      {"name":"Latin"}],
-      "statement": "My best style(s) are:"
+    "profession": "Dancer",
+    "talents": [
+      {
+        "name": "Hip-hop"
+      },
+      {
+        "name": "Ballet"
+      },
+      {
+        "name": "Contemporary"
+      },
+      {
+        "name": "Latin"
+      }
+    ],
+    "statement": "My best style(s) are:"
   },
   {
-    "profession":"Photographer",
-    "talents":[
-      {"name":"Landscape"}, 
-      {"name":"Portrait"}, 
-      {"name":"Street"}, 
-      {"name":"Motion"}],
-      "statement": "My best style(s) are:"
+    "profession": "Photographer",
+    "talents": [
+      {
+        "name": "Landscape"
+      },
+      {
+        "name": "Portrait"
+      },
+      {
+        "name": "Street"
+      },
+      {
+        "name": "Motion"
+      }
+    ],
+    "statement": "My best style(s) are:"
   },
   {
-    "profession":"Videographer",
-    "talents":[
-      {"name":"Documentary"}, 
-      {"name":"Drone"}, 
-      {"name":"Event"}, 
-      {"name":"Music"}],
-      "statement": "My best style(s) are:"
+    "profession": "Videographer",
+    "talents": [
+      {
+        "name": "Documentary"
+      },
+      {
+        "name": "Drone"
+      },
+      {
+        "name": "Event"
+      },
+      {
+        "name": "Music"
+      }
+    ],
+    "statement": "My best style(s) are:"
   },
   {
-    "profession":"Web Developer",
-    "talents":[
-      {"name":"React"}, 
-      {"name":"Javascript"}, 
-      {"name":"Node"}, 
-      {"name":"CSS"}],
-      "statement": "My strongest langague(s) are:"
+    "profession": "Web Developer",
+    "talents": [
+      {
+        "name": "React"
+      },
+      {
+        "name": "Javascript"
+      },
+      {
+        "name": "Node"
+      },
+      {
+        "name": "CSS"
+      }
+    ],
+    "statement": "My strongest language(s) are:"
   },
   {
-    "profession":"Visual Artist",
-    "talents":[
-      {"name":"Paint"}, 
-      {"name":"Draw"}, 
-      {"name":"Ceramics"}, 
-      {"name":"Sculpture"}],
-      "statement": "My strongest medium(s) are:"
+    "profession": "Visual Artist",
+    "talents": [
+      {
+        "name": "Paint"
+      },
+      {
+        "name": "Draw"
+      },
+      {
+        "name": "Ceramics"
+      },
+      {
+        "name": "Sculpture"
+      }
+    ],
+    "statement": "My strongest medium(s) are:"
   },
   {
-  "profession":"Designer",
-  "talents":[
-    {"name":"Graphic"}, 
-    {"name":"Web"}, 
-    {"name":"Interior"}, 
-    {"name":"Fashion"}],
+    "profession": "Designer",
+    "talents": [
+      {
+        "name": "Graphic"
+      },
+      {
+        "name": "Web"
+      },
+      {
+        "name": "Interior"
+      },
+      {
+        "name": "Fashion"
+      }
+    ],
     "statement": "My strongest type(s) are:"
   },
   {
-    "profession":"Writer",
-    "talents":[
-      {"name":"Journalist"}, 
-      {"name":"Digital/UX Writer"}, 
-      {"name":"Copywriter"}, 
-      {"name":"Technical Writer"}],
-      "statement": "My strongest type(s) are:"
-    }
+    "profession": "Musician",
+    "talents": [
+      {
+        "name": "Electronic"
+      },
+      {
+        "name": "Guitarist"
+      },
+      {
+        "name": "Wind instruments"
+      },
+      {
+        "name": "Percussionist"
+      }
+    ],
+    "statement": "My best style(s) are:"
+  },
+  {
+    "profession": "Singer",
+    "talents": [
+      {
+        "name": "Soprano"
+      },
+      {
+        "name": "Tenor"
+      },
+      {
+        "name": "Baritone"
+      },
+      {
+        "name": "Bass"
+      }
+    ],
+    "statement": "My best style(s) are:"
+  }
 ]

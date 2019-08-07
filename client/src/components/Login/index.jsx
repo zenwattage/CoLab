@@ -71,7 +71,7 @@ export default class Login extends Component {
   };
 
   render() {
-    console.log(this.state.errorMessage);
+    // console.log(this.state.errorMessage);
 
     const isAuthenticated = window.localStorage.getItem("isAuthenticated");
     if (isAuthenticated) {
@@ -85,39 +85,39 @@ export default class Login extends Component {
             <Button value="login" className="homepagebutton" handleOnClick={this.handleShowLoginForms}>Log In</Button>
             <div className="login">
               {this.state.test && (
-                <Form>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Control
-                      onChange={this.handleChange}
-                      name="email"
-                      value={this.state.email}
-                      type="email"
-                      className="form-control-home"
-                      placeholder="Enter email"
-                    />
-                  </Form.Group>
-                </Form>
+
+                <Form.Group>
+                  <Form.Control
+                    onChange={this.handleChange}
+                    name="email"
+                    value={this.state.email}
+                    type="email"
+                    className="form-control-home"
+                    placeholder="Enter email"
+                  />
+                </Form.Group>
+
               )}
               {this.state.test && (
-                <Form>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Control
-                      onChange={this.handleChange}
-                      name="password"
-                      value={this.state.password}
-                      type="password"
-                      className="form-control-home"
-                      placeholder="Enter password"
-                    />
-                  </Form.Group>
-                </Form>)}
+
+                <Form.Group>
+                  <Form.Control
+                    onChange={this.handleChange}
+                    name="password"
+                    value={this.state.password}
+                    type="password"
+                    className="form-control-home"
+                    placeholder="Enter password"
+                  />
+                </Form.Group>
+              )}
               {this.state.test &&
                 <Button className="loginsubmit" handleOnClick={this.handleSubmit} value="submit">Submit</Button>
               }
               {this.state.test &&
                 <p className="error">{this.state.errorStatement}</p>
               }
-              <br/>
+              <br />
             </div>
           </div>
         </form>

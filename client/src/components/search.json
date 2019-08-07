@@ -1,66 +1,146 @@
 [
   {
-    "profession":"Dancer",
-    "talents":[
-      {"name":"Hip-hop"}, 
-      {"name":"Ballet"}, 
-      {"name":"Contemporary"}, 
-      {"name":"Latin"}],
-      "statement": "Wanted style:"
-  },
-  {
-    "profession":"Photographer",
-    "talents":[
-      {"name":"Landscape"}, 
-      {"name":"Portrait"}, 
-      {"name":"Street"}, 
-      {"name":"Motion"}],
-      "statement":"Wanted style:"
-  },
-  {
-    "profession":"Videographer",
-    "talents":[
-      {"name":"Documentary"}, 
-      {"name":"Drone"}, 
-      {"name":"Event"}, 
-      {"name":"Music"}],
-      "statement": "Wanted style:"
-  },
-  {
-    "profession":"Web Developer",
-    "talents":[
-      {"name":"React"}, 
-      {"name":"Javascript"}, 
-      {"name":"Node"}, 
-      {"name":"CSS"}],
-      "statement": "Wanted language:"
-  },
-  {
-    "profession":"Visual Artist",
-    "talents":[
-      {"name":"Paint"}, 
-      {"name":"Draw"}, 
-      {"name":"Ceramics"}, 
-      {"name":"Sculpture"}],
-      "statement": "Wanted medium:"
-  },
-  {
-    "profession":"Designer",
-    "talents":[
-      {"name":"Graphic"}, 
-      {"name":"Web"}, 
-      {"name":"Interior"}, 
-      {"name":"Fashion"}],
-      "statement": "Wanted type:"
-    },
-    {
-      "profession":"Writer",
-      "talents":[
-        {"name":"Journalist"}, 
-        {"name":"Digital/UX Writer"}, 
-        {"name":"Copywriter"}, 
-        {"name":"Technical Writer"}],
-        "statement":"Wanted type:"
+    "profession": "Dancer",
+    "talents": [
+      {
+        "name": "Hip-hop"
+      },
+      {
+        "name": "Ballet"
+      },
+      {
+        "name": "Contemporary"
+      },
+      {
+        "name": "Latin"
       }
-
+    ],
+    "statement": "Wanted style:"
+  },
+  {
+    "profession": "Photographer",
+    "talents": [
+      {
+        "name": "Landscape"
+      },
+      {
+        "name": "Portrait"
+      },
+      {
+        "name": "Street"
+      },
+      {
+        "name": "Motion"
+      }
+    ],
+    "statement": "Wanted style:"
+  },
+  {
+    "profession": "Videographer",
+    "talents": [
+      {
+        "name": "Documentary"
+      },
+      {
+        "name": "Drone"
+      },
+      {
+        "name": "Event"
+      },
+      {
+        "name": "Music"
+      }
+    ],
+    "statement": "Wanted style:"
+  },
+  {
+    "profession": "Web Developer",
+    "talents": [
+      {
+        "name": "React"
+      },
+      {
+        "name": "Javascript"
+      },
+      {
+        "name": "Node"
+      },
+      {
+        "name": "CSS"
+      }
+    ],
+    "statement": "Wanted language:"
+  },
+  {
+    "profession": "Visual Artist",
+    "talents": [
+      {
+        "name": "Paint"
+      },
+      {
+        "name": "Draw"
+      },
+      {
+        "name": "Ceramics"
+      },
+      {
+        "name": "Sculpture"
+      }
+    ],
+    "statement": "Wanted medium:"
+  },
+  {
+    "profession": "Designer",
+    "talents": [
+      {
+        "name": "Graphic"
+      },
+      {
+        "name": "Web"
+      },
+      {
+        "name": "Interior"
+      },
+      {
+        "name": "Fashion"
+      }
+    ],
+    "statement": "Wanted type:"
+  },
+  {
+    "profession": "Musician",
+    "talents": [
+      {
+        "name": "Electronic"
+      },
+      {
+        "name": "Guitarist"
+      },
+      {
+        "name": "Wind instruments"
+      },
+      {
+        "name": "Percussionist"
+      }
+    ],
+    "statement": "Wanted style:"
+  },
+  {
+    "profession": "Singer",
+    "talents": [
+      {
+        "name": "Soprano"
+      },
+      {
+        "name": "Tenor"
+      },
+      {
+        "name": "Baritone"
+      },
+      {
+        "name": "Bass"
+      }
+    ],
+    "statement": "Wanted style:"
+  }
 ]
