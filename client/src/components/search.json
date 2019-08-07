@@ -52,6 +52,24 @@
       {"name":"Interior"}, 
       {"name":"Fashion"}],
       "statement": "Wanted type:"
+    },
+    {
+      "profession":"Musician",
+      "talents":[
+        {"name":"Electronic"}, 
+        {"name":"Guitarist"}, 
+        {"name":"Wind instruments"}, 
+        {"name":"Percussionist"}],
+        "statement": "Wanted style:"
+    },
+    {
+      "profession":"Singer",
+      "talents":[
+        {"name":"Soprano"}, 
+        {"name":"Tenor"}, 
+        {"name":"Baritone"}, 
+        {"name":"Bass"}],
+        "statement": "Wanted style:"
     }
 
 ]
