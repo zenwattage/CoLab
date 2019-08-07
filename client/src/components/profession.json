@@ -52,5 +52,14 @@
     {"name":"Interior"}, 
     {"name":"Fashion"}],
     "statement": "My strongest type(s) are:"
-  }
+  },
+  {
+    "profession":"Writer",
+    "talents":[
+      {"name":"Journalist"}, 
+      {"name":"Digital/UX Writer"}, 
+      {"name":"Copywriter"}, 
+      {"name":"Technical Writer"}],
+      "statement": "My strongest type(s) are:"
+    }
 ]
