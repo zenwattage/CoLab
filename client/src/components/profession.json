@@ -33,7 +33,7 @@
       {"name":"Javascript"}, 
       {"name":"Node"}, 
       {"name":"CSS"}],
-      "statement": "My strongest langague(s) are:"
+      "statement": "My strongest language(s) are:"
   },
   {
     "profession":"Visual Artist",
@@ -52,5 +52,23 @@
     {"name":"Interior"}, 
     {"name":"Fashion"}],
     "statement": "My strongest type(s) are:"
+  },
+  {
+    "profession":"Musician",
+    "talents":[
+      {"name":"Electronic"}, 
+      {"name":"Guitarist"}, 
+      {"name":"Wind instruments"}, 
+      {"name":"Percussionist"}],
+      "statement": "My best style(s) are:"
+  },
+  {
+    "profession":"Singer",
+    "talents":[
+      {"name":"Soprano"}, 
+      {"name":"Tenor"}, 
+      {"name":"Baritone"}, 
+      {"name":"Bass"}],
+      "statement": "My best style(s) are:"
   }
 ]
